@@ -19,7 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="Vue x Laravel installation" />
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="Vue x Laravel installation">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/views/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/views/layouts/guest.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/views/layouts/guest.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/webpack.mix.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,7 +76,7 @@
       <workItem from="1602324655975" duration="4502000" />
       <workItem from="1602334320287" duration="6353000" />
       <workItem from="1602340679896" duration="3764000" />
-      <workItem from="1602344513018" duration="376000" />
+      <workItem from="1602344513018" duration="2741000" />
     </task>
     <task id="LOCAL-00001" summary="update laravel installation">
       <created>1602234138633</created>
@@ -157,14 +165,14 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="726" y="310" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1602339882624" />
-    <state x="855" y="452" key="Github.ShareDialog" timestamp="1602341220430">
+    <state x="855" y="452" key="Github.ShareDialog" timestamp="1602344911097">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="855" y="452" key="Github.ShareDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1602341220430" />
-    <state x="711" y="239" width="555" height="627" key="Github.UntrackedFilesDialog" timestamp="1602341226572">
+    <state x="855" y="452" key="Github.ShareDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1602344911097" />
+    <state x="711" y="239" width="555" height="627" key="Github.UntrackedFilesDialog" timestamp="1602344917292">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="711" y="239" width="555" height="627" key="Github.UntrackedFilesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1602341226572" />
+    <state x="711" y="239" width="555" height="627" key="Github.UntrackedFilesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1602344917292" />
     <state x="482" y="187" key="SettingsEditor" timestamp="1602344539180">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -181,9 +189,13 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="774" y="467" width="428" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1853.1053@67.27.1853.1053" timestamp="1602344403255" />
-    <state x="435" y="264" width="1146" height="580" key="find.popup" timestamp="1602344154459">
+    <state x="435" y="264" width="1146" height="580" key="find.popup" timestamp="1602346807695">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="435" y="264" width="1146" height="580" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1602344154459" />
+    <state x="435" y="264" width="1146" height="580" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1602346807695" />
+    <state x="718" y="466" width="540" height="172" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1602346202880">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="718" y="466" width="540" height="172" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1602346202880" />
   </component>
 </project>
