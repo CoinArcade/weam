@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="Vue x Laravel installation" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/laravel8/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1idMmqOw1SpjzKrFSZhzOo6Wv93" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/weam/resources/js/Pages/Home" />
+      <recent name="$PROJECT_DIR$/weam/resources/js/Pages" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="" />
+      <created>1602233177183</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602233177183</updated>
+      <workItem from="1602233178349" duration="4356000" />
+      <workItem from="1602264572865" duration="2795000" />
+      <workItem from="1602272535796" duration="320000" />
+      <workItem from="1602272860617" duration="71000" />
+      <workItem from="1602272978350" duration="106000" />
+      <workItem from="1602324655975" duration="4502000" />
+      <workItem from="1602334320287" duration="6353000" />
+      <workItem from="1602340679896" duration="3764000" />
+      <workItem from="1602344513018" duration="376000" />
+    </task>
+    <task id="LOCAL-00001" summary="update laravel installation">
+      <created>1602234138633</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602234138633</updated>
+    </task>
+    <task id="LOCAL-00002" summary="cancel gitignore">
+      <created>1602234346070</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1602234346070</updated>
+    </task>
+    <task id="LOCAL-00003" summary="cancel gitignore">
+      <created>1602236738005</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1602236738005</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update laravel with vue">
+      <created>1602272204216</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1602272204216</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add gitignore">
+      <created>1602272907101</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1602272907101</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Vue x Laravel installation">
+      <created>1602337424442</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1602337424442</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Vue x Laravel installation">
+      <created>1602337488872</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1602337488872</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="update laravel installation" />
+    <MESSAGE value="cancel gitignore" />
+    <MESSAGE value="update laravel with vue" />
+    <MESSAGE value="add gitignore" />
+    <MESSAGE value="Vue x Laravel installation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Vue x Laravel installation" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602340399573">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1602340399573" />
+    <state x="726" y="310" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602339882624">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="726" y="310" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1602339882624" />
+    <state x="855" y="452" key="Github.ShareDialog" timestamp="1602341220430">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="855" y="452" key="Github.ShareDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1602341220430" />
+    <state x="711" y="239" width="555" height="627" key="Github.UntrackedFilesDialog" timestamp="1602341226572">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="711" y="239" width="555" height="627" key="Github.UntrackedFilesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1602341226572" />
+    <state x="482" y="187" key="SettingsEditor" timestamp="1602344539180">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="482" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1602344539180" />
+    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1602337494684">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1602337494684" />
+    <state x="838" y="269" width="301" height="566" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1602234416216">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="838" y="269" width="301" height="566" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1602234416216" />
+    <state x="774" y="467" width="428" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602344403255">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="774" y="467" width="428" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1853.1053@67.27.1853.1053" timestamp="1602344403255" />
+    <state x="435" y="264" width="1146" height="580" key="find.popup" timestamp="1602344154459">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="435" y="264" width="1146" height="580" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1602344154459" />
+  </component>
+</project>
