@@ -20,104 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="First vue component">
-      <change afterPath="$PROJECT_DIR$/weam/app/Actions/Fortify/CreateNewUser.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/app/Actions/Fortify/PasswordValidationRules.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/app/Actions/Fortify/ResetUserPassword.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/app/Actions/Fortify/UpdateUserPassword.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/app/Actions/Fortify/UpdateUserProfileInformation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/app/Actions/Jetstream/DeleteUser.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/app/Http/Controllers/MainController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/app/Providers/FortifyServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/app/Providers/JetstreamServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/app/View/Components/GuestLayout.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/config/fortify.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/config/jetstream.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/config/sanctum.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/database/migrations/2014_10_12_200000_add_two_factor_columns_to_users_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/database/migrations/2020_10_10_200700_create_sessions_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Jetstream/ActionMessage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Jetstream/ActionSection.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Jetstream/ApplicationLogo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Jetstream/ApplicationMark.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Jetstream/Button.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Jetstream/ConfirmationModal.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Jetstream/ConfirmsPassword.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Jetstream/DangerButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Jetstream/DialogModal.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Jetstream/Dropdown.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Jetstream/DropdownLink.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Jetstream/FormSection.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Jetstream/Input.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Jetstream/InputError.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Jetstream/Label.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Jetstream/Modal.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Jetstream/NavLink.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Jetstream/ResponsiveNavLink.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Jetstream/SecondaryButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Jetstream/SectionBorder.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Jetstream/SectionTitle.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Jetstream/Welcome.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Layouts/AppLayout.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Mixins/InteractsWithErrorBags.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Pages/API/ApiTokenManager.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Pages/API/Index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Pages/Dashboard.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Pages/Home/Index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Pages/Profile/DeleteUserForm.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Pages/Profile/LogoutOtherBrowserSessionsForm.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Pages/Profile/Show.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Pages/Profile/TwoFactorAuthenticationForm.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Pages/Profile/UpdatePasswordForm.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/Pages/Profile/UpdateProfileInformationForm.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/views/app.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/views/auth/forgot-password.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/views/auth/reset-password.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/views/auth/two-factor-challenge.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/views/auth/verify-email.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/views/layouts/guest.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/tailwind.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/weam/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/ConfirmPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/VerificationController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/HomeController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/weam/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/weam/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/config/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/config/session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/weam/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/weam/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/public/img/weam.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/ExampleComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/sass/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/sass/app.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/views/auth/passwords/confirm.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/views/auth/passwords/email.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/views/auth/passwords/reset.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/views/auth/verify.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/views/home.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/views/layouts/app.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements/others-install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/requirements/others-install.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +78,8 @@
       <workItem from="1602324655975" duration="4502000" />
       <workItem from="1602334320287" duration="6353000" />
       <workItem from="1602340679896" duration="3764000" />
-      <workItem from="1602344513018" duration="15744000" />
+      <workItem from="1602344513018" duration="15909000" />
+      <workItem from="1602408396940" duration="693000" />
     </task>
     <task id="LOCAL-00001" summary="update laravel installation">
       <created>1602234138633</created>
@@ -274,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602357633246</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="First vue component">
+      <created>1602361977298</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1602361977298</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,10 +240,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1602344539180" />
-    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1602357639610">
+    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1602361982383">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1602357639610" />
+    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1602361982383" />
     <state x="838" y="269" width="301" height="566" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1602234416216">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
