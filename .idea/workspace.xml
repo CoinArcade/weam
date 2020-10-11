@@ -19,12 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="setup laravel and vuejs">
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="fix mix-manifest generation and update requirements">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements/others-install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/requirements/others-install.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/bootstrap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +80,7 @@
       <workItem from="1602334320287" duration="6353000" />
       <workItem from="1602340679896" duration="3764000" />
       <workItem from="1602344513018" duration="15909000" />
-      <workItem from="1602408396940" duration="4395000" />
+      <workItem from="1602408396940" duration="4921000" />
     </task>
     <task id="LOCAL-00001" summary="update laravel installation">
       <created>1602234138633</created>
@@ -203,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602412241828</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fix mix-manifest generation and update requirements">
+      <created>1602412844604</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1602412844605</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +241,8 @@
     <MESSAGE value="First vue component" />
     <MESSAGE value="update requirements" />
     <MESSAGE value="setup laravel and vuejs" />
-    <option name="LAST_COMMIT_MESSAGE" value="setup laravel and vuejs" />
+    <MESSAGE value="fix mix-manifest generation and update requirements" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix mix-manifest generation and update requirements" />
   </component>
   <component name="WindowStateProjectService">
     <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602340399573">
@@ -259,10 +265,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1602344539180" />
-    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1602412245532">
+    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1602412848933">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1602412245532" />
+    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1602412848933" />
     <state x="838" y="269" width="301" height="566" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1602234416216">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
