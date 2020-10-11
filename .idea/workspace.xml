@@ -19,9 +19,155 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="First vue component">
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="update requirements">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements/others-install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/requirements/others-install.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/.env.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/.styleci.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Actions/Fortify/CreateNewUser.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Actions/Fortify/PasswordValidationRules.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Actions/Fortify/ResetUserPassword.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Actions/Fortify/UpdateUserPassword.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Actions/Fortify/UpdateUserProfileInformation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Actions/Jetstream/DeleteUser.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Console/Kernel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Exceptions/Handler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Controller.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/MainController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Http/Kernel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Http/Middleware/Authenticate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Http/Middleware/EncryptCookies.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Http/Middleware/PreventRequestsDuringMaintenance.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Http/Middleware/TrimStrings.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Http/Middleware/TrustHosts.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Http/Middleware/TrustProxies.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Models/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Providers/AppServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Providers/AuthServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Providers/BroadcastServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Providers/EventServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Providers/FortifyServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Providers/JetstreamServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Providers/RouteServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/View/Components/GuestLayout.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/artisan" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/bootstrap/app.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/bootstrap/cache/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/config/app.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/config/auth.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/config/broadcasting.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/config/cache.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/config/cors.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/config/database.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/config/filesystems.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/config/fortify.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/config/hashing.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/config/jetstream.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/config/logging.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/config/mail.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/config/queue.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/config/sanctum.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/config/services.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/config/session.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/config/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/database/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/database/factories/UserFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/database/migrations/2014_10_12_200000_add_two_factor_columns_to_users_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/database/migrations/2020_10_10_200700_create_sessions_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/database/seeders/DatabaseSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/phpunit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/mix-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/web.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Jetstream/ActionMessage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Jetstream/ActionSection.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Jetstream/ApplicationLogo.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Jetstream/ApplicationMark.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Jetstream/Button.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Jetstream/ConfirmationModal.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Jetstream/ConfirmsPassword.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Jetstream/DangerButton.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Jetstream/DialogModal.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Jetstream/Dropdown.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Jetstream/DropdownLink.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Jetstream/FormSection.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Jetstream/Input.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Jetstream/InputError.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Jetstream/Label.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Jetstream/Modal.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Jetstream/NavLink.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Jetstream/ResponsiveNavLink.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Jetstream/SecondaryButton.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Jetstream/SectionBorder.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Jetstream/SectionTitle.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Jetstream/Welcome.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Layouts/AppLayout.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Mixins/InteractsWithErrorBags.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Pages/API/ApiTokenManager.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Pages/API/Index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Pages/Dashboard.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Pages/Home/Index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Pages/Profile/DeleteUserForm.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Pages/Profile/LogoutOtherBrowserSessionsForm.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Pages/Profile/Show.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Pages/Profile/TwoFactorAuthenticationForm.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Pages/Profile/UpdatePasswordForm.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/Pages/Profile/UpdateProfileInformationForm.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/lang/en/auth.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/lang/en/pagination.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/lang/en/passwords.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/lang/en/validation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/views/app.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/views/auth/forgot-password.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/views/auth/login.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/views/auth/register.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/views/auth/reset-password.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/views/auth/two-factor-challenge.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/views/auth/verify-email.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/views/layouts/guest.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/views/welcome.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/routes/api.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/routes/channels.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/routes/console.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/routes/web.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/server.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/storage/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/storage/app/public/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/storage/framework/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/storage/framework/cache/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/storage/framework/cache/data/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/storage/framework/sessions/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/storage/framework/testing/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/storage/framework/views/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/storage/logs/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/tailwind.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/tests/CreatesApplication.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/tests/Feature/ExampleTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/tests/TestCase.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/tests/Unit/ExampleTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/webpack.mix.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +225,7 @@
       <workItem from="1602334320287" duration="6353000" />
       <workItem from="1602340679896" duration="3764000" />
       <workItem from="1602344513018" duration="15909000" />
-      <workItem from="1602408396940" duration="693000" />
+      <workItem from="1602408396940" duration="3689000" />
     </task>
     <task id="LOCAL-00001" summary="update laravel installation">
       <created>1602234138633</created>
@@ -186,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602361977298</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="update requirements">
+      <created>1602409142472</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1602409142472</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +370,8 @@
     <MESSAGE value="Add first vue" />
     <MESSAGE value="Initial commit" />
     <MESSAGE value="First vue component" />
-    <option name="LAST_COMMIT_MESSAGE" value="First vue component" />
+    <MESSAGE value="update requirements" />
+    <option name="LAST_COMMIT_MESSAGE" value="update requirements" />
   </component>
   <component name="WindowStateProjectService">
     <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602340399573">
@@ -240,10 +394,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1602344539180" />
-    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1602361982383">
+    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1602409157845">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1602361982383" />
+    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1602409157845" />
     <state x="838" y="269" width="301" height="566" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1602234416216">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -252,10 +406,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="774" y="467" width="428" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1853.1053@67.27.1853.1053" timestamp="1602344403255" />
-    <state x="568" y="262" width="1146" height="580" key="find.popup" timestamp="1602361680547">
+    <state x="568" y="262" width="1146" height="580" key="find.popup" timestamp="1602410908599">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="568" y="262" width="1146" height="580" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1602361680547" />
+    <state x="568" y="262" width="1146" height="580" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1602410908599" />
     <state x="718" y="466" width="540" height="172" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1602360263660">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
