@@ -19,7 +19,7 @@
                 font-family: 'Nunito';
             }
         </style>
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     </head>
     <body class="antialiased">
         <div id="app">

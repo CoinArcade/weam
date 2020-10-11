@@ -12,4 +12,14 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css').then(() => {
+        var fs = require('fs');
+        var mix_manifest_file = path.resolve(__dirname) + '/public/mix-manifest.json';
+        var mix_manifest = require(mix_manifest_file);
+        for(var key in mix_manifest) {
+            mix_manifest[key] = '.' + mix_manifest[key];
+        }
+        fs.writeFile(mix_manifest_file, JSON.stringify(mix_manifest), function (err) {
+            console.log(err);
+        });
+    });
