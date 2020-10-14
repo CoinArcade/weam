@@ -19,10 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="remove jquery loading">
-      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="adding composer.json">
+      <change afterPath="$PROJECT_DIR$/weam/resources/js/components/TaskComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements/others-install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/requirements/others-install.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/weam/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/weam/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/ExampleComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/HomeComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +87,12 @@
       <workItem from="1602340679896" duration="3764000" />
       <workItem from="1602344513018" duration="15909000" />
       <workItem from="1602408396940" duration="5209000" />
-      <workItem from="1602487195684" duration="529000" />
+      <workItem from="1602487195684" duration="1386000" />
+      <workItem from="1602526770597" duration="598000" />
+      <workItem from="1602571627381" duration="25000" />
+      <workItem from="1602582155061" duration="64000" />
+      <workItem from="1602679037427" duration="2459000" />
+      <workItem from="1602687959465" duration="2491000" />
     </task>
     <task id="LOCAL-00001" summary="update laravel installation">
       <created>1602234138633</created>
@@ -216,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602413515455</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="adding composer.json">
+      <created>1602487744772</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1602487744772</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,7 +269,8 @@
     <MESSAGE value="setup laravel and vuejs" />
     <MESSAGE value="fix mix-manifest generation and update requirements" />
     <MESSAGE value="remove jquery loading" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove jquery loading" />
+    <MESSAGE value="adding composer.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding composer.json" />
   </component>
   <component name="WindowStateProjectService">
     <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602340399573">
@@ -274,10 +293,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1602344539180" />
-    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1602413520279">
+    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1602487751807">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1602413520279" />
+    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1602487751807" />
     <state x="838" y="269" width="301" height="566" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1602234416216">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

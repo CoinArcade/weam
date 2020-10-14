@@ -47,6 +47,7 @@
 # chmod 777 -R .
 # TODO : change .env file
 # php artisan migrate
+# npm install vue-router
 
 # TODO : update webpack.mix.js with these lines :
 # mix.js('resources/js/app.js', 'public/js')
