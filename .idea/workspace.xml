@@ -19,16 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="adding composer.json">
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/components/TaskComponent.vue" afterDir="false" />
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="spa test + add requirement">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements/others-install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/requirements/others-install.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/weam/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/weam/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/ExampleComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/HomeComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +43,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1idMmqOw1SpjzKrFSZhzOo6Wv93" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -92,7 +88,15 @@
       <workItem from="1602571627381" duration="25000" />
       <workItem from="1602582155061" duration="64000" />
       <workItem from="1602679037427" duration="2459000" />
-      <workItem from="1602687959465" duration="2491000" />
+      <workItem from="1602687959465" duration="2652000" />
+      <workItem from="1602766033834" duration="598000" />
+      <workItem from="1602780696616" duration="2962000" />
+      <workItem from="1602834971337" duration="9000" />
+      <workItem from="1602840181414" duration="6000" />
+      <workItem from="1602842929500" duration="18000" />
+      <workItem from="1602842955672" duration="61000" />
+      <workItem from="1602845009759" duration="246000" />
+      <workItem from="1602875229461" duration="2676000" />
     </task>
     <task id="LOCAL-00001" summary="update laravel installation">
       <created>1602234138633</created>
@@ -234,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602487744772</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="spa test + add requirement">
+      <created>1602691116995</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1602691116995</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +281,8 @@
     <MESSAGE value="fix mix-manifest generation and update requirements" />
     <MESSAGE value="remove jquery loading" />
     <MESSAGE value="adding composer.json" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding composer.json" />
+    <MESSAGE value="spa test + add requirement" />
+    <option name="LAST_COMMIT_MESSAGE" value="spa test + add requirement" />
   </component>
   <component name="WindowStateProjectService">
     <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602340399573">
@@ -293,18 +305,18 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1602344539180" />
-    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1602487751807">
+    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1602691120772">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1602487751807" />
+    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1602691120772" />
     <state x="838" y="269" width="301" height="566" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1602234416216">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="838" y="269" width="301" height="566" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1602234416216" />
-    <state x="774" y="467" width="428" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602344403255">
+    <state x="774" y="467" width="438" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602789132962">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="774" y="467" width="428" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1853.1053@67.27.1853.1053" timestamp="1602344403255" />
+    <state x="774" y="467" width="438" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1853.1053@67.27.1853.1053" timestamp="1602789132962" />
     <state x="568" y="262" width="1146" height="580" key="find.popup" timestamp="1602410908599">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

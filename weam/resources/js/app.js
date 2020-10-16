@@ -22,21 +22,27 @@ Vue.use(VueRouter)
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-import Home from './components/HomeComponent.vue';
-import Task from './components/TaskComponent.vue';
+import Home from './components/HomeComponent';
+import Task from './components/TaskComponent';
 
-const routes = [
-    {
-        path: '/',
-        component: Home
-    },
-    {
-        path: '/tasks',
-        component: Task
-    }
-];
-
-const router = new VueRouter({routes});
+const router = new VueRouter({
+    mode: 'history',
+    base: '/weam/weam/public',
+    routes: [
+        {
+            path: '/',
+            component: require('./components/HomeComponent.vue').default
+        },
+        {
+            path: '/tasks',
+            component: require('./components/TaskComponent').default
+        },
+        {
+            path: '*',
+            redirect: '/'
+        }
+    ]
+});
 
 //Vue.component('example-component', require('./components/HomeComponent.vue').default);
 

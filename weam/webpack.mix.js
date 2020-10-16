@@ -18,8 +18,11 @@ mix.js('resources/js/app.js', 'public/js')
         var mix_manifest = require(mix_manifest_file);
         for(var key in mix_manifest) {
             mix_manifest[key] = '.' + mix_manifest[key];
+            mix_manifest[key] = mix_manifest[key].replace(/(\.){2,}/, '.')
         }
         fs.writeFile(mix_manifest_file, JSON.stringify(mix_manifest), function (err) {
-            console.log(err);
+            if (err !== null) {
+                console.log("Mix manifest error : " + err);
+            }
         });
     });

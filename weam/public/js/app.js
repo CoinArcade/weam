@@ -52845,8 +52845,8 @@ module.exports = function(module) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var _components_HomeComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/HomeComponent.vue */ "./resources/js/components/HomeComponent.vue");
-/* harmony import */ var _components_TaskComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/TaskComponent.vue */ "./resources/js/components/TaskComponent.vue");
+/* harmony import */ var _components_HomeComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/HomeComponent */ "./resources/js/components/HomeComponent.vue");
+/* harmony import */ var _components_TaskComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/TaskComponent */ "./resources/js/components/TaskComponent.vue");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -52869,15 +52869,19 @@ Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 
 
-var routes = [{
-  path: '/',
-  component: _components_HomeComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
-}, {
-  path: '/tasks',
-  component: _components_TaskComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
-}];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
-  routes: routes
+  mode: 'history',
+  base: '/weam/weam/public',
+  routes: [{
+    path: '/',
+    component: __webpack_require__(/*! ./components/HomeComponent.vue */ "./resources/js/components/HomeComponent.vue")["default"]
+  }, {
+    path: '/tasks',
+    component: __webpack_require__(/*! ./components/TaskComponent */ "./resources/js/components/TaskComponent.vue")["default"]
+  }, {
+    path: '*',
+    redirect: '/'
+  }]
 }); //Vue.component('example-component', require('./components/HomeComponent.vue').default);
 
 /**
