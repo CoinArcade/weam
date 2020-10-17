@@ -19,11 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="spa test + add requirement">
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="fix router">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +94,8 @@
       <workItem from="1602842929500" duration="18000" />
       <workItem from="1602842955672" duration="61000" />
       <workItem from="1602845009759" duration="246000" />
-      <workItem from="1602875229461" duration="2676000" />
+      <workItem from="1602875229461" duration="2915000" />
+      <workItem from="1602924911883" duration="948000" />
     </task>
     <task id="LOCAL-00001" summary="update laravel installation">
       <created>1602234138633</created>
@@ -245,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602691116995</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="fix router">
+      <created>1602878218206</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1602878218206</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,7 +288,8 @@
     <MESSAGE value="remove jquery loading" />
     <MESSAGE value="adding composer.json" />
     <MESSAGE value="spa test + add requirement" />
-    <option name="LAST_COMMIT_MESSAGE" value="spa test + add requirement" />
+    <MESSAGE value="fix router" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix router" />
   </component>
   <component name="WindowStateProjectService">
     <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602340399573">
@@ -305,10 +312,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1602344539180" />
-    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1602691120772">
+    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1602878224271">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1602691120772" />
+    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1602878224271" />
     <state x="838" y="269" width="301" height="566" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1602234416216">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
