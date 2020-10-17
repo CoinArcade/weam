@@ -4,11 +4,11 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+import VueRouter from 'vue-router'
+
 require('./bootstrap');
 
 window.Vue = require('vue');
-
-import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 /**
@@ -22,8 +22,11 @@ Vue.use(VueRouter)
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-import Home from './components/HomeComponent';
-import Task from './components/TaskComponent';
+// Components
+
+let App = require('./components/AppComponent').default;
+let Root = require('./components/HomeComponent.vue').default;
+let Tasks = require('./components/TaskComponent').default;
 
 const router = new VueRouter({
     mode: 'history',
@@ -31,11 +34,11 @@ const router = new VueRouter({
     routes: [
         {
             path: '/',
-            component: require('./components/HomeComponent.vue').default
+            component: Root
         },
         {
             path: '/tasks',
-            component: require('./components/TaskComponent').default
+            component: Tasks
         },
         {
             path: '*',
@@ -54,5 +57,8 @@ const router = new VueRouter({
 
 const app = new Vue({
     el: '#app',
-    router: router
+    components: {
+        App
+    },
+    router
 });

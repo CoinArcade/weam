@@ -17,8 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/tasks', 'App\Http\Controllers\TasksController@index');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/{any}', 'App\Http\Controllers\TasksController@index')->where('any', '.*');
