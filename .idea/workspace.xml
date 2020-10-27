@@ -19,33 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="fix spa">
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/components/AppComponent.vue" afterDir="false" />
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="delete auth, fix migration and created app component for spa control">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/ConfirmPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/VerificationController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/HomeController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/HomeComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/HomeComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/TaskComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/TaskComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/views/auth/login.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/views/auth/passwords/confirm.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/views/auth/passwords/email.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/views/auth/passwords/reset.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/views/auth/register.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/views/auth/verify.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/views/home.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/views/layouts/app.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/AppComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/AppComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +98,12 @@
       <workItem from="1602842955672" duration="61000" />
       <workItem from="1602845009759" duration="246000" />
       <workItem from="1602875229461" duration="2915000" />
-      <workItem from="1602924911883" duration="3250000" />
+      <workItem from="1602924911883" duration="3627000" />
+      <workItem from="1602961840309" duration="578000" />
+      <workItem from="1603023778239" duration="21000" />
+      <workItem from="1603124104170" duration="16000" />
+      <workItem from="1603125898369" duration="7000" />
+      <workItem from="1603800066792" duration="1823000" />
     </task>
     <task id="LOCAL-00001" summary="update laravel installation">
       <created>1602234138633</created>
@@ -282,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602926068342</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="delete auth, fix migration and created app component for spa control">
+      <created>1602928553897</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1602928553897</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +312,8 @@
     <MESSAGE value="spa test + add requirement" />
     <MESSAGE value="fix router" />
     <MESSAGE value="fix spa" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix spa" />
+    <MESSAGE value="delete auth, fix migration and created app component for spa control" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete auth, fix migration and created app component for spa control" />
   </component>
   <component name="WindowStateProjectService">
     <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602927853853">
@@ -344,10 +336,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1602344539180" />
-    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1602926069398">
+    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1602928557555">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1602926069398" />
+    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1602928557555" />
     <state x="838" y="269" width="301" height="566" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1602234416216">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

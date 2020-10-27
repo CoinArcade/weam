@@ -1,4 +1,14 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);
+
+@charset "UTF-8";
+
+.bg-primary-top {
+    background-color: var(--primary-top-menu) !important;
+}
+
+.bg-primary-side {
+    background-color: var(--primary-side-menu) !important;
+}
 
 /*!
  * Bootstrap v4.5.2 (https://getbootstrap.com/)
@@ -36,6 +46,10 @@
   --breakpoint-xl: 1200px;
   --font-family-sans-serif: "Nunito", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --primary-bg: #0f1629;
+  --primary-top-menu: #171e3b;
+  --primary-side-menu: #182246;
+  --font-color: white;
 }
 
 *,
@@ -6951,7 +6965,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #3490dc !important;
+  background-color: var(--primary-bg) !important;
 }
 
 a.bg-primary:hover,

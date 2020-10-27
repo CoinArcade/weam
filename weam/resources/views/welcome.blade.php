@@ -13,7 +13,7 @@
 
     <body class="antialiased">
 
-        <div id="app">
+        <div id="app" class="bg-primary vh-100">
             <app></app>
         </div>
 
