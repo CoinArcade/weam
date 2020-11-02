@@ -1,2 +1,2 @@
 # weam
-A new sub-second latency livestream platform
+Welcome to weam project ! Weam is a new livestream platform that allows to all to stream on every platform at the same time. Enjoy a sub-second experience.
