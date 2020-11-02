@@ -1,17 +1,7 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);
-
-@charset "UTF-8";
-
-.bg-primary-top {
-    background-color: var(--primary-top-menu) !important;
-}
-
-.bg-primary-side {
-    background-color: var(--primary-side-menu) !important;
-}
+@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
 /*!
- * Bootstrap v4.5.2 (https://getbootstrap.com/)
+ * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -46,10 +36,6 @@
   --breakpoint-xl: 1200px;
   --font-family-sans-serif: "Nunito", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --primary-bg: #0f1629;
-  --primary-top-menu: #171e3b;
-  --primary-side-menu: #182246;
-  --font-color: white;
 }
 
 *,
@@ -247,6 +233,7 @@ caption {
 
 th {
   text-align: inherit;
+  text-align: -webkit-match-parent;
 }
 
 label {
@@ -3953,6 +3940,8 @@ input[type=button].btn-block {
   display: block;
   min-height: 1.44rem;
   padding-left: 1.5rem;
+  -webkit-print-color-adjust: exact;
+          color-adjust: exact;
 }
 
 .custom-control-inline {
@@ -5532,6 +5521,7 @@ a.badge-dark.focus {
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 2;
   padding: 0.75rem 1.25rem;
   color: inherit;
 }
@@ -6965,7 +6955,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: var(--primary-bg) !important;
+  background-color: #3490dc !important;
 }
 
 a.bg-primary:hover,
@@ -10800,7 +10790,7 @@ a.text-dark:focus {
 
 .text-break {
   word-break: break-word !important;
-  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
 }
 
 .text-reset {
@@ -10911,5 +10901,24 @@ a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+}
+
+:root {
+  --primary-bg: #0f1629;
+  --primary-top-menu: #171e3b;
+  --primary-side-menu: #182246;
+  --font-color: white;
+}
+
+.bg-primary-top {
+  background-color: var(--primary-top-menu) !important;
+}
+
+.bg-primary-side {
+  background-color: var(--primary-side-menu) !important;
+}
+
+.bg-primary-theme {
+  background-color: var(--primary-bg) !important;
 }
 

@@ -19,11 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="update multiplatform.sh">
-      <change afterPath="$PROJECT_DIR$/multiatform_get.sh" afterDir="false" />
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="platform changed">
+      <change afterPath="$PROJECT_DIR$/multiplatform_get.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/multiplatform.sh" beforeDir="false" afterPath="$PROJECT_DIR$/multiplatform_post.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/multiatform_get.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/multiplatform_post.sh" beforeDir="false" afterPath="$PROJECT_DIR$/multiplatform_post.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +110,7 @@
       <workItem from="1603979761028" duration="3267000" />
       <workItem from="1604312568657" duration="865000" />
       <workItem from="1604318111080" duration="599000" />
-      <workItem from="1604339971586" duration="443000" />
+      <workItem from="1604339971586" duration="1480000" />
     </task>
     <task id="LOCAL-00001" summary="update laravel installation">
       <created>1602234138633</created>
@@ -311,7 +315,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604313395410</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="update multiplatform scripts">
+      <created>1604340439873</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1604340439873</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,7 +365,9 @@
     <MESSAGE value="modify style" />
     <MESSAGE value="add all directrories and files" />
     <MESSAGE value="update multiplatform.sh" />
-    <option name="LAST_COMMIT_MESSAGE" value="update multiplatform.sh" />
+    <MESSAGE value="update multiplatform scripts" />
+    <MESSAGE value="platform changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="platform changed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602927853853">
@@ -377,10 +390,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1602344539180" />
-    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1604313400998">
+    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1604340484997">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1604313400998" />
+    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1604340484997" />
     <state x="838" y="269" width="301" height="566" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1602234416216">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

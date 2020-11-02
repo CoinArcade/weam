@@ -6,3 +6,22 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+:root {
+  --primary-bg: #0f1629;
+  --primary-top-menu: #171e3b;
+  --primary-side-menu: #182246;
+  --font-color: white;
+}
+
+.bg-primary-top {
+    background-color: var(--primary-top-menu) !important;
+}
+
+.bg-primary-side {
+    background-color: var(--primary-side-menu) !important;
+}
+
+.bg-primary-theme {
+    background-color: var(--primary-bg) !important;
+}

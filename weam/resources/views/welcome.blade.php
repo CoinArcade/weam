@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Hello world</title>
 
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
@@ -13,7 +13,7 @@
 
     <body class="antialiased">
 
-        <div id="app" class="bg-primary vh-100">
+        <div id="app" class="bg-primary-theme vh-100">
             <app></app>
         </div>
 
