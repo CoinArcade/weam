@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Cache;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +14,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// TODO: add gzip/brotli support to the server, modify middleware SetEncoding and add 'encoding' as middleware to serve compressed ressources at the user
+
+Route::prefix('languages')->group(function() {
+
+	Route::get('list','\App\Http\Controllers\LanguageController@availableLanguagesCodeAndLanguage');
+
+	Route::get('available', '\App\Http\Controllers\LanguageController@availableLanguagesCode');
+
+	Route::post('modify/{locale}', 'App\Http\Controllers\LanguageController@changeLanguage')->where('locale', '[a-z]{2}_[A-Z]{2}');
+
 });
 
-Route::get('/{any}', 'App\Http\Controllers\TasksController@index')->where('any', '.*');
+Route::middleware(['translations', 'cache.headers:public;max_age=2628000;etag'])->group(function() {
+
+	Route::get('/', 'App\Http\Controllers\HomeController@index');
+
+	Route::get('/settings', 'App\Http\Controllers\SettingsController@index');
+
+	Route::get('/{any}', 'App\Http\Controllers\HomeController@index')->where('any', '.*');
+
+});

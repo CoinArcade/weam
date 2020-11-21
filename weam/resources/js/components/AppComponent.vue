@@ -2,34 +2,41 @@
 
     <div>
 
-        <nav class="navbar navbar-expand-lg bg-primary-top">
-
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <router-link to="/" class="nav-link">Accueil</router-link>
-                    </li>
-                    <li class="nav-item">
-                        <router-link to="/tasks" class="nav-link">Liste des tâches</router-link>
-                    </li>
-                </ul>
-            </div>
-
-        </nav>
-
-        <div class="container">
-            <router-view></router-view>
-        </div>
+        <router-view></router-view>
 
     </div>
 
 </template>
 
 <script>
-    export default {}
+    
+    export default {
+
+        name: 'App',
+
+        methods: {
+
+        	getCookie(name) {
+  				let value = `;${document.cookie}`;
+  				let parts = value.split(`;${name}=`);
+  				if (parts.length === 2) return parts.pop().split(';').shift();
+			}
+
+        },
+
+        watch: {
+
+        	$route (to, from) {
+
+        		let d = new Date();
+                d.setTime(d.getTime() + 1 * 24 * 60 * 60 * 1000);
+                let expires = "expires=" + d.toUTCString();
+                document.cookie = "language=" + this.getCookie('language') + ";" + expires + ";path=/";
+
+        	}
+
+        }
+
+    }
+
 </script>
