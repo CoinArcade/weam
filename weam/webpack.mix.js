@@ -1,4 +1,6 @@
 const mix = require('laravel-mix');
+const tailwindcss = require('tailwindcss')
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -12,8 +14,12 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .scripts('resources/js/lib.js', 'public/js/lib.js')
-    .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/async.scss', 'public/css')
+    .sass('resources/sass/app.scss', 'public/css')
+    .options({
+        processCssUrls: false,
+        postCss: [ tailwindcss('tailwind.config.js') ],
+    })
     .then(() => {
         var fs = require('fs');
         var mix_manifest_file = path.resolve(__dirname) + '/public/mix-manifest.json';

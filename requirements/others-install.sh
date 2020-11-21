@@ -51,12 +51,31 @@
 
 # npm install vue-sweetalert2
 # npm install --save @fortawesome/fontawesome-free
+# npm uninstall bootstrap
+# npm install tailwindcss
+#
+# TODO: replace content of resources/sass/app.scss by the following :
+# @tailwind base;
+#
+# @tailwind components;
+#
+# @tailwind utilities;
+#
+# npx tailwindcss init --full
+# npm install postcss
 
 # TODO : update webpack.mix.js with these lines :
-#mix.js('resources/js/app.js', 'public/js')
+#
+# const tailwindcss = require('tailwindcss')
+#
+# mix.js('resources/js/app.js', 'public/js')
 #    .scripts('resources/js/lib.js', 'public/js/lib.js')
-#    .sass('resources/sass/app.scss', 'public/css')
 #    .sass('resources/sass/async.scss', 'public/css')
+#    .sass('resources/sass/app.scss', 'public/css')
+#    .options({
+#        processCssUrls: false,
+#        postCss: [ tailwindcss('tailwind.config.js') ],
+#    })
 #    .then(() => {
 #        var fs = require('fs');
 #        var mix_manifest_file = path.resolve(__dirname) + '/public/mix-manifest.json';
