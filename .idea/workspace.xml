@@ -19,130 +19,48 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="update multiplatform scripts">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements/others-install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/requirements/others-install.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/.env" beforeDir="false" afterPath="$PROJECT_DIR$/weam/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Middleware/EncryptCookies.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Http/Middleware/EncryptCookies.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/.jshintrc" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/.jshintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/absolute.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/absolute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/bower-component.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/bower-component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/npm-module.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/npm-module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/output-relative.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/output-relative.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/project-relative.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/project-relative.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/source-relative.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/source-relative.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/utility/enhanced-relative.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/utility/enhanced-relative.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/utility/get-context-directory.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/utility/get-context-directory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/utility/get-output-directory.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/utility/get-output-directory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/webpack-bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/webpack-bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/webpack-protocol.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/codec/webpack-protocol.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/loader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/module-filename-template.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/module-filename-template.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/process/debug-message.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/process/debug-message.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/process/decode-sources-with.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/process/decode-sources-with.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/process/encode-sources-with.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/process/encode-sources-with.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/process/get-error.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/process/get-error.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/process/get-field-as-fn.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/process/get-field-as-fn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/process/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/process/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/process/locate-root-with.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/process/locate-root-with.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/process/test-codec.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/process/test-codec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/process/throw-errors.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/process/throw-errors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/process/to-reg-exp.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/lib/process/to-reg-exp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/node_modules/camelcase/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/node_modules/camelcase/license" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/node_modules/camelcase/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/node_modules/camelcase/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/node_modules/lodash.defaults/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/node_modules/lodash.defaults/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/node_modules/lodash.defaults/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/node_modules/lodash.defaults/node_modules/lodash.assign/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/node_modules/lodash.defaults/node_modules/lodash.assign/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/node_modules/lodash.defaults/node_modules/lodash.assign/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/node_modules/lodash.defaults/node_modules/lodash.assign/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/node_modules/lodash.defaults/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/adjust-sourcemap-loader/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._baseassign/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._baseassign/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._baseassign/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._baseassign/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._basecopy/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._basecopy/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._basecopy/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._basecopy/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._bindcallback/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._bindcallback/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._bindcallback/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._bindcallback/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._createassigner/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._createassigner/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._createassigner/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._createassigner/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._getnative/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._getnative/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._getnative/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._getnative/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._isiterateecall/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._isiterateecall/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._isiterateecall/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash._isiterateecall/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.assign/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.assign/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.assign/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.assign/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.defaults/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.defaults/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.defaults/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.defaults/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.isarguments/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.isarguments/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.isarguments/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.isarguments/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.isarray/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.isarray/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.isarray/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.isarray/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.keys/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.keys/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.keys/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.keys/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.restparam/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.restparam/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.restparam/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/lodash.restparam/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/object-path/.npmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/object-path/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/object-path/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/object-path/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/object-path/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/object-path/component.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/object-path/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/object-path/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/object-path/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/resolve-url-loader/LICENCE" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/resolve-url-loader/LICENCE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/resolve-url-loader/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/resolve-url-loader/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/resolve-url-loader/lib/find-file.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/resolve-url-loader/lib/sources-absolute-to-relative.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/resolve-url-loader/node_modules/camelcase/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/resolve-url-loader/node_modules/camelcase/license" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/resolve-url-loader/node_modules/camelcase/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/resolve-url-loader/node_modules/camelcase/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/resolve-url-loader/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/weam/node_modules/resolve-url-loader/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/node_modules/resolve-url-loader/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/weam/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/weam/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/AppComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/AppComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/webpack.mix.js" afterDir="false" />
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="get from weam-multiplatform (adding multilanguage module support)">
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/.npmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/HELP-US-OUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/css/font-awesome.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/less/animated.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/less/bordered-pulled.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/less/core.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/less/fixed-width.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/less/font-awesome.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/less/icons.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/less/larger.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/less/list.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/less/mixins.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/less/path.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/less/rotated-flipped.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/less/screen-reader.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/less/stacked.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/less/variables.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/scss/_animated.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/scss/_bordered-pulled.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/scss/_core.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/scss/_fixed-width.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/scss/_icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/scss/_larger.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/scss/_list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/scss/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/scss/_path.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/scss/_rotated-flipped.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/scss/_screen-reader.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/scss/_stacked.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/scss/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/font-awesome/scss/font-awesome.scss" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +147,7 @@
       <workItem from="1604512724194" duration="20000" />
       <workItem from="1604513043278" duration="770000" />
       <workItem from="1605690119897" duration="19000" />
-      <workItem from="1605968820399" duration="1772000" />
+      <workItem from="1605968820399" duration="2136000" />
     </task>
     <task id="LOCAL-00001" summary="update laravel installation">
       <created>1602234138633</created>
@@ -462,7 +380,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605969041831</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="get from weam-multiplatform (adding multilanguage module support)">
+      <created>1605970790521</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1605970790521</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,7 +433,8 @@
     <MESSAGE value="platform changed" />
     <MESSAGE value="changed platform and update scripts" />
     <MESSAGE value="update multiplatform scripts" />
-    <option name="LAST_COMMIT_MESSAGE" value="update multiplatform scripts" />
+    <MESSAGE value="get from weam-multiplatform (adding multilanguage module support)" />
+    <option name="LAST_COMMIT_MESSAGE" value="get from weam-multiplatform (adding multilanguage module support)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602927853853">
