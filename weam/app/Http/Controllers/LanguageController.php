@@ -1,6 +1,7 @@
 <?php
 
 // TODO: pass language cookie creation on server-side
+// TODO: error support
 
 namespace App\Http\Controllers;
 
@@ -49,7 +50,7 @@ class LanguageController extends Controller
             if ($data['success']) {
                 $this->supported = $data['success'];
             } else {
-
+                dd('erreur');
             }
         } catch (GuzzleException $e) {
             echo $e->getMessage();
@@ -65,7 +66,7 @@ class LanguageController extends Controller
         App::setLocale(config('app.locales_app_match')[session('settings.locale')]);
 
         $translations = $this->phpTranslations(session('settings.locale'));
-            
+
         $request->session()->forget('settings.translations');
         session(['settings.translations' => $translations]);
     }
@@ -106,7 +107,6 @@ class LanguageController extends Controller
     public function availableLanguagesCode()
     {
         $languages = array_diff(scandir(resource_path('lang')), array('.', '..'));
-        sort($languages);
         return $languages !== null ? json_encode(['success' => $languages]) : json_encode(['error' => 'Unable to recover available languages']);
     }
 
@@ -118,7 +118,17 @@ class LanguageController extends Controller
     public function availableLanguagesCodeAndLanguage()
     {
         $available = config('app.available_locales');
-        //sort($available);
         return $available !== null ? json_encode(['success' => $available]) : json_encode(['error' => 'Unable to recover available languages']);
+    }
+
+    /**
+     * Display the fallback locale language
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function defaultLanguage()
+    {
+        $default = config('app.fallback_locale');
+        return $default !== null ? json_encode(['success' => $default]) : json_encode(['error' => 'Unable to recover default language']);
     }
 }

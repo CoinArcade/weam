@@ -21,9 +21,14 @@
         	    let cookieLanguage = getCookie("language");
 
                 if (cookieLanguage !== undefined && cookieLanguage !== null) {
+
+                    eraseCookie("language");
                     setCookie("language", getCookie("language"), 364);
+
                 } else {
-                    setCookie("language", "en_GB", 364);
+
+                    setCookie("language", this.__('Default language'), 364);
+
                 }
 
         	}

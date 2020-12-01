@@ -22,6 +22,8 @@ Route::prefix('languages')->group(function() {
 
 	Route::get('available', '\App\Http\Controllers\LanguageController@availableLanguagesCode');
 
+    Route::get('default','\App\Http\Controllers\LanguageController@defaultLanguage');
+
 	Route::post('modify/{locale}', 'App\Http\Controllers\LanguageController@changeLanguage')->where('locale', '[a-z]{2}_[A-Z]{2}');
 
 });

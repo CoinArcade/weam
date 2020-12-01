@@ -6460,9 +6460,10 @@ __webpack_require__.r(__webpack_exports__);
       var cookieLanguage = getCookie("language");
 
       if (cookieLanguage !== undefined && cookieLanguage !== null) {
+        eraseCookie("language");
         setCookie("language", getCookie("language"), 364);
       } else {
-        setCookie("language", "en_GB", 364);
+        setCookie("language", this.__('Default language'), 364);
       }
     }
   }
@@ -6537,18 +6538,15 @@ __webpack_require__.r(__webpack_exports__);
 
       if (this.__('Current language') !== lang) {
         axios.post(this.$appURL + '/languages/modify/' + lang).then(function () {
-          _this2.setlangCookie(lang);
+          setCookie("language", lang, 364);
 
           _this2.$swal.close();
 
           _this2.$swalRouter.go();
         })["catch"](function (error) {
-          alert(error);
+          _this2.error = true;
         });
       }
-    },
-    setlangCookie: function setlangCookie(lang) {
-      setCookie("language", lang, 364);
     }
   }
 });
@@ -33971,7 +33969,7 @@ var render = function() {
       ? _c("section", [
           _c("p", [
             _vm._v(
-              "Nous sommes désolés, nous ne sommes pas en mesure de récupérer ces informations pour le moment. Veuillez réessayer ultérieurement."
+              "Une interférence intergalactique est survenue ! Veuillez réessayer ultérieurement."
             )
           ])
         ])

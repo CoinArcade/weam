@@ -93,7 +93,6 @@ Vue.prototype.$appURL = "http://localhost:8000/weam/weam/public"
 Vue.prototype.$swalRouter = router
 
 
-
 // Vue app
 const app = new Vue({
     el: '#app',

@@ -6,7 +6,7 @@
         <h1>Langues</h1>
 
         <section v-if="error">
-            <p>Nous sommes désolés, nous ne sommes pas en mesure de récupérer ces informations pour le moment. Veuillez réessayer ultérieurement.</p>
+            <p>Une interférence intergalactique est survenue ! Veuillez réessayer ultérieurement.</p>
         </section>
 
         <section v-else>
@@ -78,24 +78,18 @@
                         .post(this.$appURL + '/languages/modify/' + lang)
                         .then(() => {
 
-                            this.setlangCookie(lang)
+                            setCookie("language", lang, 364);
                             this.$swal.close()
                             this.$swalRouter.go()
 
                         })
                         .catch(error => {
 
-                            alert(error)
+                            this.error = true
 
                         })
 
                 }
-            },
-
-            setlangCookie(lang) {
-
-                setCookie("language", lang, 364);
-
             }
 
         }
