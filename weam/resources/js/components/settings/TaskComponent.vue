@@ -5,7 +5,7 @@
         <menu-top></menu-top>
 
         <div class="container">
-    
+
             <ul class="list-group">
                 <li class="list-group-item">
                     <a href="#">Tâche 1</a>
@@ -20,7 +20,7 @@
                     <a href="#">Tâche 4</a>
                 </li>
             </ul>
-    
+
         </div>
 
     </div>
@@ -30,19 +30,15 @@
 <script>
 
     import MenuTop from '../menus/SettingsTopMenuComponent';
-    
+
     export default {
-        
+
         name: 'tasks',
 
         components: {
             'MenuTop': MenuTop
-        },
-
-        created: function() {
-            this.$currentURL = "/settings"
         }
 
     }
-    
+
 </script>

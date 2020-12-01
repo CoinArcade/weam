@@ -27,7 +27,7 @@
 </template>
 
 <script>
-    
+
     export default {
 
         name: 'ChooseLanguage',
@@ -94,10 +94,7 @@
 
             setlangCookie(lang) {
 
-                let d = new Date();
-                d.setTime(d.getTime() + 1 * 24 * 60 * 60 * 1000);
-                let expires = "expires=" + d.toUTCString();
-                document.cookie = "language=" + lang + ";" + expires + ";path=/";
+                setCookie("language", lang, 364);
 
             }
 

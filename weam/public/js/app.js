@@ -6455,19 +6455,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'App',
-  methods: {
-    getCookie: function getCookie(name) {
-      var value = ";".concat(document.cookie);
-      var parts = value.split(";".concat(name, "="));
-      if (parts.length === 2) return parts.pop().split(';').shift();
-    }
-  },
   watch: {
     $route: function $route(to, from) {
-      var d = new Date();
-      d.setTime(d.getTime() + 1 * 24 * 60 * 60 * 1000);
-      var expires = "expires=" + d.toUTCString();
-      document.cookie = "language=" + this.getCookie('language') + ";" + expires + ";path=/";
+      var cookieLanguage = getCookie("language");
+
+      if (cookieLanguage !== undefined && cookieLanguage !== null) {
+        setCookie("language", getCookie("language"), 364);
+      } else {
+        setCookie("language", "en_GB", 364);
+      }
     }
   }
 });
@@ -6552,10 +6548,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     setlangCookie: function setlangCookie(lang) {
-      var d = new Date();
-      d.setTime(d.getTime() + 1 * 24 * 60 * 60 * 1000);
-      var expires = "expires=" + d.toUTCString();
-      document.cookie = "language=" + lang + ";" + expires + ";path=/";
+      setCookie("language", lang, 364);
     }
   }
 });
@@ -6596,9 +6589,6 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     'MenuTop': _menus_HomeTopMenuComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  created: function created() {
-    this.$currentURL = "/";
-  },
   methods: {
     chooseLang: function chooseLang() {
       VueSwal2('swalLang', null);
@@ -6617,6 +6607,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -6825,9 +6816,6 @@ __webpack_require__.r(__webpack_exports__);
   name: 'tasks',
   components: {
     'MenuTop': _menus_SettingsTopMenuComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
-  created: function created() {
-    this.$currentURL = "/settings";
   }
 });
 
@@ -34164,7 +34152,75 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
-          _vm._m(0),
+          _c(
+            "div",
+            {
+              staticClass:
+                "flex-1 flex items-center justify-center sm:items-stretch sm:justify-start"
+            },
+            [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("div", { staticClass: "hidden sm:block sm:ml-6" }, [
+                _c(
+                  "div",
+                  { staticClass: "flex space-x-4" },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900",
+                        attrs: { href: "#" }
+                      },
+                      [_vm._v("Dashboard")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "router-link",
+                      {
+                        staticClass:
+                          "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700",
+                        attrs: { to: "/settings", href: "#" }
+                      },
+                      [_vm._v("Settings")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700",
+                        attrs: { href: "#" }
+                      },
+                      [_vm._v("Team")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700",
+                        attrs: { href: "#" }
+                      },
+                      [_vm._v("Projects")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700",
+                        attrs: { href: "#" }
+                      },
+                      [_vm._v("Calendar")]
+                    )
+                  ],
+                  1
+                )
+              ])
+            ]
+          ),
           _vm._v(" "),
           _c(
             "div",
@@ -34226,78 +34282,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "flex-1 flex items-center justify-center sm:items-stretch sm:justify-start"
-      },
-      [
-        _c("div", { staticClass: "flex-shrink-0 flex items-center" }, [
-          _c("img", {
-            staticClass: "block lg:hidden h-8 w-auto",
-            attrs: {
-              src:
-                "https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg",
-              alt: "Workflow"
-            }
-          }),
-          _vm._v(" "),
-          _c("img", {
-            staticClass: "hidden lg:block h-8 w-auto",
-            attrs: {
-              src:
-                "https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg",
-              alt: "Workflow"
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "hidden sm:block sm:ml-6" }, [
-          _c("div", { staticClass: "flex space-x-4" }, [
-            _c(
-              "a",
-              {
-                staticClass:
-                  "px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900",
-                attrs: { href: "#" }
-              },
-              [_vm._v("Dashboard")]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass:
-                  "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700",
-                attrs: { href: "#" }
-              },
-              [_vm._v("Team")]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass:
-                  "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700",
-                attrs: { href: "#" }
-              },
-              [_vm._v("Projects")]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass:
-                  "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700",
-                attrs: { href: "#" }
-              },
-              [_vm._v("Calendar")]
-            )
-          ])
-        ])
-      ]
-    )
+    return _c("div", { staticClass: "flex-shrink-0 flex items-center" }, [
+      _c("img", {
+        staticClass: "block lg:hidden h-8 w-auto",
+        attrs: {
+          src: "https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg",
+          alt: "Workflow"
+        }
+      }),
+      _vm._v(" "),
+      _c("img", {
+        staticClass: "hidden lg:block h-8 w-auto",
+        attrs: {
+          src:
+            "https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg",
+          alt: "Workflow"
+        }
+      })
+    ])
   },
   function() {
     var _vm = this
@@ -34385,7 +34387,7 @@ var staticRenderFns = [
               "block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900",
             attrs: { href: "#" }
           },
-          [_vm._v("Dashboard")]
+          [_vm._v("Settings")]
         ),
         _vm._v(" "),
         _c(

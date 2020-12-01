@@ -13,23 +13,19 @@
     	</div>
 
     </div>
-    
+
 </template>
 
 <script>
 
     import MenuTop from '../menus/HomeTopMenuComponent';
-	
+
     export default {
-    	
+
     	name: 'Home',
 
         components: {
             'MenuTop': MenuTop
-        },
-
-        created: function() {
-            this.$currentURL = "/"
         },
 
         methods: {

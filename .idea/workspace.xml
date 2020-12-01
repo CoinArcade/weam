@@ -20,9 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="removing node_modules directory from github">
-      <change beforePath="$PROJECT_DIR$/.idea/weam.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/weam.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/weam/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/js/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/lib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/AppComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/AppComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/HomeComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/TaskComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/ChooseLanguageComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/ChooseLanguageComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/home/HomeComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/home/HomeComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/menus/HomeTopMenuComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/menus/HomeTopMenuComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/settings/TaskComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/settings/TaskComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/lib.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +120,9 @@
       <workItem from="1605690119897" duration="19000" />
       <workItem from="1605968820399" duration="7961000" />
       <workItem from="1606042032701" duration="107000" />
-      <workItem from="1606045290998" duration="2143000" />
+      <workItem from="1606045290998" duration="2310000" />
+      <workItem from="1606761385852" duration="827000" />
+      <workItem from="1606828990020" duration="6528000" />
     </task>
     <task id="LOCAL-00001" summary="update laravel installation">
       <created>1602234138633</created>
@@ -379,7 +390,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606050882083</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="removing node_modules directory from github">
+      <created>1606051554404</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1606051554404</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,10 +467,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1602344539180" />
-    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1606050889065">
+    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1606051559806">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1606050889065" />
+    <state x="566" y="238" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1606051559806" />
     <state x="838" y="269" width="301" height="566" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1602234416216">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -461,14 +479,14 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="774" y="467" width="438" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1853.1053@67.27.1853.1053" timestamp="1602789132962" />
-    <state x="568" y="262" width="1146" height="580" key="find.popup" timestamp="1602410908599">
+    <state x="568" y="262" width="1146" height="580" key="find.popup" timestamp="1606829221396">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="568" y="262" width="1146" height="580" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1602410908599" />
-    <state x="657" y="253" key="run.anything.popup" timestamp="1602926720674">
+    <state x="568" y="262" width="1146" height="580" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1606829221396" />
+    <state x="657" y="253" key="run.anything.popup" timestamp="1606837465609">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="657" y="253" key="run.anything.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1602926720674" />
+    <state x="657" y="253" key="run.anything.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1606837465609" />
     <state x="656" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1604340106761">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
