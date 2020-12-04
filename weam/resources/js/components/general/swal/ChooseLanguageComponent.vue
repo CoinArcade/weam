@@ -2,7 +2,6 @@
 
     <div>
 
-        <!--<p v-for="(language, code) in availableLanguages"><span class="pointer" @click="chooseLang(code)">{{ language }}</span></p>-->
         <h1>Langues</h1>
 
         <section v-if="error">

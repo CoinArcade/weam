@@ -9,6 +9,7 @@ return [
 
     // Menu
     'Parameters' => 'Parameters',
+    'Login' => 'Login',
     'Current language' => App::getLocale(),
     'Default language' => config("app.fallback_locale"),
 
