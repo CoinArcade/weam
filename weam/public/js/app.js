@@ -6579,18 +6579,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Home',
   components: {
     'MenuTop': _menus_HomeTopMenuComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
-  methods: {
-    chooseLang: function chooseLang() {
-      VueSwal2('swalLang', null);
-    }
   }
 });
 
@@ -6729,8 +6722,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'HomeTopMenu'
+  name: 'HomeTopMenu',
+  methods: {
+    parameters: function parameters() {
+      VueSwal2('swalLang', null);
+    }
+  }
 });
 
 /***/ }),
@@ -34037,15 +34036,7 @@ var render = function() {
           _c("a", { attrs: { href: "#" } }, [
             _vm._v(_vm._s(_vm.__("Welcome", 1, ["test"])))
           ])
-        ]),
-        _vm._v(" "),
-        _c("span", { staticClass: "fa fa-cog white-text" }),
-        _vm._v(" "),
-        _c(
-          "button",
-          { staticClass: "btn btn-primary", on: { click: _vm.chooseLang } },
-          [_vm._v("alert")]
-        )
+        ])
       ])
     ],
     1
@@ -34227,6 +34218,16 @@ var render = function() {
                 "absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
             },
             [
+              _c(
+                "a",
+                {
+                  staticClass:
+                    "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 pointer",
+                  on: { click: _vm.parameters }
+                },
+                [_vm._v(_vm._s(_vm.__("Parameters")))]
+              ),
+              _vm._v(" "),
               _c(
                 "button",
                 {

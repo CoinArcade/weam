@@ -20,7 +20,7 @@ class LanguageController extends Controller
     private $supported;
 
     /**
-     * Remove locale from cache and insert the new locale
+     * Remove locale from session and insert the new locale
      */
     public function changeLanguage(Request $request, $locale)
     {

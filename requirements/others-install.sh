@@ -65,6 +65,19 @@
 # npx tailwindcss init --full
 # npm install postcss
 
+# TODO: modify tailwind.config.js and replace purge with these lines :
+#
+#  purge: {
+#      enabled: true,
+#      content: [
+#      './resources/**/*.html',
+#      './resources/**/*.scss',
+#      './resources/**/*.css',
+#      './resources/**/*.vue',
+#      './resources/**/*.js'
+#      ]
+#  }
+
 # TODO : update webpack.mix.js with these lines :
 #
 # const tailwindcss = require('tailwindcss')

@@ -8,6 +8,7 @@ return [
     'Weam' => 'Weam',
 
     // Menu
+    'Parameters' => 'Parameters',
     'Current language' => App::getLocale(),
     'Default language' => config("app.fallback_locale"),
 

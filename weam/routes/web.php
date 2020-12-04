@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Cache;
 |
 */
 
-// TODO: add gzip/brotli support to the server, modify middleware SetEncoding and add 'encoding' as middleware to serve compressed ressources at the user
+// TODO: add gzip/brotli support to the server, modify middleware SetEncoding and add 'encoding' as middleware to serve compressed ressources at user
 
 Route::prefix('languages')->group(function() {
 
