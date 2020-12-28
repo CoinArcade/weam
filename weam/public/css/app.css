@@ -601,6 +601,11 @@ video {
   background-color: rgba(55, 65, 81, var(--tw-bg-opacity));
 }
 
+.border-red-600 {
+  --tw-border-opacity: 1;
+  border-color: rgba(220, 38, 38, var(--tw-border-opacity));
+}
+
 .rounded {
   border-radius: 0.25rem;
 }
@@ -856,8 +861,8 @@ video {
   --tw-shadow: 0 0 #0000;
 }
 
-.shadow-md {
-  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -913,6 +918,10 @@ video {
   --tw-ring-opacity: 0.05;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
@@ -931,6 +940,11 @@ video {
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgba(55, 65, 81, var(--tw-text-opacity));
+}
+
+.text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgba(220, 38, 38, var(--tw-text-opacity));
 }
 
 .hover\:text-white:hover {
@@ -1088,6 +1102,7 @@ video {
 }
 
 :root {
+  --grey-background: #edf2f7;
   --primary-bg: #0f1629;
   --primary-top-menu: #171e3b;
   --primary-side-menu: #182246;
@@ -1096,6 +1111,10 @@ video {
   --primary-light-3: rgba(52, 144, 220, 0.625);
   --font-color-theme: #ddd;
   --font-color-hover: #3490dc;
+}
+
+body {
+  background-color: var(--grey-background);
 }
 
 .bg-primary-top {

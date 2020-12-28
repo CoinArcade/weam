@@ -10,6 +10,8 @@
 
 	// Principal theme (blue)
 
+    --grey-background: #edf2f7;
+
 	--primary-bg: #0f1629;
 	--primary-top-menu: #171e3b;
 	--primary-side-menu: #182246;
@@ -25,6 +27,10 @@
 }
 
 // Elements coloration
+
+body {
+    background-color: var(--grey-background);
+}
 
 .bg-primary-top {
     background-color: var(--primary-top-menu) !important;

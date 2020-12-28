@@ -1,15 +1,15 @@
 <template>
-    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
+    <div class="bg-white rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
         <div class="-mx-3 md:flex mb-6">
             <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
+                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="grid-first-name">
                     First Name
                 </label>
-                <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Jane">
-                <p class="text-red text-xs italic">Please fill out this field.</p>
+                <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red-600 rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Jane">
+                <p class="text-red-600 text-xs italic text-left">Please fill out this field.</p>
             </div>
             <div class="md:w-1/2 px-3">
-                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="grid-last-name">
                     Last Name
                 </label>
                 <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="Doe">
@@ -17,22 +17,22 @@
         </div>
         <div class="-mx-3 md:flex mb-6">
             <div class="md:w-full px-3">
-                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
+                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="grid-password">
                     Password
                 </label>
                 <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="grid-password" type="password" placeholder="******************">
-                <p class="text-grey-dark text-xs italic">Make it as long and as crazy as you'd like</p>
+                <p class="text-grey-dark text-xs italic text-left">Make it as long and as crazy as you'd like</p>
             </div>
         </div>
         <div class="-mx-3 md:flex mb-2">
             <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-city">
+                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="grid-city">
                     City
                 </label>
                 <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-city" type="text" placeholder="Albuquerque">
             </div>
             <div class="md:w-1/2 px-3">
-                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-state">
+                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="grid-state">
                     State
                 </label>
                 <div class="relative">
@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="md:w-1/2 px-3">
-                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-zip">
+                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="grid-zip">
                     Zip
                 </label>
                 <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-zip" type="text" placeholder="90210">

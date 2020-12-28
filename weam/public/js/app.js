@@ -34104,10 +34104,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    {
-      staticClass:
-        "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2"
-    },
+    { staticClass: "bg-white rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2" },
     [
       _vm._m(0),
       _vm._v(" "),
@@ -34121,7 +34118,7 @@ var render = function() {
             "label",
             {
               staticClass:
-                "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+                "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left",
               attrs: { for: "grid-state" }
             },
             [_vm._v("\n                State\n            ")]
@@ -34176,7 +34173,7 @@ var staticRenderFns = [
           "label",
           {
             staticClass:
-              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left",
             attrs: { for: "grid-first-name" }
           },
           [_vm._v("\n                First Name\n            ")]
@@ -34184,11 +34181,11 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("input", {
           staticClass:
-            "appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3",
+            "appearance-none block w-full bg-grey-lighter text-grey-darker border border-red-600 rounded py-3 px-4 mb-3",
           attrs: { id: "grid-first-name", type: "text", placeholder: "Jane" }
         }),
         _vm._v(" "),
-        _c("p", { staticClass: "text-red text-xs italic" }, [
+        _c("p", { staticClass: "text-red-600 text-xs italic text-left" }, [
           _vm._v("Please fill out this field.")
         ])
       ]),
@@ -34198,7 +34195,7 @@ var staticRenderFns = [
           "label",
           {
             staticClass:
-              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left",
             attrs: { for: "grid-last-name" }
           },
           [_vm._v("\n                Last Name\n            ")]
@@ -34222,7 +34219,7 @@ var staticRenderFns = [
           "label",
           {
             staticClass:
-              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left",
             attrs: { for: "grid-password" }
           },
           [_vm._v("\n                Password\n            ")]
@@ -34238,7 +34235,7 @@ var staticRenderFns = [
           }
         }),
         _vm._v(" "),
-        _c("p", { staticClass: "text-grey-dark text-xs italic" }, [
+        _c("p", { staticClass: "text-grey-dark text-xs italic text-left" }, [
           _vm._v("Make it as long and as crazy as you'd like")
         ])
       ])
@@ -34253,7 +34250,7 @@ var staticRenderFns = [
         "label",
         {
           staticClass:
-            "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+            "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left",
           attrs: { for: "grid-city" }
         },
         [_vm._v("\n                City\n            ")]
@@ -34295,7 +34292,7 @@ var staticRenderFns = [
         "label",
         {
           staticClass:
-            "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+            "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left",
           attrs: { for: "grid-zip" }
         },
         [_vm._v("\n                Zip\n            ")]
@@ -34368,7 +34365,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("nav", { staticClass: "bg-gray-800" }, [
+  return _c("nav", { staticClass: "bg-white shadow" }, [
     _c("div", { staticClass: "max-w-7xl mx-auto px-2 sm:px-6 lg:px-8" }, [
       _c(
         "div",
