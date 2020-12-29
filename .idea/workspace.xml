@@ -20,16 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="create login form">
-      <change afterPath="$PROJECT_DIR$/weam/database/db.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weam/public/js/app.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weam/public/js/lib.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weam/public/js/manifest.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weam/public/js/vendor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements/others-install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/requirements/others-install.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/weam/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/public/css/async.css" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/css/async.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/menus/HomeTopMenuComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/menus/HomeTopMenuComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/sass/async.scss" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/sass/async.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +53,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="ProjectId" id="1idMmqOw1SpjzKrFSZhzOo6Wv93" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -133,6 +138,7 @@
       <workItem from="1608589012045" duration="8000" />
       <workItem from="1608590079159" duration="7000" />
       <workItem from="1609181258068" duration="447000" />
+      <workItem from="1609247100117" duration="2875000" />
     </task>
     <task id="LOCAL-00001" summary="update laravel installation">
       <created>1602234138633</created>

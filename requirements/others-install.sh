@@ -30,8 +30,8 @@
 # sudo apt install composer
 # composer create-project --prefer-dist laravel/laravel weam
 # cd weam/
-# composer require laravel/ui --auth
-# php artisan ui vue --auth
+# composer require laravel/ui //--auth
+# php artisan ui vue //--auth
 # npm install
 # npm run dev
 # sudo chmod 777 -R .
