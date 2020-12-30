@@ -1,10 +1,11 @@
 // Allows to use VueJS components in sweet alert 2
 
-function VueSwal2(component,propsData)
+function VueSwal2(component, propsData, customClass)
 {
     Vue.swal({
         html: '<div id="swal-component"></div>',
         showConfirmButton: false,
+        customClass: customClass,
         willOpen: () => {
             let ComponentClass = Vue.extend(Vue.component(component));
             let instance = new ComponentClass({

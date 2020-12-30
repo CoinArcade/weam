@@ -6656,37 +6656,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "LoginAndSigninForm",
   data: function data() {
@@ -6873,10 +6842,12 @@ __webpack_require__.r(__webpack_exports__);
   name: 'HomeTopMenu',
   methods: {
     parameters: function parameters() {
-      VueSwal2('swalLang', null);
+      VueSwal2('swalLang', null, null);
     },
     loginAndSigninForm: function loginAndSigninForm() {
-      VueSwal2('swalLoginAndSigninForm', null);
+      VueSwal2('swalLoginAndSigninForm', null, {
+        popup: 'swal2-width-login'
+      });
     }
   }
 });
@@ -34175,99 +34146,135 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "flex justify-between" }, [
-      _c(
-        "div",
-        {
-          staticClass: "text-center",
-          class: [_vm.activetab === 1 ? "active" : ""],
-          on: {
-            click: function($event) {
-              _vm.activetab = 1
+  return _c("div", { staticClass: "grid grid-cols-12 gap-4" }, [
+    _c(
+      "div",
+      {
+        staticClass:
+          "flex justify-between col-span-full md:col-start-2 md:col-span-10"
+      },
+      [
+        _c(
+          "div",
+          {
+            staticClass: "w-full cursor-pointer",
+            class: [_vm.activetab === 1 ? "active" : ""],
+            on: {
+              click: function($event) {
+                _vm.activetab = 1
+              }
             }
-          }
-        },
-        [_vm._v("Tab 1")]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "text-center",
-          class: [_vm.activetab === 2 ? "active" : ""],
-          on: {
-            click: function($event) {
-              _vm.activetab = 2
+          },
+          [
+            _c("p", { staticClass: "text-center" }, [
+              _vm._v("\n            " + _vm._s(_vm.__("Log In")))
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "w-full cursor-pointer",
+            class: [_vm.activetab === 2 ? "active" : ""],
+            on: {
+              click: function($event) {
+                _vm.activetab = 2
+              }
             }
-          }
-        },
-        [_vm._v("Tab 2")]
-      ),
-      _vm._v(" "),
-      _c("hr")
-    ]),
+          },
+          [
+            _c("p", { staticClass: "text-center" }, [
+              _vm._v(_vm._s(_vm.__("Sign Up")))
+            ])
+          ]
+        )
+      ]
+    ),
+    _vm._v(" "),
+    _vm._m(0),
     _vm._v(" "),
     _vm.activetab === 1
       ? _c(
           "div",
           {
             staticClass:
-              "bg-white rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2"
+              "bg-white rounded my-2 pt-1 flex flex-col col-span-full md:col-start-2 md:col-span-10"
           },
           [
-            _vm._m(0),
-            _vm._v(" "),
-            _vm._m(1),
-            _vm._v(" "),
-            _c("div", { staticClass: "-mx-3 md:flex mb-2" }, [
-              _vm._m(2),
-              _vm._v(" "),
-              _c("div", { staticClass: "md:w-1/2 px-3" }, [
-                _c(
-                  "label",
-                  {
-                    staticClass:
-                      "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left",
-                    attrs: { for: "grid-state" }
-                  },
-                  [_vm._v("\n                    State\n                ")]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "relative" }, [
-                  _vm._m(3),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker"
-                    },
-                    [
-                      _c(
-                        "svg",
-                        {
-                          staticClass: "h-4 w-4",
-                          attrs: {
-                            xmlns: "http://www.w3.org/2000/svg",
-                            viewBox: "0 0 20 20"
-                          }
-                        },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d:
-                                "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-                            }
-                          })
-                        ]
-                      )
-                    ]
+            _c("div", { staticClass: "w-full" }, [
+              _c(
+                "label",
+                {
+                  staticClass:
+                    "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left",
+                  attrs: { for: "grid-first-name" }
+                },
+                [
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(_vm.__("Username")) +
+                      "\n            "
                   )
-                ])
-              ]),
+                ]
+              ),
               _vm._v(" "),
-              _vm._m(4)
+              _c("input", {
+                staticClass:
+                  "flex-1 appearance-none border border-grey-lighter w-full py-1 px-2 bg-grey-lighter text-grey-darker rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent",
+                attrs: {
+                  id: "grid-first-name",
+                  type: "text",
+                  placeholder: _vm.__("Enter your username")
+                }
+              }),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-red-600 text-sm text-left mt-2" })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "w-full mt-3" }, [
+              _c(
+                "label",
+                {
+                  staticClass:
+                    "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left",
+                  attrs: { for: "grid-last-name" }
+                },
+                [
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(_vm.__("Password")) +
+                      "\n            "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                staticClass:
+                  "flex-1 appearance-none border border-grey-lighter w-full py-1 px-2 bg-grey-lighter text-grey-darker rounded-lg text-base  focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent",
+                attrs: {
+                  id: "grid-last-name",
+                  type: "password",
+                  placeholder: _vm.__("************")
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "w-full mt-5" }, [
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "w-full flex-shrink-0 bg-purple-600 text-white text-base font-semibold py-1 px-2 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-200"
+                },
+                [
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(_vm.__("Log In")) +
+                      "\n            "
+                  )
+                ]
+              )
             ])
           ]
         )
@@ -34278,15 +34285,15 @@ var render = function() {
           "div",
           {
             staticClass:
-              "bg-white rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2"
+              "bg-white rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2 col-span-full md:col-start-2 md:col-span-10"
           },
           [
-            _vm._m(5),
+            _vm._m(1),
             _vm._v(" "),
-            _vm._m(6),
+            _vm._m(2),
             _vm._v(" "),
             _c("div", { staticClass: "-mx-3 md:flex mb-2" }, [
-              _vm._m(7),
+              _vm._m(3),
               _vm._v(" "),
               _c("div", { staticClass: "md:w-1/2 px-3" }, [
                 _c(
@@ -34300,7 +34307,7 @@ var render = function() {
                 ),
                 _vm._v(" "),
                 _c("div", { staticClass: "relative" }, [
-                  _vm._m(8),
+                  _vm._m(4),
                   _vm._v(" "),
                   _c(
                     "div",
@@ -34332,7 +34339,7 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _vm._m(9)
+              _vm._m(5)
             ])
           ]
         )
@@ -34344,143 +34351,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "-mx-3 md:flex mb-6" }, [
-      _c("div", { staticClass: "md:w-1/2 px-3 mb-6 md:mb-0" }, [
-        _c(
-          "label",
-          {
-            staticClass:
-              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left",
-            attrs: { for: "grid-first-name" }
-          },
-          [_vm._v("\n                    First Name\n                ")]
-        ),
-        _vm._v(" "),
-        _c("input", {
-          staticClass:
-            "appearance-none block w-full bg-grey-lighter text-grey-darker border border-red-600 rounded py-3 px-4 mb-3",
-          attrs: { id: "grid-first-name", type: "text", placeholder: "Jane" }
-        }),
-        _vm._v(" "),
-        _c("p", { staticClass: "text-red-600 text-xs italic text-left" }, [
-          _vm._v("Please fill out this field.")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "md:w-1/2 px-3" }, [
-        _c(
-          "label",
-          {
-            staticClass:
-              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left",
-            attrs: { for: "grid-last-name" }
-          },
-          [_vm._v("\n                    Last Name\n                ")]
-        ),
-        _vm._v(" "),
-        _c("input", {
-          staticClass:
-            "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
-          attrs: { id: "grid-last-name", type: "text", placeholder: "Doe" }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "-mx-3 md:flex mb-6" }, [
-      _c("div", { staticClass: "md:w-full px-3" }, [
-        _c(
-          "label",
-          {
-            staticClass:
-              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left",
-            attrs: { for: "grid-password" }
-          },
-          [_vm._v("\n                    Password\n                ")]
-        ),
-        _vm._v(" "),
-        _c("input", {
-          staticClass:
-            "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3",
-          attrs: {
-            id: "grid-password",
-            type: "password",
-            placeholder: "******************"
-          }
-        }),
-        _vm._v(" "),
-        _c("p", { staticClass: "text-grey-dark text-xs italic text-left" }, [
-          _vm._v("Make it as long and as crazy as you'd like")
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "md:w-1/2 px-3 mb-6 md:mb-0" }, [
-      _c(
-        "label",
-        {
-          staticClass:
-            "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left",
-          attrs: { for: "grid-city" }
-        },
-        [_vm._v("\n                    City\n                ")]
-      ),
-      _vm._v(" "),
-      _c("input", {
-        staticClass:
-          "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
-        attrs: { id: "grid-city", type: "text", placeholder: "Albuquerque" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c(
-      "select",
-      {
-        staticClass:
-          "block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded",
-        attrs: { id: "grid-state" }
-      },
-      [
-        _c("option", [_vm._v("New Mexico")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Missouri")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Texas")])
-      ]
+      "div",
+      { staticClass: "col-span-full md:col-start-2 md:col-span-10" },
+      [_c("hr", { staticClass: "w-full" })]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "md:w-1/2 px-3" }, [
-      _c(
-        "label",
-        {
-          staticClass:
-            "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left",
-          attrs: { for: "grid-zip" }
-        },
-        [_vm._v("\n                    Zip\n                ")]
-      ),
-      _vm._v(" "),
-      _c("input", {
-        staticClass:
-          "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
-        attrs: { id: "grid-zip", type: "text", placeholder: "90210" }
-      })
-    ])
   },
   function() {
     var _vm = this
@@ -34842,7 +34717,7 @@ var render = function() {
                 "a",
                 {
                   staticClass:
-                    "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 pointer",
+                    "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 cursor-pointer",
                   on: { click: _vm.parameters }
                 },
                 [_vm._v(_vm._s(_vm.__("Parameters")))]
@@ -34852,10 +34727,10 @@ var render = function() {
                 "a",
                 {
                   staticClass:
-                    "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 pointer",
+                    "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 cursor-pointer",
                   on: { click: _vm.loginAndSigninForm }
                 },
-                [_vm._v(_vm._s(_vm.__("Login")))]
+                [_vm._v(_vm._s(_vm.__("Log In")))]
               ),
               _vm._v(" "),
               _c(

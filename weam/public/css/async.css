@@ -12,6 +12,6 @@
   padding: 0 !important;
 }
 
-.pointer {
-  cursor: pointer;
+.swal2-width-login {
+  width: 25em !important;
 }

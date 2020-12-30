@@ -68,8 +68,8 @@
                     </div>
                 </div>
                 <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                    <a @click="parameters" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 pointer">{{ __('Parameters') }}</a>
-                    <a @click="loginAndSigninForm" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 pointer">{{ __('Login') }}</a>
+                    <a @click="parameters" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 cursor-pointer">{{ __('Parameters') }}</a>
+                    <a @click="loginAndSigninForm" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 cursor-pointer">{{ __('Log In') }}</a>
                     <button class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                         <span class="sr-only">View notifications</span>
                         <!-- Heroicon name: bell -->
@@ -133,11 +133,11 @@
         methods: {
 
             parameters() {
-                VueSwal2('swalLang', null)
+                VueSwal2('swalLang', null, null)
             },
 
             loginAndSigninForm() {
-                VueSwal2('swalLoginAndSigninForm', null)
+                VueSwal2('swalLoginAndSigninForm', null, {popup: 'swal2-width-login'})
             }
 
         }
