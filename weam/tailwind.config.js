@@ -35,6 +35,10 @@ module.exports = {
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
+      'th-body': 'var(--theme-body)',
+      'th-color': 'var(--theme-color)',
+      'th-btn': 'var(--btn-focus-ring-color)',
+      'th-btn-soft': 'var(--btn-focus-ring-color-soft)'
     },
     spacing: {
       px: '1px',

@@ -17,3 +17,18 @@
 .swal2-width-login {
     width: 25em !important;
 }
+
+// Others
+
+button:focus {
+    outline: 0 !important;
+}
+
+.tabs-content .tab.active {
+    background-color: var(--theme-color-soft);
+    color: var(--theme-color);
+}
+
+.tabs-content .tab:not(.active):hover, .tabs-content .tab:not(.active):focus {
+    background-color: var(--theme-body);
+}

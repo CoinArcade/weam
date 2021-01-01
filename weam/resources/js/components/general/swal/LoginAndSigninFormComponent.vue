@@ -2,90 +2,82 @@
 
     <div class="grid grid-cols-12 gap-4">
 
-        <div class="flex justify-between col-span-full md:col-start-2 md:col-span-10">
-            <div v-on:click="activetab=1" v-bind:class="[ activetab === 1 ? 'active' : '' ]" class="w-full cursor-pointer"><p class="text-center">
-                {{ __('Log In') }}</p></div>
-            <div v-on:click="activetab=2" v-bind:class="[ activetab === 2 ? 'active' : '' ]" class="w-full cursor-pointer"><p class="text-center">{{ __('Sign Up') }}</p></div>
+        <div class="flex justify-between col-span-full md:col-start-2 md:col-span-10 tabs-content">
+            <button v-on:click="activetab=1" v-bind:class="[ activetab === 1 ? 'active' : '' ]" class="w-full cursor-pointer tab rounded-lg py-2 mx-2"><p class="text-center">
+                {{ __('Log In') }}</p></button>
+            <button v-on:click="activetab=2" v-bind:class="[ activetab === 2 ? 'active' : '' ]" class="w-full cursor-pointer tab rounded-lg py-2 mx-2"><p class="text-center">{{ __('Sign Up') }}</p></button>
         </div>
 
         <div class="col-span-full md:col-start-2 md:col-span-10">
             <hr class="w-full">
         </div>
 
-        <div v-if="activetab === 1" class="bg-white rounded my-2 pt-1 flex flex-col col-span-full md:col-start-2 md:col-span-10">
+        <div v-if="activetab === 1" class="bg-white rounded mb-2 flex flex-col col-span-full md:col-start-2 md:col-span-10">
             <div class="w-full">
-                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="grid-first-name">
+                <label class="block tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="login-username">
                     {{ __('Username') }}
                 </label>
-                <input id="grid-first-name" type="text" v-bind:placeholder="__('Enter your username')" class="flex-1 appearance-none border border-grey-lighter w-full py-1 px-2 bg-grey-lighter text-grey-darker rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
-                <p class="text-red-600 text-sm text-left mt-2"></p>
+                <input id="login-username" type="text" v-bind:placeholder="__('Enter your username')" class="bg-th-body flex-1 appearance-none border border-transparent w-full py-1 px-2 bg-grey-lighter text-grey-darker rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+                <p id="login-username-error" class="text-red-600 text-sm text-left mt-2"></p>
             </div>
             <div class="w-full mt-3">
-                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="grid-last-name">
+                <label class="block tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="login-password">
                     {{ __('Password') }}
                 </label>
-                <input id="grid-last-name" type="password" v-bind:placeholder="__('************')" class="flex-1 appearance-none border border-grey-lighter w-full py-1 px-2 bg-grey-lighter text-grey-darker rounded-lg text-base  focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+                <input id="login-password" type="password" v-bind:placeholder="__('************')" class="bg-th-body flex-1 appearance-none border border-transparent w-full py-1 px-2 bg-grey-lighter text-grey-darker rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+                <p id="login-password-error" class="text-red-600 text-sm text-left mt-2"></p>
             </div>
             <div class="w-full mt-5">
-                <button class="w-full flex-shrink-0 bg-purple-600 text-white text-base font-semibold py-1 px-2 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-200">
+                <button class="w-full flex-shrink-0 bg-th-color text-white text-base font-semibold py-1 px-2 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-th-btn focus:ring-offset-2 focus:ring-offset-th-btn-soft">
                     {{ __('Log In') }}
                 </button>
             </div>
         </div>
 
-        <div v-if="activetab === 2" class="bg-white rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2 col-span-full md:col-start-2 md:col-span-10">
-            <div class="-mx-3 md:flex mb-6">
-                <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-                    <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="grid-first-name">
-                        First Name
-                    </label>
-                    <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red-600 rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Jane">
-                    <p class="text-red-600 text-xs italic text-left">Tab 2</p>
-                </div>
-                <div class="md:w-1/2 px-3">
-                    <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="grid-last-name">
-                        Last Name
-                    </label>
-                    <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="Doe">
-                </div>
+        <div v-if="activetab === 2" class="bg-white rounded mb-2 flex flex-col col-span-full md:col-start-2 md:col-span-10">
+            <div class="w-full">
+                <label class="block tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="signup-username">
+                    {{ __('Username') }}
+                </label>
+                <input id="signup-username" type="text" v-bind:placeholder="__('Enter your username')" class="bg-th-body flex-1 appearance-none border border-transparent w-full py-1 px-2 bg-grey-lighter text-grey-darker rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+                <p id="signup-username-error" class="text-red-600 text-sm text-left mt-2"></p>
             </div>
-            <div class="-mx-3 md:flex mb-6">
-                <div class="md:w-full px-3">
-                    <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="grid-password">
-                        Password
-                    </label>
-                    <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="grid-password" type="password" placeholder="******************">
-                    <p class="text-grey-dark text-xs italic text-left">Make it as long and as crazy as you'd like</p>
-                </div>
+            <div class="w-full mt-3">
+                <label class="block tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="signup-email">
+                    {{ __('Email address') }}
+                </label>
+                <input id="signup-email" type="email" v-bind:placeholder="__('Enter your email address')" class="bg-th-body flex-1 appearance-none border border-transparent w-full py-1 px-2 bg-grey-lighter text-grey-darker rounded-lg text-sm  focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+                <p id="signup-email-error" class="text-red-600 text-sm text-left mt-2"></p>
             </div>
-            <div class="-mx-3 md:flex mb-2">
-                <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-                    <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="grid-city">
-                        City
-                    </label>
-                    <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-city" type="text" placeholder="Albuquerque">
+            <div class="w-full mt-3">
+                <label class="block tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="signup-password">
+                    {{ __('Password') }}
+                </label>
+                <input id="signup-password" type="password" v-bind:placeholder="__('************')" class="bg-th-body flex-1 appearance-none border border-transparent w-full py-1 px-2 bg-grey-lighter text-grey-darker rounded-lg text-sm  focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+                <p id="signup-password-error" class="text-red-600 text-sm text-left mt-2"></p>
+            </div>
+            <div class="w-full mt-3">
+                <label class="block tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="signup-password-confirm">
+                    {{ __('Password confirmation') }}
+                </label>
+                <input id="signup-password-confirm" type="password" v-bind:placeholder="__('************')" class="bg-th-body flex-1 appearance-none border border-transparent w-full py-1 px-2 bg-grey-lighter text-grey-darker rounded-lg text-sm  focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+                <p id="signup-password-confirm-error" class="text-red-600 text-sm text-left mt-2"></p>
+            </div>
+            <div class="w-full mt-3">
+                <label class="block tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="signup-birthdate">
+                    {{ __('Date of birth') }}
+                </label>
+                <div id="signup-birthdate" class="flex justify-between">
+                    <input id="signup-birthdate-day" type="text" v-bind:placeholder="__('Day')" class="bg-th-body mx-1 flex-1 appearance-none border border-transparent w-full py-1 px-2 bg-grey-lighter text-grey-darker rounded-lg text-sm  focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+                    <input id="signup-birthdate-month" type="text" v-bind:placeholder="__('Month')" class="bg-th-body mx-1 flex-1 appearance-none border border-transparent w-full py-1 px-2 bg-grey-lighter text-grey-darker rounded-lg text-sm  focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+                    <input id="signup-birthdate-year" type="text" v-bind:placeholder="__('Year')" class="bg-th-body mx-1 flex-1 appearance-none border border-transparent w-full py-1 px-2 bg-grey-lighter text-grey-darker rounded-lg text-sm  focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
                 </div>
-                <div class="md:w-1/2 px-3">
-                    <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="grid-state">
-                        State
-                    </label>
-                    <div class="relative">
-                        <select class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
-                            <option>New Mexico</option>
-                            <option>Missouri</option>
-                            <option>Texas</option>
-                        </select>
-                        <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
-                            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="md:w-1/2 px-3">
-                    <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="grid-zip">
-                        Zip
-                    </label>
-                    <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-zip" type="text" placeholder="90210">
-                </div>
+                <p id="signup-birthdate-error" class="text-red-600 text-sm text-left mt-2"></p>
+            </div>
+            <div class="w-full mt-5">
+                <button class="w-full flex-shrink-0 bg-th-color text-white text-base font-semibold py-1 px-2 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-th-btn focus:ring-offset-2 focus:ring-offset-th-btn-soft">
+                    {{ __('Sign Up') }}
+                </button>
             </div>
         </div>
 

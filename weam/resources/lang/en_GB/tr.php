@@ -19,6 +19,12 @@ return [
     'Enter your username' => 'Enter your username',
     'Password' => 'Password',
     '************' => '************',
+    'Email address' => 'Email address',
+    'Enter your email address' => 'Enter your email address',
+    'Date of birth' => 'Date of birth',
+    'Day' => 'Day',
+    'Month' => 'Month',
+    'Year' => 'Year',
 
     // Home
     'Welcome' => 'Welcome to you :name|Welcome to us :name',

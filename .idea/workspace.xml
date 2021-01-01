@@ -19,17 +19,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="create login and signin tabs">
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="design login tab">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/css/async.css" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/css/async.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/public/js/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/lib.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/menus/HomeTopMenuComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/menus/HomeTopMenuComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/lib.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/sass/app.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/sass/async.scss" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/sass/async.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +136,10 @@
       <workItem from="1608590079159" duration="7000" />
       <workItem from="1609181258068" duration="447000" />
       <workItem from="1609247100117" duration="3082000" />
-      <workItem from="1609326420750" duration="8798000" />
+      <workItem from="1609326420750" duration="13319000" />
+      <workItem from="1609439103763" duration="1116000" />
+      <workItem from="1609511754369" duration="1253000" />
+      <workItem from="1609521452432" duration="3443000" />
     </task>
     <task id="LOCAL-00001" summary="update laravel installation">
       <created>1602234138633</created>
@@ -445,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609250045275</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="design login tab">
+      <created>1609337273026</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1609337273026</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,7 +478,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Add first vue" />
     <MESSAGE value="Initial commit" />
     <MESSAGE value="First vue component" />
     <MESSAGE value="update requirements" />
@@ -492,6 +502,7 @@
     <MESSAGE value="perform language module" />
     <MESSAGE value="create login form" />
     <MESSAGE value="create login and signin tabs" />
-    <option name="LAST_COMMIT_MESSAGE" value="create login and signin tabs" />
+    <MESSAGE value="design login tab" />
+    <option name="LAST_COMMIT_MESSAGE" value="design login tab" />
   </component>
 </project>
