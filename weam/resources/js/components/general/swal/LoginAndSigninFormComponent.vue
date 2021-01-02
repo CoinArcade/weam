@@ -29,7 +29,7 @@
             </div>
             <div class="w-full mt-5">
                 <button class="w-full flex-shrink-0 bg-th-color text-white text-base font-semibold py-1 px-2 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-th-btn focus:ring-offset-2 focus:ring-offset-th-btn-soft">
-                    <button-loader v-bind:text="__('Log In')"></button-loader>
+                    <button-loader :text="__('Log In')" @submitted="submitLogin" ref="submitLoginButton"></button-loader>
                 </button>
             </div>
         </div>
@@ -76,7 +76,7 @@
             </div>
             <div class="w-full mt-5">
                 <button class="w-full flex-shrink-0 bg-th-color text-white text-base font-semibold py-1 px-2 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-th-btn focus:ring-offset-2 focus:ring-offset-th-btn-soft">
-                    test
+                    <button-loader :text="__('Sign Up')" @submitted="submitSignup" ref="submitSignupButton"></button-loader>
                 </button>
             </div>
         </div>
@@ -104,6 +104,28 @@
                 activetab: 1
 
             }
+        },
+
+        methods: {
+
+            submitLogin: function() {
+
+                // send data, then :
+                this.$refs.submitLoginButton.stopLoader()
+                Vue.swal.close()
+                this.$swalRouter.go()
+
+            },
+
+            submitSignup: function() {
+
+                // send data, then :
+                this.$refs.submitSignupButton.stopLoader()
+                Vue.swal.close()
+                this.$swalRouter.go()
+
+            }
+
         }
 
     }

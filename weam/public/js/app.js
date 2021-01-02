@@ -6503,10 +6503,12 @@ __webpack_require__.r(__webpack_exports__);
       if (this.isLoading === 0) {
         this.savedText = '<div class="loader-bar"><div></div><div></div><div></div></div>';
         this.isLoading = 1;
-      } else {
-        this.savedText = this.text;
-        this.isLoading = 0;
+        this.$emit('submitted');
       }
+    },
+    stopLoader: function stopLoader() {
+      this.savedText = this.text;
+      this.isLoading = 0;
     }
   }
 });
@@ -6701,6 +6703,20 @@ __webpack_require__.r(__webpack_exports__);
     return {
       activetab: 1
     };
+  },
+  methods: {
+    submitLogin: function submitLogin() {
+      // send data, then :
+      this.$refs.submitLoginButton.stopLoader();
+      Vue.swal.close();
+      this.$swalRouter.go();
+    },
+    submitSignup: function submitSignup() {
+      // send data, then :
+      this.$refs.submitSignupButton.stopLoader();
+      Vue.swal.close();
+      this.$swalRouter.go();
+    }
   }
 });
 
@@ -34341,7 +34357,13 @@ var render = function() {
                   staticClass:
                     "w-full flex-shrink-0 bg-th-color text-white text-base font-semibold py-1 px-2 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-th-btn focus:ring-offset-2 focus:ring-offset-th-btn-soft"
                 },
-                [_c("button-loader", { attrs: { text: _vm.__("Log In") } })],
+                [
+                  _c("button-loader", {
+                    ref: "submitLoginButton",
+                    attrs: { text: _vm.__("Log In") },
+                    on: { submitted: _vm.submitLogin }
+                  })
+                ],
                 1
               )
             ])
@@ -34551,7 +34573,23 @@ var render = function() {
               })
             ]),
             _vm._v(" "),
-            _vm._m(1)
+            _c("div", { staticClass: "w-full mt-5" }, [
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "w-full flex-shrink-0 bg-th-color text-white text-base font-semibold py-1 px-2 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-th-btn focus:ring-offset-2 focus:ring-offset-th-btn-soft"
+                },
+                [
+                  _c("button-loader", {
+                    ref: "submitSignupButton",
+                    attrs: { text: _vm.__("Sign Up") },
+                    on: { submitted: _vm.submitSignup }
+                  })
+                ],
+                1
+              )
+            ])
           ]
         )
       : _vm._e()
@@ -34567,21 +34605,6 @@ var staticRenderFns = [
       { staticClass: "col-span-full md:col-start-2 md:col-span-10" },
       [_c("hr", { staticClass: "w-full" })]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-full mt-5" }, [
-      _c(
-        "button",
-        {
-          staticClass:
-            "w-full flex-shrink-0 bg-th-color text-white text-base font-semibold py-1 px-2 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-th-btn focus:ring-offset-2 focus:ring-offset-th-btn-soft"
-        },
-        [_vm._v("\n                test\n            ")]
-      )
-    ])
   }
 ]
 render._withStripped = true

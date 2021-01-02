@@ -19,12 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="login + signup form design finished">
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/components/general/loader/ButtonLoaderComponent.vue" afterDir="false" />
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="login loading bar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/loader/ButtonLoaderComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/loader/ButtonLoaderComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/sass/async.scss" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/sass/async.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +133,8 @@
       <workItem from="1609439103763" duration="1116000" />
       <workItem from="1609511754369" duration="1253000" />
       <workItem from="1609521452432" duration="3630000" />
-      <workItem from="1609582719805" duration="5456000" />
+      <workItem from="1609582719805" duration="5698000" />
+      <workItem from="1609613867102" duration="3974000" />
     </task>
     <task id="LOCAL-00001" summary="update laravel installation">
       <created>1602234138633</created>
@@ -458,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609524982937</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="login loading bar">
+      <created>1609589751924</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1609589751924</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,7 +487,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="First vue component" />
     <MESSAGE value="update requirements" />
     <MESSAGE value="setup laravel and vuejs" />
     <MESSAGE value="fix mix-manifest generation and update requirements" />
@@ -505,6 +511,7 @@
     <MESSAGE value="create login and signin tabs" />
     <MESSAGE value="design login tab" />
     <MESSAGE value="login + signup form design finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="login + signup form design finished" />
+    <MESSAGE value="login loading bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="login loading bar" />
   </component>
 </project>
