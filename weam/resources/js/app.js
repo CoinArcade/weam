@@ -5,6 +5,7 @@
  */
 
 import VueRouter from 'vue-router'
+import Vuex from 'vuex'
 import VueSweetalert2 from 'vue-sweetalert2'
 import VueTranslation from './translations'
 
@@ -14,6 +15,7 @@ require('@fortawesome/fontawesome-free/js/all.js');
 window.Vue = require('vue');
 
 Vue.use(VueRouter)
+Vue.use(Vuex)
 Vue.use(VueSweetalert2)
 
 Vue.mixin(VueTranslation)

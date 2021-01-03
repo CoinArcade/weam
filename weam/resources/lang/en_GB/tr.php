@@ -18,6 +18,7 @@ return [
     'Username' => 'Username',
     'Enter your username' => 'Enter your username',
     'Password' => 'Password',
+    'Password confirmation' => 'Password confirmation',
     '************' => '************',
     'Email address' => 'Email address',
     'Enter your email address' => 'Enter your email address',

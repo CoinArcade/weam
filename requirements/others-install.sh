@@ -48,8 +48,9 @@
 # chmod 777 -R .
 # TODO : change .env file
 # php artisan migrate
-# npm install vue-router
 
+# npm install vue-router
+# npm install vuex
 # npm install vue-sweetalert2
 # npm install --save @fortawesome/fontawesome-free
 # npm uninstall bootstrap
