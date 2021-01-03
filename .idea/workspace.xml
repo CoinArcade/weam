@@ -19,11 +19,28 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="login loading bar">
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="implementation of the verification system for login and signup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/js/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/vendor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/vendor/facade/ignition/resources/compiled/ignition.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/vendor/facade/ignition/resources/compiled/ignition.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/vendor/laravel/framework/src/Illuminate/View/Factory.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/vendor/laravel/framework/src/Illuminate/View/Factory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/vendor/laravel/ui/src/Presets/Bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/vendor/laravel/ui/src/Presets/Bootstrap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/vendor/laravel/ui/src/Presets/Vue.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/vendor/laravel/ui/src/Presets/Vue.php" afterDir="false" />
+    </list>
+    <list id="037ad574-186d-4068-a870-c2c8ac47cfd4" name="implementation of the verification system for login and signup" comment="">
+      <change afterPath="$PROJECT_DIR$/weam/resources/js/components/general/form/ButtonLoaderComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weam/resources/js/components/general/form/InputComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements/others-install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/requirements/others-install.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/weam/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/weam/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/loader/ButtonLoaderComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/loader/ButtonLoaderComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/js/app.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/loader/ButtonLoaderComponent.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/vendor/symfony/translation/Extractor/ChainExtractor.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/vendor/symfony/translation/Extractor/ChainExtractor.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +55,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -69,6 +87,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="" />
+      <changelist id="037ad574-186d-4068-a870-c2c8ac47cfd4" name="implementation of the verification system for login and signup" comment="" />
       <created>1602233177183</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -134,7 +153,8 @@
       <workItem from="1609511754369" duration="1253000" />
       <workItem from="1609521452432" duration="3630000" />
       <workItem from="1609582719805" duration="5698000" />
-      <workItem from="1609613867102" duration="3974000" />
+      <workItem from="1609613867102" duration="4726000" />
+      <workItem from="1609667858200" duration="17810000" />
     </task>
     <task id="LOCAL-00001" summary="update laravel installation">
       <created>1602234138633</created>
@@ -465,7 +485,21 @@
       <option name="project" value="LOCAL" />
       <updated>1609589751924</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="implementation of the redirection system for login and signup">
+      <created>1609620194860</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1609620194860</updated>
+    </task>
+    <task id="LOCAL-00049" summary="implementation of the verification system for login and signup">
+      <created>1609691692441</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1609691692441</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -487,8 +521,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="update requirements" />
-    <MESSAGE value="setup laravel and vuejs" />
     <MESSAGE value="fix mix-manifest generation and update requirements" />
     <MESSAGE value="remove jquery loading" />
     <MESSAGE value="adding composer.json" />
@@ -512,6 +544,8 @@
     <MESSAGE value="design login tab" />
     <MESSAGE value="login + signup form design finished" />
     <MESSAGE value="login loading bar" />
-    <option name="LAST_COMMIT_MESSAGE" value="login loading bar" />
+    <MESSAGE value="implementation of the redirection system for login and signup" />
+    <MESSAGE value="implementation of the verification system for login and signup" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementation of the verification system for login and signup" />
   </component>
 </project>
