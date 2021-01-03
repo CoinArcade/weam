@@ -6566,7 +6566,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "InputComponent",
-  props: ['label', 'placeholder', 'inputId'],
+  props: ['label', 'placeholder', 'inputId', 'inputType'],
   data: function data() {
     return {
       entry: "",
@@ -6741,6 +6741,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -6757,7 +6765,7 @@ __webpack_require__.r(__webpack_exports__);
       signupUsername: null,
       signupEmail: null,
       signupPassword: null,
-      signupPasswordConfirm: null,
+      signupPasswordConfirmation: null,
       signupBirthdateDay: null,
       signupBirthdateMonth: null,
       signupBirthdateYear: null,
@@ -6804,13 +6812,53 @@ __webpack_require__.r(__webpack_exports__);
     /*
      * SIGNUP FORM VALIDATION
      */
-    usernameSignupValidation: function usernameSignupValidation() {},
-    emailSignupValidation: function emailSignupValidation() {},
-    passwordSignupValidation: function passwordSignupValidation() {},
-    passwordConfirmationSignupValidation: function passwordConfirmationSignupValidation() {},
+    usernameSignupValidation: function usernameSignupValidation(value) {
+      if (!/^[_a-zA-Z0-9]{3,25}$/.test(value)) {
+        this.signupUsername = null;
+        this.$refs.signupUsername.showErrorMsg("Username must contain between 3 and 25 alphanumeric characters");
+      } else {
+        this.signupUsername = value;
+        this.$refs.signupUsername.resetErrorMsg();
+      }
+
+      this.checkSignupForm();
+    },
+    emailSignupValidation: function emailSignupValidation(value) {
+      if (!/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/.test(value)) {
+        this.signupEmail = null;
+        this.$refs.signupEmail.showErrorMsg("Please enter a valid e-mail address");
+      } else {
+        this.signupEmail = value;
+        this.$refs.signupEmail.resetErrorMsg();
+      }
+
+      this.checkSignupForm();
+    },
+    passwordSignupValidation: function passwordSignupValidation(value) {
+      if (!/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/.test(value)) {
+        this.signupPassword = null;
+        this.$refs.signupPassword.showErrorMsg('Password must contain at least 8 characters, including 1 upper case, 1 lower case and 1 number');
+      } else {
+        this.signupPassword = value;
+        this.$refs.signupPassword.resetErrorMsg();
+      }
+
+      this.checkSignupForm();
+    },
+    passwordConfirmationSignupValidation: function passwordConfirmationSignupValidation(value) {
+      if (value !== this.signupPassword) {
+        this.signupPasswordConfirmation = null;
+        this.$refs.signupPasswordConfirmation.showErrorMsg('Password do not match');
+      } else {
+        this.signupPasswordConfirmation = value;
+        this.$refs.signupPasswordConfirmation.resetErrorMsg();
+      }
+
+      this.checkSignupForm();
+    },
     // verifies that all fields are correctly filled in and authorises the submission of the signup form
-    checkSubmitForm: function checkSubmitForm() {
-      if (this.signupUsername && this.signupEmail && this.signupPassword && this.signupPasswordConfirm && this.signupBirthdateDay && this.signupBirthdateMonth && this.signupBirthdateYear) {
+    checkSignupForm: function checkSignupForm() {
+      if (this.signupUsername && this.signupEmail && this.signupPassword && this.signupPasswordConfirmation && this.signupBirthdateDay && this.signupBirthdateMonth && this.signupBirthdateYear) {
         this.signupFormError = false;
       } else {
         this.signupFormError = true;
@@ -34305,39 +34353,113 @@ var render = function() {
       [_vm._v("\n        " + _vm._s(_vm.__(this.label)) + "\n    ")]
     ),
     _vm._v(" "),
-    _c("input", {
-      directives: [
-        {
-          name: "model",
-          rawName: "v-model",
-          value: _vm.entry,
-          expression: "entry"
-        }
-      ],
-      staticClass:
-        "bg-th-body flex-1 appearance-none w-full py-1 px-2 border-2 bg-grey-lighter text-grey-darker rounded-lg text-sm focus:outline-none",
-      class: this.error
-        ? "border-red-500 focus:border-red-500"
-        : "border-transparent focus:border-purple-600",
-      attrs: {
-        id: this.inputId,
-        type: "text",
-        placeholder: _vm.__(this.placeholder)
-      },
-      domProps: { value: _vm.entry },
-      on: {
-        keyup: _vm.validation,
-        input: function($event) {
-          if ($event.target.composing) {
-            return
+    this.inputType === "checkbox"
+      ? _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.entry,
+              expression: "entry"
+            }
+          ],
+          staticClass:
+            "bg-th-body flex-1 appearance-none w-full py-1 px-2 border-2 bg-grey-lighter text-grey-darker rounded-lg text-sm focus:outline-none",
+          class: this.error
+            ? "border-red-600 focus:border-red-600"
+            : "border-transparent focus:border-purple-600",
+          attrs: {
+            id: this.inputId,
+            placeholder: _vm.__(this.placeholder),
+            type: "checkbox"
+          },
+          domProps: {
+            checked: Array.isArray(_vm.entry)
+              ? _vm._i(_vm.entry, null) > -1
+              : _vm.entry
+          },
+          on: {
+            keyup: _vm.validation,
+            change: function($event) {
+              var $$a = _vm.entry,
+                $$el = $event.target,
+                $$c = $$el.checked ? true : false
+              if (Array.isArray($$a)) {
+                var $$v = null,
+                  $$i = _vm._i($$a, $$v)
+                if ($$el.checked) {
+                  $$i < 0 && (_vm.entry = $$a.concat([$$v]))
+                } else {
+                  $$i > -1 &&
+                    (_vm.entry = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+                }
+              } else {
+                _vm.entry = $$c
+              }
+            }
           }
-          _vm.entry = $event.target.value
-        }
-      }
-    }),
+        })
+      : this.inputType === "radio"
+      ? _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.entry,
+              expression: "entry"
+            }
+          ],
+          staticClass:
+            "bg-th-body flex-1 appearance-none w-full py-1 px-2 border-2 bg-grey-lighter text-grey-darker rounded-lg text-sm focus:outline-none",
+          class: this.error
+            ? "border-red-600 focus:border-red-600"
+            : "border-transparent focus:border-purple-600",
+          attrs: {
+            id: this.inputId,
+            placeholder: _vm.__(this.placeholder),
+            type: "radio"
+          },
+          domProps: { checked: _vm._q(_vm.entry, null) },
+          on: {
+            keyup: _vm.validation,
+            change: function($event) {
+              _vm.entry = null
+            }
+          }
+        })
+      : _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.entry,
+              expression: "entry"
+            }
+          ],
+          staticClass:
+            "bg-th-body flex-1 appearance-none w-full py-1 px-2 border-2 bg-grey-lighter text-grey-darker rounded-lg text-sm focus:outline-none",
+          class: this.error
+            ? "border-red-600 focus:border-red-600"
+            : "border-transparent focus:border-purple-600",
+          attrs: {
+            id: this.inputId,
+            placeholder: _vm.__(this.placeholder),
+            type: this.inputType
+          },
+          domProps: { value: _vm.entry },
+          on: {
+            keyup: _vm.validation,
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.entry = $event.target.value
+            }
+          }
+        }),
     _vm._v(" "),
     _c("p", { staticClass: "text-red-600 text-xs text-left mt-2" }, [
-      _vm._v(_vm._s(this.errorMsg))
+      _vm._v(_vm._s(_vm.__(this.errorMsg)))
     ])
   ])
 }
@@ -34478,7 +34600,7 @@ var render = function() {
     _vm._v(" "),
     _vm.activeTab === 1
       ? _c(
-          "div",
+          "form",
           {
             staticClass:
               "bg-white rounded mb-2 flex flex-col col-span-full md:col-start-2 md:col-span-10"
@@ -34487,9 +34609,10 @@ var render = function() {
             _c("form-input", {
               ref: "loginUsername",
               attrs: {
+                "input-id": "login-username",
+                "input-type": "text",
                 label: "Username",
-                placeholder: "Enter your username",
-                "input-id": "login-username"
+                placeholder: "Enter your username"
               },
               on: { validate: _vm.usernameLoginValidation }
             }),
@@ -34497,9 +34620,10 @@ var render = function() {
             _c("form-input", {
               ref: "loginPassword",
               attrs: {
+                "input-id": "login-password",
+                "input-type": "password",
                 label: "Password",
-                placeholder: "************",
-                "input-id": "login-password"
+                placeholder: "************"
               },
               on: { validate: _vm.passwordLoginValidation }
             }),
@@ -34527,7 +34651,7 @@ var render = function() {
     _vm._v(" "),
     _vm.activeTab === 2
       ? _c(
-          "div",
+          "form",
           {
             staticClass:
               "bg-white rounded mb-2 flex flex-col col-span-full md:col-start-2 md:col-span-10"
@@ -34536,9 +34660,10 @@ var render = function() {
             _c("form-input", {
               ref: "signupUsername",
               attrs: {
+                "input-id": "signup-username",
+                "input-type": "text",
                 label: "Username",
-                placeholder: "Enter your username",
-                "input-id": "signup-username"
+                placeholder: "Enter your username"
               },
               on: { validate: _vm.usernameSignupValidation }
             }),
@@ -34546,9 +34671,10 @@ var render = function() {
             _c("form-input", {
               ref: "signupEmail",
               attrs: {
+                "input-id": "signup-email",
+                "input-type": "email",
                 label: "Email address",
-                placeholder: "Enter your email address",
-                "input-id": "signup-email"
+                placeholder: "Enter your email address"
               },
               on: { validate: _vm.emailSignupValidation }
             }),
@@ -34556,9 +34682,10 @@ var render = function() {
             _c("form-input", {
               ref: "signupPassword",
               attrs: {
+                "input-id": "signup-password",
+                "input-type": "password",
                 label: "Password",
-                placeholder: "************",
-                "input-id": "signup-password"
+                placeholder: "************"
               },
               on: { validate: _vm.passwordSignupValidation }
             }),
@@ -34566,9 +34693,10 @@ var render = function() {
             _c("form-input", {
               ref: "signupPasswordConfirmation",
               attrs: {
+                "input-type": "password",
+                "input-id": "signup-password-confirmation",
                 label: "Password confirmation",
-                placeholder: "************",
-                "input-id": "signup-password-confirmation"
+                placeholder: "************"
               },
               on: { validate: _vm.passwordConfirmationSignupValidation }
             }),

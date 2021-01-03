@@ -9,13 +9,13 @@
         <input v-model="entry"
                @keyup="validation"
                :id="this.inputId"
-               type="text"
+               :type="this.inputType"
                :placeholder="__(this.placeholder)"
                class="bg-th-body flex-1 appearance-none w-full py-1 px-2 border-2 bg-grey-lighter text-grey-darker rounded-lg text-sm focus:outline-none"
-               v-bind:class="this.error ? 'border-red-500 focus:border-red-500' : 'border-transparent focus:border-purple-600'"
+               v-bind:class="this.error ? 'border-red-600 focus:border-red-600' : 'border-transparent focus:border-purple-600'"
         >
 
-        <p class="text-red-600 text-xs text-left mt-2">{{ this.errorMsg }}</p>
+        <p class="text-red-600 text-xs text-left mt-2">{{ __(this.errorMsg) }}</p>
 
     </div>
 
@@ -27,7 +27,7 @@
 
         name: "InputComponent",
 
-        props: ['label', 'placeholder', 'inputId'],
+        props: ['label', 'placeholder', 'inputId', 'inputType'],
 
         data: function() {
 

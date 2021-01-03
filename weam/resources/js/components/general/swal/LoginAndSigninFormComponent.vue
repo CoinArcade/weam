@@ -12,27 +12,34 @@
             <hr class="w-full">
         </div>
 
-        <div v-if="activeTab === 1" class="bg-white rounded mb-2 flex flex-col col-span-full md:col-start-2 md:col-span-10">
+        <form v-if="activeTab === 1" class="bg-white rounded mb-2 flex flex-col col-span-full md:col-start-2 md:col-span-10">
 
-            <form-input @validate="usernameLoginValidation" label="Username" placeholder="Enter your username" ref="loginUsername" input-id="login-username"></form-input>
+            <form-input @validate="usernameLoginValidation" input-id="login-username" input-type="text"
+                        label="Username" placeholder="Enter your username" ref="loginUsername"></form-input>
 
-            <form-input @validate="passwordLoginValidation" label="Password" placeholder="************" ref="loginPassword" input-id="login-password"></form-input>
+            <form-input @validate="passwordLoginValidation" input-id="login-password" input-type="password"
+                        label="Password" placeholder="************" ref="loginPassword"></form-input>
 
             <div class="w-full mt-5">
-                <button-loader @submitted="submitLogin" :text="__('Log In')" :submit-error="this.loginFormError" ref="submitLoginButton" key="loginSubmitButton"></button-loader>
+                <button-loader @submitted="submitLogin" key="loginSubmitButton" :text="__('Log In')" :submit-error="this.loginFormError"
+                               ref="submitLoginButton"></button-loader>
             </div>
 
-        </div>
+        </form>
 
-        <div v-if="activeTab === 2" class="bg-white rounded mb-2 flex flex-col col-span-full md:col-start-2 md:col-span-10">
+        <form v-if="activeTab === 2" class="bg-white rounded mb-2 flex flex-col col-span-full md:col-start-2 md:col-span-10">
 
-            <form-input @validate="usernameSignupValidation" label="Username" placeholder="Enter your username" ref="signupUsername" input-id="signup-username"></form-input>
+            <form-input @validate="usernameSignupValidation" input-id="signup-username" input-type="text"
+                        label="Username" placeholder="Enter your username" ref="signupUsername"></form-input>
 
-            <form-input @validate="emailSignupValidation" label="Email address" placeholder="Enter your email address" ref="signupEmail" input-id="signup-email"></form-input>
+            <form-input @validate="emailSignupValidation" input-id="signup-email" input-type="email"
+                        label="Email address" placeholder="Enter your email address" ref="signupEmail"></form-input>
 
-            <form-input @validate="passwordSignupValidation" label="Password" placeholder="************" ref="signupPassword" input-id="signup-password"></form-input>
+            <form-input @validate="passwordSignupValidation" input-id="signup-password" input-type="password"
+                        label="Password" placeholder="************" ref="signupPassword"></form-input>
 
-            <form-input @validate="passwordConfirmationSignupValidation" label="Password confirmation" placeholder="************" ref="signupPasswordConfirmation" input-id="signup-password-confirmation"></form-input>
+            <form-input @validate="passwordConfirmationSignupValidation" input-type="password" input-id="signup-password-confirmation"
+                        label="Password confirmation" placeholder="************" ref="signupPasswordConfirmation"></form-input>
 
             <div class="w-full mt-3">
                 <label class="block tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="signup-birthdate">
@@ -47,10 +54,11 @@
             </div>
 
             <div class="w-full mt-5">
-                <button-loader @submitted="submitSignup" :text="__('Sign Up')" :submit-error="this.signupFormError" ref="submitSignupButton" key="signupSubmitButton"></button-loader>
+                <button-loader @submitted="submitSignup" key="signupSubmitButton" :text="__('Sign Up')" :submit-error="this.signupFormError"
+                               ref="submitSignupButton"></button-loader>
             </div>
 
-        </div>
+        </form>
 
     </div>
 
@@ -82,7 +90,7 @@
                 signupUsername: null,
                 signupEmail: null,
                 signupPassword: null,
-                signupPasswordConfirm: null,
+                signupPasswordConfirmation: null,
                 signupBirthdateDay: null,
                 signupBirthdateMonth: null,
                 signupBirthdateYear: null,
@@ -144,26 +152,66 @@
              * SIGNUP FORM VALIDATION
              */
 
-            usernameSignupValidation: function() {
+            usernameSignupValidation: function(value) {
+
+                if (!/^[_a-zA-Z0-9]{3,25}$/.test(value)) {
+                    this.signupUsername = null
+                    this.$refs.signupUsername.showErrorMsg("Username must contain between 3 and 25 alphanumeric characters")
+                } else {
+                    this.signupUsername = value
+                    this.$refs.signupUsername.resetErrorMsg()
+                }
+
+                this.checkSignupForm()
 
             },
 
-            emailSignupValidation: function() {
+            emailSignupValidation: function(value) {
+
+                if (!/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/.test(value)) {
+                    this.signupEmail = null
+                    this.$refs.signupEmail.showErrorMsg("Please enter a valid e-mail address")
+                } else {
+                    this.signupEmail = value
+                    this.$refs.signupEmail.resetErrorMsg()
+                }
+
+                this.checkSignupForm()
 
             },
 
-            passwordSignupValidation: function() {
+            passwordSignupValidation: function(value) {
+
+                if (!/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/.test(value)) {
+                    this.signupPassword = null
+                    this.$refs.signupPassword.showErrorMsg('Password must contain at least 8 characters, including 1 upper case, 1 lower case and 1 number')
+                } else {
+                    this.signupPassword = value
+                    this.$refs.signupPassword.resetErrorMsg()
+                }
+
+                this.checkSignupForm()
 
             },
 
-            passwordConfirmationSignupValidation: function() {
+            passwordConfirmationSignupValidation: function(value) {
+
+                if (value !== this.signupPassword) {
+                    this.signupPasswordConfirmation = null
+                    this.$refs.signupPasswordConfirmation.showErrorMsg('Password do not match')
+                } else {
+                    this.signupPasswordConfirmation = value
+                    this.$refs.signupPasswordConfirmation.resetErrorMsg()
+                }
+
+                this.checkSignupForm()
 
             },
 
             // verifies that all fields are correctly filled in and authorises the submission of the signup form
-            checkSubmitForm: function() {
+            checkSignupForm: function() {
 
-                if (this.signupUsername && this.signupEmail && this.signupPassword && this.signupPasswordConfirm
+                if (this.signupUsername && this.signupEmail && this.signupPassword && this.signupPasswordConfirmation
                     && this.signupBirthdateDay && this.signupBirthdateMonth && this.signupBirthdateYear) {
 
                     this.signupFormError = false
