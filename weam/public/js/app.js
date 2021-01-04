@@ -6516,7 +6516,7 @@ __webpack_require__.r(__webpack_exports__);
     this.savedText = this.text;
   },
   methods: {
-    loaderManager: function loaderManager() {
+    startLoader: function startLoader() {
       if (this.isLoading === false && !this.submitError) {
         this.savedText = "";
         this.isLoading = true;
@@ -6789,6 +6789,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.checkLoginForm();
     },
+    // check presence of password
     passwordLoginValidation: function passwordLoginValidation(value) {
       this.loginPassword = value;
       this.checkLoginForm();
@@ -6812,6 +6813,7 @@ __webpack_require__.r(__webpack_exports__);
     /*
      * SIGNUP FORM VALIDATION
      */
+    // check if username is valid
     usernameSignupValidation: function usernameSignupValidation(value) {
       if (!/^[_a-zA-Z0-9]{3,25}$/.test(value)) {
         this.signupUsername = null;
@@ -6823,6 +6825,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.checkSignupForm();
     },
+    // check if e-mail address is valid
     emailSignupValidation: function emailSignupValidation(value) {
       if (!/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/.test(value)) {
         this.signupEmail = null;
@@ -6834,6 +6837,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.checkSignupForm();
     },
+    // check if password is valid
     passwordSignupValidation: function passwordSignupValidation(value) {
       if (!/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/.test(value)) {
         this.signupPassword = null;
@@ -6845,6 +6849,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.checkSignupForm();
     },
+    // check if passwords match
     passwordConfirmationSignupValidation: function passwordConfirmationSignupValidation(value) {
       if (value !== this.signupPassword) {
         this.signupPasswordConfirmation = null;
@@ -34298,7 +34303,12 @@ var render = function() {
       class: this.submitError
         ? "bg-gray-500"
         : "bg-th-color hover:bg-purple-700 focus:ring-2 focus:ring-th-btn focus:ring-offset-2 focus:ring-offset-th-btn-soft",
-      on: { click: _vm.loaderManager }
+      on: {
+        click: function($event) {
+          $event.preventDefault()
+          return _vm.startLoader($event)
+        }
+      }
     },
     [
       this.isLoading
@@ -51978,7 +51988,7 @@ router.beforeEach(function (to, from, next) {
   next();
 }); // Vue global variables
 
-Vue.prototype.$appURL = "http://localhost:8000/weam/weam/public";
+Vue.prototype.$appURL = "http://weam.tv";
 Vue.prototype.$swalRouter = router; // Vue app
 
 var app = new Vue({
@@ -52735,9 +52745,9 @@ module.exports = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/weam/weam/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /var/www/html/weam/weam/resources/sass/async.scss */"./resources/sass/async.scss");
-module.exports = __webpack_require__(/*! /var/www/html/weam/weam/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/weam.tv/weam/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /var/www/weam.tv/weam/resources/sass/async.scss */"./resources/sass/async.scss");
+module.exports = __webpack_require__(/*! /var/www/weam.tv/weam/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

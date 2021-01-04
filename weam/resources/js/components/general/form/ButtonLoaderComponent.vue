@@ -1,6 +1,6 @@
 <template>
 
-    <button @click="loaderManager"
+    <button @click.prevent="startLoader"
             v-bind:class="this.submitError ? 'bg-gray-500' : 'bg-th-color hover:bg-purple-700 focus:ring-2 focus:ring-th-btn focus:ring-offset-2 focus:ring-offset-th-btn-soft'"
             class="w-full flex-shrink-0 text-white text-base font-semibold py-1 px-2 rounded-lg shadow-md focus:outline-none"
     >
@@ -48,7 +48,7 @@
 
         methods: {
 
-            loaderManager: function() {
+            startLoader: function() {
 
                 if (this.isLoading === false && !this.submitError) {
 

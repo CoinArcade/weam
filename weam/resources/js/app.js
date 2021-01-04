@@ -91,7 +91,7 @@ router.beforeEach((to, from, next) => {
 
 
 // Vue global variables
-Vue.prototype.$appURL = "http://localhost:8000/weam/weam/public"
+Vue.prototype.$appURL = "http://weam.tv"
 Vue.prototype.$swalRouter = router
 
 

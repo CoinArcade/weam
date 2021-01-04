@@ -21,11 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="implementation of the verification system for login and signup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/.env" beforeDir="false" afterPath="$PROJECT_DIR$/weam/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/form/InputComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/form/InputComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/form/ButtonLoaderComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/form/ButtonLoaderComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +72,6 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="" />
-      <changelist id="" name="implementation of the verification system for login and signup" comment="" />
       <created>1602233177183</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -139,14 +138,9 @@
       <workItem from="1609521452432" duration="3630000" />
       <workItem from="1609582719805" duration="5698000" />
       <workItem from="1609613867102" duration="4726000" />
-      <workItem from="1609667858200" duration="24749000" />
-    </task>
-    <task id="LOCAL-00003" summary="cancel gitignore">
-      <created>1602236738005</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1602236738005</updated>
+      <workItem from="1609667858200" duration="24790000" />
+      <workItem from="1609747959767" duration="226000" />
+      <workItem from="1609775458635" duration="2232000" />
     </task>
     <task id="LOCAL-00004" summary="update laravel with vue">
       <created>1602272204216</created>
@@ -484,7 +478,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609692667825</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="implementation of the verification system for login and signup">
+      <created>1609703787960</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1609703787960</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
