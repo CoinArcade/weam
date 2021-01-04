@@ -14,7 +14,7 @@
         </span>
 
         <span v-else>
-            {{ this.savedText }}
+            {{ __(this.savedText) }}
         </span>
 
     </button>
@@ -27,14 +27,15 @@
 
         name: "ButtonLoaderComponent",
 
-        props: ['text', 'submitError'],
+        props: ['text'],
 
         data: function() {
 
             return {
 
-                savedText: "",
-                isLoading: false
+                savedText: '',
+                isLoading: false,
+                submitError: true
 
             }
 
@@ -64,6 +65,12 @@
 
                 this.savedText = this.text
                 this.isLoading = false
+
+            },
+
+            setSubmitError: function(value) {
+
+                this.submitError = value
 
             }
 

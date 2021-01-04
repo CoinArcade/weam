@@ -14,48 +14,53 @@
 
         <form v-if="activeTab === 1" class="bg-white rounded mb-2 flex flex-col col-span-full md:col-start-2 md:col-span-10">
 
-            <form-input @validate="usernameLoginValidation" input-id="login-username" input-type="text"
+            <form-input @validate="usernameLoginValidation" key="login-username"
                         label="Username" placeholder="Enter your username" ref="loginUsername"></form-input>
 
-            <form-input @validate="passwordLoginValidation" input-id="login-password" input-type="password"
+            <form-input @validate="passwordLoginValidation" key="login-password" input-type="password"
                         label="Password" placeholder="************" ref="loginPassword"></form-input>
 
             <div class="w-full mt-5">
-                <button-loader @submitted="submitLogin" key="loginSubmitButton" :text="__('Log In')" :submit-error="this.loginFormError"
-                               ref="submitLoginButton"></button-loader>
+                <button-loader @submitted="submitLogin" key="loginSubmitButton" text="Log In" ref="submitLoginButton"></button-loader>
             </div>
 
         </form>
 
         <form v-if="activeTab === 2" class="bg-white rounded mb-2 flex flex-col col-span-full md:col-start-2 md:col-span-10">
 
-            <form-input @validate="usernameSignupValidation" input-id="signup-username" input-type="text"
+            <form-input @validate="usernameSignupValidation" key="signup-username"
                         label="Username" placeholder="Enter your username" ref="signupUsername"></form-input>
 
-            <form-input @validate="emailSignupValidation" input-id="signup-email" input-type="email"
+            <form-input @validate="emailSignupValidation" key="signup-email" input-type="email"
                         label="Email address" placeholder="Enter your email address" ref="signupEmail"></form-input>
 
-            <form-input @validate="passwordSignupValidation" input-id="signup-password" input-type="password"
+            <form-input @validate="passwordSignupValidation" key="signup-password" input-type="password"
                         label="Password" placeholder="************" ref="signupPassword"></form-input>
 
-            <form-input @validate="passwordConfirmationSignupValidation" input-type="password" input-id="signup-password-confirmation"
+            <form-input @validate="passwordConfirmationSignupValidation" key="signup-password-confirmation" input-type="password"
                         label="Password confirmation" placeholder="************" ref="signupPasswordConfirmation"></form-input>
 
             <div class="w-full mt-3">
+
                 <label class="block tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="signup-birthdate">
                     {{ __('Date of birth') }}
                 </label>
+
                 <div id="signup-birthdate" class="flex justify-between">
-                    <input id="signup-birthdate-day" type="text" :placeholder="__('Day')" class="bg-th-body mx-1 flex-1 appearance-none border border-transparent w-full py-1 px-2 bg-grey-lighter text-grey-darker rounded-lg text-sm  focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
-                    <input id="signup-birthdate-month" type="text" :placeholder="__('Month')" class="bg-th-body mx-1 flex-1 appearance-none border border-transparent w-full py-1 px-2 bg-grey-lighter text-grey-darker rounded-lg text-sm  focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
-                    <input id="signup-birthdate-year" type="text" :placeholder="__('Year')" class="bg-th-body mx-1 flex-1 appearance-none border border-transparent w-full py-1 px-2 bg-grey-lighter text-grey-darker rounded-lg text-sm  focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+                    <form-input @validate="birthdateDaySignupValidation" key="signup-birthdate-day" placeholder="Day" container-class="mx-1"
+                                disable-error="true" ref="signupBirthdateDay" ></form-input>
+                    <form-input @validate="birthdateMonthSignupValidation" key="signup-birthdate-month" placeholder="Month" container-class="mx-1"
+                                disable-error="true" ref="signupBirthdateMonth"></form-input>
+                    <form-input @validate="birthdateYearSignupValidation" key="signup-birthdate-year" placeholder="Year" container-class="mx-1"
+                                disable-error="true" ref="signupBirthdateYear"></form-input>
                 </div>
-                <p id="signup-birthdate-error" class="text-red-600 text-sm text-left mt-2"></p>
+
+                <p id="signup-birthdate-error" class="text-red-600 text-xs text-left mt-2">{{ __(this.errorBirthdateMsg) }}</p>
+
             </div>
 
             <div class="w-full mt-5">
-                <button-loader @submitted="submitSignup" key="signupSubmitButton" :text="__('Sign Up')" :submit-error="this.signupFormError"
-                               ref="submitSignupButton"></button-loader>
+                <button-loader @submitted="submitSignup" key="signupSubmitButton" text="Sign Up" ref="submitSignupButton"></button-loader>
             </div>
 
         </form>
@@ -94,9 +99,10 @@
                 signupBirthdateDay: null,
                 signupBirthdateMonth: null,
                 signupBirthdateYear: null,
+                signupBirthdateIsValid: true,
 
-                loginFormError: true,
-                signupFormError: true
+                errorBirthdateMsg: "",
+                errorMsg: ""
 
             }
         },
@@ -132,9 +138,9 @@
             checkLoginForm: function() {
 
                 if (this.loginUsername && this.loginPassword) {
-                    this.loginFormError = false
+                    this.$refs.submitLoginButton.setSubmitError(false)
                 } else {
-                    this.loginFormError = true
+                    this.$refs.submitLoginButton.setSubmitError(true)
                 }
 
             },
@@ -213,18 +219,78 @@
 
             },
 
+            //check if of birth date is valid
+            birthdateDaySignupValidation: function(value) {
+                this.signupBirthdateDay = value
+                this.birthdateSignupValidation()
+            },
+
+            birthdateMonthSignupValidation: function(value) {
+                this.signupBirthdateMonth = value
+                this.birthdateSignupValidation()
+            },
+
+            birthdateYearSignupValidation: function(value) {
+                this.signupBirthdateYear = value
+                this.birthdateSignupValidation()
+            },
+
+            birthdateSignupValidation: function() {
+
+                this.$refs.signupBirthdateDay.resetError()
+                this.$refs.signupBirthdateMonth.resetError()
+                this.$refs.signupBirthdateYear.resetError()
+
+                if (this.signupBirthdateDay && this.signupBirthdateMonth && this.signupBirthdateYear) {
+
+                    let monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
+                        maxYear = 2021 - 13,
+                        minYear = 2021 - 120;
+
+                    if (this.signupBirthdateDay.length > 2 || this.signupBirthdateDay < 1) {
+                        this.signupBirthdateDay = null
+                        this.$refs.signupBirthdateDay.showError()
+                    }
+
+                    if (this.signupBirthdateMonth.length > 2 || this.signupBirthdateMonth < 1 || this.signupBirthdateMonth > 12) {
+                        this.signupBirthdateMonth = null
+                        this.$refs.signupBirthdateMonth.showError()
+                    }
+
+                    if (this.signupBirthdateYear.length > 4 || this.signupBirthdateYear > maxYear || this.signupBirthdateYear < minYear) {
+                        this.signupBirthdateYear = null
+                        this.$refs.signupBirthdateYear.showError()
+                    }
+
+                    if (this.signupBirthdateYear % 400 === 0 || (this.signupBirthdateYear % 100 !== 0 && this.signupBirthdateYear % 4 === 0)) monthLength[1]++
+
+                    if (this.signupBirthdateMonth && this.signupBirthdateDay > monthLength[this.signupBirthdateMonth - 1]) {
+                        this.signupBirthdateIsValid = false
+                        this.$refs.signupBirthdateDay.showError()
+                        this.$refs.signupBirthdateMonth.showError()
+                    } else {
+                        this.signupBirthdateIsValid = true
+                    }
+
+                    if (!this.signupBirthdateDay || !this.signupBirthdateMonth || !this.signupBirthdateYear || !this.signupBirthdateIsValid) {
+                        this.errorBirthdateMsg = 'Please enter a valid date'
+                    } else {
+                        this.errorBirthdateMsg = ''
+                    }
+
+                }
+
+                this.checkSignupForm()
+
+            },
+
             // verifies that all fields are correctly filled in and authorises the submission of the signup form
             checkSignupForm: function() {
 
-                if (this.signupUsername && this.signupEmail && this.signupPassword && this.signupPasswordConfirmation
-                    && this.signupBirthdateDay && this.signupBirthdateMonth && this.signupBirthdateYear) {
-
-                    this.signupFormError = false
-
+                if (this.signupUsername && this.signupEmail && this.signupPassword && this.signupPasswordConfirmation && this.signupBirthdateDay && this.signupBirthdateMonth && this.signupBirthdateYear && this.signupBirthdateIsValid) {
+                    this.$refs.submitSignupButton.setSubmitError(false)
                 } else {
-
-                    this.signupFormError = true
-
+                    this.$refs.submitSignupButton.setSubmitError(true)
                 }
 
             },

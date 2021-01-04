@@ -1,21 +1,21 @@
 <template>
 
-    <div class="w-full mt-3">
+    <div :class="[this.containerWidth ? this.containerWidth : 'w-full', this.containerClass ? this.containerClass : '']">
 
-        <label class="block tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" :for="this.inputId">
+        <label v-if="this.label" class="block tracking-wide text-grey-darker text-xs font-bold mb-2 text-left mt-3" :for="this.inputId">
             {{ __(this.label) }}
         </label>
 
         <input v-model="entry"
                @keyup="validation"
                :id="this.inputId"
-               :type="this.inputType"
+               :type="this.inputType ? this.inputType : 'text'"
                :placeholder="__(this.placeholder)"
                class="bg-th-body flex-1 appearance-none w-full py-1 px-2 border-2 bg-grey-lighter text-grey-darker rounded-lg text-sm focus:outline-none"
-               v-bind:class="this.error ? 'border-red-600 focus:border-red-600' : 'border-transparent focus:border-purple-600'"
+               :class="[this.error ? 'border-red-600 focus:border-red-600' : 'border-transparent focus:border-purple-600', this.inputClass ? this.inputClass : '']"
         >
 
-        <p class="text-red-600 text-xs text-left mt-2">{{ __(this.errorMsg) }}</p>
+        <p v-if="!this.disableError" class="text-red-600 text-xs text-left mt-2">{{ __(this.errorMsg) }}</p>
 
     </div>
 
@@ -27,15 +27,16 @@
 
         name: "InputComponent",
 
-        props: ['label', 'placeholder', 'inputId', 'inputType'],
+        props: ['containerWidth', 'containerClass', 'label', 'placeholder', 'inputType', 'inputClass', 'disableError'],
 
         data: function() {
 
             return {
 
-                entry: "",
+                entry: '',
+                inputId: this.$vnode.key,
                 error: false,
-                errorMsg: ""
+                errorMsg: ''
 
             }
 
@@ -51,8 +52,10 @@
 
             showErrorMsg: function(val) {
 
-                this.error = true
-                this.errorMsg = val
+                if (!this.disableError) {
+                    this.error = true
+                    this.errorMsg = val
+                }
 
             },
 
@@ -60,6 +63,18 @@
 
                 this.error = false
                 this.errorMsg = ""
+
+            },
+
+            showError: function() {
+
+                this.error = true
+
+            },
+
+            resetError: function() {
+
+                this.error = false
 
             }
 
