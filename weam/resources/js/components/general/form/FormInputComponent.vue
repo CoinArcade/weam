@@ -8,7 +8,7 @@
                @keyup="validation"
                :id="this.inputId"
                :type="this.inputType ? this.inputType : 'text'"
-               :placeholder="__(this.placeholder)"
+               :placeholder="this.placeholder ? __(this.placeholder) : ''"
                class="bg-th-body flex-1 appearance-none w-full py-1 px-2 border-2 bg-grey-lighter text-grey-darker rounded-lg text-sm focus:outline-none"
                :class="[this.error ? 'border-red-600 focus:border-red-600' : 'border-transparent focus:border-purple-600', this.inputClass ? this.inputClass : '']"
         >

@@ -1,6 +1,6 @@
 <template>
 
-    <p class="text-red-600 text-xs text-left mt-2">
+    <p v-if="this.errorMsg" class="text-red-600 text-xs text-left mt-2">
         {{ __(this.errorMsg) }}
     </p>
 

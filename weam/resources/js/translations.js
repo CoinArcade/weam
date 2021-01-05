@@ -35,6 +35,8 @@ module.exports = {
                 translation = translation.replace(occurences[o], replace[o])
             }
 
+            alert(key + ' => ' + translation)
+
             return translation
 
         }

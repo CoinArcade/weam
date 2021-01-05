@@ -13,7 +13,7 @@
             </div>
         </span>
 
-        <span v-else>
+        <span v-else-if="this.savedText">
             {{ __(this.savedText) }}
         </span>
 
@@ -41,7 +41,7 @@
 
         },
 
-        mounted: function() {
+        created: function() {
 
             this.savedText = this.text
 
@@ -71,6 +71,16 @@
             setSubmitError: function(value) {
 
                 this.submitError = value
+
+            }
+
+        },
+
+        watch: {
+
+            text: function (oldValue, newValue) {
+
+                this.savedText = newValue
 
             }
 

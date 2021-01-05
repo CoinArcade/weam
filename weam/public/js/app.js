@@ -6525,7 +6525,7 @@ __webpack_require__.r(__webpack_exports__);
       submitError: true
     };
   },
-  mounted: function mounted() {
+  created: function created() {
     this.savedText = this.text;
   },
   methods: {
@@ -6542,6 +6542,11 @@ __webpack_require__.r(__webpack_exports__);
     },
     setSubmitError: function setSubmitError(value) {
       this.submitError = value;
+    }
+  },
+  watch: {
+    text: function text(oldValue, newValue) {
+      this.savedText = newValue;
     }
   }
 });
@@ -35307,9 +35312,11 @@ var render = function() {
     [
       this.isLoading
         ? _c("span", [_vm._m(0)])
-        : _c("span", [
+        : this.savedText
+        ? _c("span", [
             _vm._v("\n        " + _vm._s(_vm.__(this.savedText)) + "\n    ")
           ])
+        : _vm._e()
     ]
   )
 }
@@ -35348,9 +35355,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("p", { staticClass: "text-red-600 text-xs text-left mt-2" }, [
-    _vm._v("\n    " + _vm._s(_vm.__(this.errorMsg)) + "\n")
-  ])
+  return this.errorMsg
+    ? _c("p", { staticClass: "text-red-600 text-xs text-left mt-2" }, [
+        _vm._v("\n    " + _vm._s(_vm.__(this.errorMsg)) + "\n")
+      ])
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -35409,7 +35418,7 @@ var render = function() {
             ],
             attrs: {
               id: this.inputId,
-              placeholder: _vm.__(this.placeholder),
+              placeholder: this.placeholder ? _vm.__(this.placeholder) : "",
               type: "checkbox"
             },
             domProps: {
@@ -35458,7 +35467,7 @@ var render = function() {
             ],
             attrs: {
               id: this.inputId,
-              placeholder: _vm.__(this.placeholder),
+              placeholder: this.placeholder ? _vm.__(this.placeholder) : "",
               type: "radio"
             },
             domProps: { checked: _vm._q(_vm.entry, null) },
@@ -35488,7 +35497,7 @@ var render = function() {
             ],
             attrs: {
               id: this.inputId,
-              placeholder: _vm.__(this.placeholder),
+              placeholder: this.placeholder ? _vm.__(this.placeholder) : "",
               type: this.inputType ? this.inputType : "text"
             },
             domProps: { value: _vm.entry },
@@ -53909,6 +53918,7 @@ module.exports = {
         translation = translation.replace(occurences[o], replace[o]);
       }
 
+      alert(key + ' => ' + translation);
       return translation;
     }
   }
