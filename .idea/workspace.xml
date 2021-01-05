@@ -19,12 +19,26 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="fix verification bug with prevent default">
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="finish verification system for signup">
+      <change afterPath="$PROJECT_DIR$/weam/app/Http/Controllers/Security/LoginController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weam/app/Http/Controllers/Security/SignupController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weam/resources/js/components/general/form/FormErrorComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weam/resources/js/components/general/form/FormLabelComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Http/Controllers/Views/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/LanguageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Http/Controllers/Settings/LanguageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Http/Controllers/Views/SettingsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/TasksController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/form/ButtonLoaderComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/form/ButtonLoaderComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/form/InputComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/form/InputComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/form/InputComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/form/FormInputComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/ChooseLanguageComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/ChooseLanguageComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/translations.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/translations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/vendor/composer/autoload_static.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +52,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -63,6 +77,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/weam/app/Http/Controllers/Settings" />
+      <recent name="$PROJECT_DIR$/weam/app/Http/Controllers/Views" />
       <recent name="$PROJECT_DIR$/weam/resources/js/Pages/Home" />
       <recent name="$PROJECT_DIR$/weam/resources/js/Pages" />
     </key>
@@ -139,14 +155,8 @@
       <workItem from="1609613867102" duration="4726000" />
       <workItem from="1609667858200" duration="24790000" />
       <workItem from="1609747959767" duration="226000" />
-      <workItem from="1609775458635" duration="14337000" />
-    </task>
-    <task id="LOCAL-00005" summary="add gitignore">
-      <created>1602272907101</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1602272907101</updated>
+      <workItem from="1609775458635" duration="14486000" />
+      <workItem from="1609831927497" duration="26721000" />
     </task>
     <task id="LOCAL-00006" summary="Vue x Laravel installation">
       <created>1602337424442</created>
@@ -484,7 +494,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609777727167</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="finish verification system for signup">
+      <created>1609797034050</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1609797034050</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,7 +523,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="remove jquery loading" />
     <MESSAGE value="adding composer.json" />
     <MESSAGE value="spa test + add requirement" />
     <MESSAGE value="fix router" />
@@ -531,6 +547,7 @@
     <MESSAGE value="implementation of the redirection system for login and signup" />
     <MESSAGE value="implementation of the verification system for login and signup" />
     <MESSAGE value="fix verification bug with prevent default" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix verification bug with prevent default" />
+    <MESSAGE value="finish verification system for signup" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish verification system for signup" />
   </component>
 </project>

@@ -30,6 +30,8 @@ return [
     'Day' => 'Jour',
     'Month' => 'Mois',
     'Year' => 'Année',
+    'Please enter a valid date' => 'Veuillez entrer une date valide',
+    'There is an error on login' => 'ERROR',
 
     // Home
     'Welcome' => 'Bienvenue à toi :name|Bienvenue à nous :name',

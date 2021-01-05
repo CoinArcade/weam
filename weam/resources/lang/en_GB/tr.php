@@ -30,6 +30,7 @@ return [
     'Day' => 'Day',
     'Month' => 'Month',
     'Year' => 'Year',
+    'Please enter a valid date' => 'Please enter a valid date.',
 
     // Home
     'Welcome' => 'Welcome to you :name|Welcome to us :name',

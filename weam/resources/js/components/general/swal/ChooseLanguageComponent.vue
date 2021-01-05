@@ -9,6 +9,7 @@
         </section>
 
         <section v-else>
+
             <div v-if="loading">Chargement...</div>
 
             <div
@@ -20,7 +21,8 @@
                 </span>
             </div>
 
-  </section>
+        </section>
+
     </div>
 
 </template>

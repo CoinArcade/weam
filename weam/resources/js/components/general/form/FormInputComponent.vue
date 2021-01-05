@@ -2,9 +2,7 @@
 
     <div :class="[this.containerWidth ? this.containerWidth : 'w-full', this.containerClass ? this.containerClass : '']">
 
-        <label v-if="this.label" class="block tracking-wide text-grey-darker text-xs font-bold mb-2 text-left mt-3" :for="this.inputId">
-            {{ __(this.label) }}
-        </label>
+        <form-label v-if="this.label" :label-for="this.inputId" :label-msg="this.label"></form-label>
 
         <input v-model="entry"
                @keyup="validation"
@@ -15,7 +13,7 @@
                :class="[this.error ? 'border-red-600 focus:border-red-600' : 'border-transparent focus:border-purple-600', this.inputClass ? this.inputClass : '']"
         >
 
-        <p v-if="!this.disableError" class="text-red-600 text-xs text-left mt-2">{{ __(this.errorMsg) }}</p>
+        <form-error v-if="!this.disableError" :error-msg="this.errorMsg"></form-error>
 
     </div>
 
@@ -23,9 +21,17 @@
 
 <script>
 
+    import FormLabel from './FormLabelComponent';
+    import FormError from './FormErrorComponent';
+
     export default {
 
-        name: "InputComponent",
+        name: "FormInput",
+
+        components: {
+            FormLabel,
+            FormError
+        },
 
         props: ['containerWidth', 'containerClass', 'label', 'placeholder', 'inputType', 'inputClass', 'disableError'],
 

@@ -3,9 +3,9 @@
     <div class="grid grid-cols-12 gap-4">
 
         <div class="flex justify-between col-span-full md:col-start-2 md:col-span-10 tabs-content">
-            <button @click="activeTab = 1" :class="[ activeTab === 1 ? 'active' : '' ]" class="w-full cursor-pointer tab rounded-lg py-2 mx-2"><p class="text-center">
-                {{ __('Log In') }}</p></button>
-            <button @click="activeTab = 2" :class="[ activeTab === 2 ? 'active' : '' ]" class="w-full cursor-pointer tab rounded-lg py-2 mx-2"><p class="text-center">{{ __('Sign Up') }}</p></button>
+            <button @click="activeTab = 1" :class="[ activeTab === 1 ? 'active' : '' ]" class="w-full cursor-pointer tab rounded-lg py-2 mx-2"><span class="text-center">
+                {{ __('Log In') }}</span></button>
+            <button @click="activeTab = 2" :class="[ activeTab === 2 ? 'active' : '' ]" class="w-full cursor-pointer tab rounded-lg py-2 mx-2"><span class="text-center">{{ __('Sign Up') }}</span></button>
         </div>
 
         <div class="col-span-full md:col-start-2 md:col-span-10">
@@ -19,6 +19,8 @@
 
             <form-input @validate="passwordLoginValidation" key="login-password" input-type="password"
                         label="Password" placeholder="************" ref="loginPassword"></form-input>
+
+            <form-error :error-msg="this.checkupLoginError"></form-error>
 
             <div class="w-full mt-5">
                 <button-loader @submitted="submitLogin" key="loginSubmitButton" text="Log In" ref="submitLoginButton"></button-loader>
@@ -42,9 +44,7 @@
 
             <div class="w-full mt-3">
 
-                <label class="block tracking-wide text-grey-darker text-xs font-bold mb-2 text-left" for="signup-birthdate">
-                    {{ __('Date of birth') }}
-                </label>
+                <form-label label-msg="Date of birth" label-for="signup-birthdate"></form-label>
 
                 <div id="signup-birthdate" class="flex justify-between">
                     <form-input @validate="birthdateDaySignupValidation" key="signup-birthdate-day" placeholder="Day" container-class="mx-1"
@@ -55,9 +55,11 @@
                                 disable-error="true" ref="signupBirthdateYear"></form-input>
                 </div>
 
-                <p id="signup-birthdate-error" class="text-red-600 text-xs text-left mt-2">{{ __(this.errorBirthdateMsg) }}</p>
+                <form-error :error-msg="this.errorBirthdateMsg"></form-error>
 
             </div>
+
+            <form-error :error-msg="this.checkupSignupError"></form-error>
 
             <div class="w-full mt-5">
                 <button-loader @submitted="submitSignup" key="signupSubmitButton" text="Sign Up" ref="submitSignupButton"></button-loader>
@@ -71,27 +73,34 @@
 
 <script>
 
+    import FormLabel from "../form/FormLabelComponent";
+    import FormInput from "../form/FormInputComponent";
+    import FormError from '../form/FormErrorComponent';
     import ButtonLoader from '../form/ButtonLoaderComponent';
-    import FormInput from "../form/InputComponent";
 
     export default {
 
         name: "LoginAndSigninForm",
 
         components: {
-            'FormInput': FormInput,
-            'ButtonLoader': ButtonLoader
+            FormLabel,
+            FormInput,
+            FormError,
+            ButtonLoader
         },
 
         data: function() {
 
             return {
 
+                // tab
                 activeTab: 1,
 
+                // login form values
                 loginUsername: null,
                 loginPassword: null,
 
+                // signup form values
                 signupUsername: null,
                 signupEmail: null,
                 signupPassword: null,
@@ -99,12 +108,30 @@
                 signupBirthdateDay: null,
                 signupBirthdateMonth: null,
                 signupBirthdateYear: null,
-                signupBirthdateIsValid: true,
 
-                errorBirthdateMsg: "",
-                errorMsg: ""
+                // signup birthdate errors
+                signupBirthdateIsValid: true,
+                errorBirthdateMsg: '',
+
+                // checkup forms error
+                checkupLoginError: '',
+                checkupSignupError: ''
 
             }
+        },
+
+        computed: {
+
+            // return the complete birthdate at MM-DD-YYYY format
+            completeBirthdate: function() {
+
+                if (this.signupBirthdateDay.length === 1) this.signupBirthdateDay = "0" + this.signupBirthdateDay
+                if (this.signupBirthdateMonth.length === 1) this.signupBirthdateMonth = "0" + this.signupBirthdateMonth
+
+                return this.signupBirthdateMonth + '-' + this.signupBirthdateDay + '-' + this.signupBirthdateYear
+
+            }
+
         },
 
         methods: {
@@ -146,12 +173,34 @@
             },
 
             // submit login form
-            submitLogin: function() {
+            submitLogin: async function() {
 
-                // send data, then :
-                this.$refs.submitLoginButton.stopLoader()
-                Vue.swal.close()
-                this.$swalRouter.go()
+                this.checkupLoginError = ''
+
+                let submit = false,
+                    url = this.$appURL + '/checkup/login',
+                    data = {
+                        username: this.loginUsername,
+                        password: this.loginPassword
+                    };
+
+                axios
+                    .post(url, data, {responseType: 'json'})
+                    .then(response => {
+                        if (response.data.success) {
+                            submit = true
+                        } else {
+                            this.checkupLoginError = response.data.error
+                        }
+                    })
+                    .catch(error => this.checkupLoginError = error)
+                    .finally(() => {
+                        this.$refs.submitLoginButton.stopLoader()
+                        if (submit) {
+                            Vue.swal.close()
+                            this.$swalRouter.go(0)
+                        }
+                    })
 
             },
 
@@ -298,10 +347,26 @@
             // submit signup form
             submitSignup: function() {
 
-                // send data, then :
-                this.$refs.submitSignupButton.stopLoader()
-                Vue.swal.close()
-                this.$swalRouter.go()
+                let submit = false;
+                this.checkupSignupError = ''
+
+                axios
+                    .post(url, data, {responseType: 'json'})
+                    .then(response => {
+                        if (response.data.success) {
+                            submit = true
+                        } else {
+                            this.checkupSignupError = response.data.error
+                        }
+                    })
+                    .catch(error => this.checkupSignupError = error)
+                    .finally(() => {
+                        this.$refs.submitSignupButton.stopLoader()
+                        if (submit) {
+                            Vue.swal.close()
+                            this.$swalRouter.go(0)
+                        }
+                    })
 
             }
 

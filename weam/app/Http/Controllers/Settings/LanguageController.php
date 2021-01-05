@@ -3,9 +3,10 @@
 // TODO: pass language cookie creation on server-side
 // TODO: error support
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Settings;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\File;
@@ -15,7 +16,7 @@ use GuzzleHttp\Client;
 class LanguageController extends Controller
 {
     /**
-     * Supported locales
+     * Supported locale languages
      */
     private $supported;
 
