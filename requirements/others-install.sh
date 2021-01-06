@@ -55,14 +55,20 @@
 # npm install --save @fortawesome/fontawesome-free
 # npm uninstall bootstrap
 # npm install tailwindcss
+# npm install autoprefixer # require node >= 14, for upgrade nodejs : npm i -g n && n stable && npm uninstall n
 #
+# composer require laravel/passport
+# php artisan migrate
+# php artisan passport:install --uuids
+# php artisan passport:keys
+
 # TODO: replace content of resources/sass/app.scss by the following :
 # @tailwind base;
 #
 # @tailwind components;
 #
 # @tailwind utilities;
-#
+
 # npx tailwindcss init --full
 # npm install postcss
 
@@ -106,6 +112,6 @@
 #        });
 #    });
 #
-# npm run dev
 
 # TODO: change app url in resources/js/app.js and config/app.php
+# npm run dev
