@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Security;
 
 use \App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -11,8 +12,14 @@ class LoginController extends Controller
      *
      * @return string
      */
-    public function index(): string
+    public function index(Request $request): string
     {
-        return json_encode(['error'=> 'There is an error on login']);
+        if ($request->_token === csrf_token()) {
+
+            return json_encode(['success' => 'login']);
+
+        } else {
+            return json_encode(['error'=> 'Invalid token']);
+        }
     }
 }

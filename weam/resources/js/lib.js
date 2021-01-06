@@ -47,3 +47,11 @@ function eraseCookie(name) {
     document.cookie = name +'= ;Path=/;Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 
 }
+
+// CSRF token handler
+
+function getCSRFToken() {
+
+    return document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+
+}

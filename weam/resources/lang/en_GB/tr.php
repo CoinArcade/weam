@@ -38,4 +38,7 @@ return [
     // Tasks
     'Tasks' => 'Tasks',
 
+    // CSRF error
+    'Invalid token' => 'The request was lost ! Maybe his privilege level was not high enough...',
+
 ];

@@ -179,15 +179,16 @@
 
                 let submit = false,
                     url = this.$appURL + '/checkup/login',
-                    data = {
-                        username: this.loginUsername,
-                        password: this.loginPassword
-                    };
+                    formData = new FormData();
+
+                formData.append('_token', getCSRFToken())
+                formData.append('username', this.loginUsername)
+                formData.append('password', this.loginPassword)
 
                 axios
-                    .post(url, data, {responseType: 'json'})
+                    .post(url, formData, {responseType: 'json'})
                     .then(response => {
-                        if (response.data.success) {
+                        if (response.data.success === 'login') {
                             submit = true
                         } else {
                             this.checkupLoginError = response.data.error

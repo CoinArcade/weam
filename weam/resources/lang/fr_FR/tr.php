@@ -31,12 +31,14 @@ return [
     'Month' => 'Mois',
     'Year' => 'Année',
     'Please enter a valid date' => 'Veuillez entrer une date valide',
-    'There is an error on login' => 'ERROR',
 
     // Home
     'Welcome' => 'Bienvenue à toi :name|Bienvenue à nous :name',
 
     // Tasks
     'Tasks' => 'Tâches',
+
+    // CSRF error
+    'Invalid token' => 'La requête s\'est perdue ! Peut être que son niveau de privilèges n\'était pas assez élevé...',
 
 ];
