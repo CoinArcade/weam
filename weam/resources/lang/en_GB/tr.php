@@ -31,6 +31,8 @@ return [
     'Month' => 'Month',
     'Year' => 'Year',
     'Please enter a valid date' => 'Please enter a valid date.',
+    'You must be at least 13 years old to create an account' => 'You must be at least 13 years old to create an account.',
+    'You don\'t look your age ! But if you are 150 years old or older you are not human' => 'You don\'t look your age ! But if you are 150 years old or older you are not human, and only residents of planet Earth are allowed here. For the time being...',
 
     // Home
     'Welcome' => 'Welcome to you :name|Welcome to us :name',
