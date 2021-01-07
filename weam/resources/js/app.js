@@ -48,7 +48,7 @@ let swalLoginAndSigninForm = Vue.component('swalLoginAndSigninForm', require('./
 // Vue router
 const router = new VueRouter({
     mode: 'history',
-    base: '/weam/weam/public',
+    //base: '/weam/weam/public',
     routes: [
 
         // App

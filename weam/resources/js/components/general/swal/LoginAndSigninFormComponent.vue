@@ -291,11 +291,15 @@
                 this.$refs.signupBirthdateMonth.resetError()
                 this.$refs.signupBirthdateYear.resetError()
 
-                if (this.signupBirthdateDay && this.signupBirthdateMonth && this.signupBirthdateYear) {
+                if (this.signupBirthdateDay && this.signupBirthdateMonth && this.signupBirthdateYear && this.signupBirthdateYear.length === 4) {
 
                     let monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
-                        maxYear = 2021 - 13,
-                        minYear = 2021 - 120;
+                        date = new Date(),
+                        maxYear = date.getFullYear() - 149,
+                        minYear = date.getFullYear() - 13,
+                        minMonth = date.getMonth() + 1,
+                        minDay = date.getDate(),
+                        errorMsg = 'Please enter a valid date';
 
                     if (this.signupBirthdateDay.length > 2 || this.signupBirthdateDay < 1) {
                         this.signupBirthdateDay = null
@@ -307,9 +311,29 @@
                         this.$refs.signupBirthdateMonth.showError()
                     }
 
-                    if (this.signupBirthdateYear.length > 4 || this.signupBirthdateYear > maxYear || this.signupBirthdateYear < minYear) {
+                    if (this.signupBirthdateYear.length > 4) {
                         this.signupBirthdateYear = null
                         this.$refs.signupBirthdateYear.showError()
+                    }
+
+                    if (this.signupBirthdateYear && this.signupBirthdateYear < maxYear) {
+                        errorMsg = 'You don\'t look your age ! But if you are 150 years old or older you are not human'
+                        this.signupBirthdateYear = null
+                        this.$refs.signupBirthdateYear.showError()
+                    }
+
+                    if (this.signupBirthdateDay && this.signupBirthdateMonth && this.signupBirthdateYear && parseInt(this.signupBirthdateYear) > minYear) {
+                        errorMsg = 'You must be at least 13 years old to create an account'
+                        this.signupBirthdateYear = null
+                        this.$refs.signupBirthdateYear.showError()
+                    } else if (this.signupBirthdateDay && this.signupBirthdateMonth && this.signupBirthdateYear && parseInt(this.signupBirthdateYear) === minYear && this.signupBirthdateMonth > minMonth) {
+                        errorMsg = 'You must be at least 13 years old to create an account'
+                        this.signupBirthdateMonth = null
+                        this.$refs.signupBirthdateMonth.showError()
+                    } else if (this.signupBirthdateDay && this.signupBirthdateMonth && this.signupBirthdateYear && parseInt(this.signupBirthdateYear) === minYear && parseInt(this.signupBirthdateMonth) === minMonth && this.signupBirthdateDay > minDay) {
+                        errorMsg = 'You must be at least 13 years old to create an account'
+                        this.signupBirthdateDay = null
+                        this.$refs.signupBirthdateDay.showError()
                     }
 
                     if (this.signupBirthdateYear % 400 === 0 || (this.signupBirthdateYear % 100 !== 0 && this.signupBirthdateYear % 4 === 0)) monthLength[1]++
@@ -323,7 +347,7 @@
                     }
 
                     if (!this.signupBirthdateDay || !this.signupBirthdateMonth || !this.signupBirthdateYear || !this.signupBirthdateIsValid) {
-                        this.errorBirthdateMsg = 'Please enter a valid date'
+                        this.errorBirthdateMsg = errorMsg
                     } else {
                         this.errorBirthdateMsg = ''
                     }
