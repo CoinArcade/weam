@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -49,10 +50,14 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $beforeDate = date('Y-m-d', strtotime('-13 year'));
+        $afterDate = date('Y-m-d', strtotime('-149 year'));
+
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'username' => ['required', 'string', 'between:3,25', 'unique:users'],
+            'email' => ['required', 'string', 'email:rfc,dns', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'birthdate' => ['required', 'date', 'date_format:m-d-Y', 'size:10', "before:$beforeDate", "after:$afterDate"]
         ]);
     }
 

@@ -372,8 +372,18 @@
             // submit signup form
             submitSignup: function() {
 
-                let submit = false;
                 this.checkupSignupError = ''
+
+                let submit = false,
+                    url = this.$appURL + '/checkup/login',
+                    formData = new FormData();
+
+                formData.append('_token', getCSRFToken())
+                formData.append('username', this.signupUsername)
+                formData.append('email', this.signupEmail)
+                formData.append('password', this.signupPassword)
+                formData.append('password_confirmation', this.signupPasswordConfirmation)
+                formData.append('birthdate', this.completeBirthdate)
 
                 axios
                     .post(url, data, {responseType: 'json'})

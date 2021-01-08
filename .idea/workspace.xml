@@ -19,18 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="remove passport from project">
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="add passport to project and modify users table">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/weam/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/weam/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/database/migrations/2016_06_01_000001_create_oauth_auth_codes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/database/migrations/2016_06_01_000001_create_oauth_auth_codes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/database/migrations/2016_06_01_000002_create_oauth_access_tokens_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/database/migrations/2016_06_01_000002_create_oauth_access_tokens_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/database/migrations/2016_06_01_000003_create_oauth_refresh_tokens_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/database/migrations/2016_06_01_000003_create_oauth_refresh_tokens_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/database/migrations/2016_06_01_000004_create_oauth_clients_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/database/migrations/2016_06_01_000004_create_oauth_clients_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/database/migrations/2016_06_01_000005_create_oauth_personal_access_clients_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/database/migrations/2016_06_01_000005_create_oauth_personal_access_clients_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,14 +154,9 @@
       <workItem from="1609919418050" duration="13138000" />
       <workItem from="1609944288206" duration="2336000" />
       <workItem from="1609968772342" duration="762000" />
-      <workItem from="1610006127690" duration="20691000" />
-    </task>
-    <task id="LOCAL-00012" summary="Initial commit">
-      <created>1602352125328</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1602352125328</updated>
+      <workItem from="1610006127690" duration="22777000" />
+      <workItem from="1610092728252" duration="7357000" />
+      <workItem from="1610135864864" duration="1537000" />
     </task>
     <task id="LOCAL-00013" summary="First vue component">
       <created>1602357532508</created>
@@ -501,7 +494,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610022464149</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="add passport to project and modify users table">
+      <created>1610036966542</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1610036966662</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,7 +523,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="platform changed" />
     <MESSAGE value="changed platform and update scripts" />
     <MESSAGE value="update multiplatform scripts" />
     <MESSAGE value="get from weam-multiplatform (adding multilanguage module support)" />
@@ -548,6 +547,7 @@
     <MESSAGE value="vendor commit" />
     <MESSAGE value="fix date verification on signin form, add auth scalfolding and update vendor" />
     <MESSAGE value="remove passport from project" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove passport from project" />
+    <MESSAGE value="add passport to project and modify users table" />
+    <option name="LAST_COMMIT_MESSAGE" value="add passport to project and modify users table" />
   </component>
 </project>

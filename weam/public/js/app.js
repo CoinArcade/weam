@@ -7165,8 +7165,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     submitSignup: function submitSignup() {
       var _this2 = this;
 
-      var submit = false;
       this.checkupSignupError = '';
+      var submit = false,
+          url = this.$appURL + '/checkup/login',
+          formData = new FormData();
+      formData.append('_token', getCSRFToken());
+      formData.append('username', this.signupUsername);
+      formData.append('email', this.signupEmail);
+      formData.append('password', this.signupPassword);
+      formData.append('password_confirmation', this.signupPasswordConfirmation);
+      formData.append('birthdate', this.completeBirthdate);
       axios.post(url, data, {
         responseType: 'json'
       }).then(function (response) {
