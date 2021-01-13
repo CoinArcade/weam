@@ -43,4 +43,7 @@ return [
     // CSRF error
     'Invalid token' => 'The request was lost ! Maybe his privilege level was not high enough...',
 
+    // Error codes
+    //'Code 000' => 'Code 000 : quelqu\'un tente de s\'infiltrer, mais il semblerait que les informations fournit ne soient pas valides',
+
 ];

@@ -7149,9 +7149,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         } else {
           this.errorBirthdateMsg = '';
         }
-      }
 
-      this.checkSignupForm();
+        this.checkSignupForm();
+      }
     },
     // verifies that all fields are correctly filled in and authorises the submission of the signup form
     checkSignupForm: function checkSignupForm() {
@@ -7166,29 +7166,31 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this2 = this;
 
       this.checkupSignupError = '';
-      var submit = false,
-          url = this.$appURL + '/checkup/login',
-          formData = new FormData();
-      formData.append('_token', getCSRFToken());
-      formData.append('username', this.signupUsername);
-      formData.append('email', this.signupEmail);
-      formData.append('password', this.signupPassword);
-      formData.append('password_confirmation', this.signupPasswordConfirmation);
-      formData.append('birthdate', this.completeBirthdate);
+      var submitted = false,
+          url = this.$appURL + '/register',
+          data = {
+        _token: getCSRFToken(),
+        username: this.signupUsername,
+        email: this.signupEmail,
+        password: this.signupPassword,
+        password_confirmation: this.signupPasswordConfirmation,
+        birthdate: this.completeBirthdate
+      };
       axios.post(url, data, {
         responseType: 'json'
       }).then(function (response) {
         if (response.data.success) {
-          submit = true;
+          submitted = true;
         } else {
-          _this2.checkupSignupError = response.data.error;
+          console.log(response);
+          _this2.checkupSignupError = _this2.__(response.data.error);
         }
       })["catch"](function (error) {
         return _this2.checkupSignupError = error;
       })["finally"](function () {
         _this2.$refs.submitSignupButton.stopLoader();
 
-        if (submit) {
+        if (submitted) {
           Vue.swal.close();
 
           _this2.$swalRouter.go(0);

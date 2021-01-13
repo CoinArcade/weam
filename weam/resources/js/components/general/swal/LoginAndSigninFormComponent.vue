@@ -352,9 +352,8 @@
                         this.errorBirthdateMsg = ''
                     }
 
+                    this.checkSignupForm()
                 }
-
-                this.checkSignupForm()
 
             },
 
@@ -374,30 +373,31 @@
 
                 this.checkupSignupError = ''
 
-                let submit = false,
-                    url = this.$appURL + '/checkup/login',
-                    formData = new FormData();
-
-                formData.append('_token', getCSRFToken())
-                formData.append('username', this.signupUsername)
-                formData.append('email', this.signupEmail)
-                formData.append('password', this.signupPassword)
-                formData.append('password_confirmation', this.signupPasswordConfirmation)
-                formData.append('birthdate', this.completeBirthdate)
+                let submitted = false,
+                    url = this.$appURL + '/register',
+                    data = {
+                        _token: getCSRFToken(),
+                        username: this.signupUsername,
+                        email: this.signupEmail,
+                        password: this.signupPassword,
+                        password_confirmation: this.signupPasswordConfirmation,
+                        birthdate: this.completeBirthdate
+                    };
 
                 axios
                     .post(url, data, {responseType: 'json'})
                     .then(response => {
                         if (response.data.success) {
-                            submit = true
+                            submitted = true
                         } else {
-                            this.checkupSignupError = response.data.error
+                            console.log(response)
+                            this.checkupSignupError = this.__(response.data.error)
                         }
                     })
                     .catch(error => this.checkupSignupError = error)
                     .finally(() => {
                         this.$refs.submitSignupButton.stopLoader()
-                        if (submit) {
+                        if (submitted) {
                             Vue.swal.close()
                             this.$swalRouter.go(0)
                         }

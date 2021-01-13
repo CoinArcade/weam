@@ -48,4 +48,4 @@ Route::middleware(['translations', 'cache.headers:public;max_age=2628000;etag'])
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

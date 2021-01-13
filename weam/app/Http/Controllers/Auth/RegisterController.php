@@ -50,14 +50,14 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        $beforeDate = date('Y-m-d', strtotime('-13 year'));
-        $afterDate = date('Y-m-d', strtotime('-149 year'));
+        $beforeDate = date('Y-m-d', strtotime(date('Y-m-d').' -13 year'));
+        $afterDate = date('Y-m-d', strtotime(date('Y-m-d').' -149 year'));
 
         return Validator::make($data, [
             'username' => ['required', 'string', 'between:3,25', 'unique:users'],
-            'email' => ['required', 'string', 'email:rfc,dns', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'birthdate' => ['required', 'date', 'date_format:m-d-Y', 'size:10', "before:$beforeDate", "after:$afterDate"]
+            'birthdate' => ['required', 'date', 'date_format:m-d', 'size:10', "before:$beforeDate", "after:$afterDate"]
         ]);
     }
 
@@ -70,8 +70,9 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'username' => $data['username'],
             'email' => $data['email'],
+            'birthdate' => $data['birthdate'],
             'password' => Hash::make($data['password']),
         ]);
     }

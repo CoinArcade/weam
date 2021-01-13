@@ -43,4 +43,54 @@ return [
     // CSRF error
     'Invalid token' => 'La requête s\'est perdue ! Peut être que son niveau de privilèges n\'était pas assez élevé...',
 
+    //Form validation errors
+    'Required' => [
+        'username' => '',
+        'email' => '',
+        'password' => '',
+        'birthdate' => '',
+    ],
+
+    'Unique' => [
+        'username' => '',
+        'email' => '',
+    ],
+
+    'String' => [
+        'username' => '',
+        'email' => '',
+        'password' => '',
+    ],
+
+    'Min' => [
+        'password' => '',
+    ],
+
+    'Max' => [
+        'email' => '',
+    ],
+
+    'Between' => [
+        'username' => '',
+    ],
+
+    'Email' => [
+        'email' => '',
+    ],
+
+    'Date' => [
+        'birthdate' => '',
+    ],
+
+    'DateFormat' => [
+        'birthdate' => 'test',
+    ],
+
+    'Before' => [
+        'birthdate' => '',
+    ],
+
+    'After' => [
+        'birthdate' => '',
+    ],
 ];
