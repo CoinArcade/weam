@@ -72,10 +72,10 @@ const router = new VueRouter({
         },
 
         // Not found
-        {
+        /*{
             path: '*',
-            redirect: '/settings'
-        }
+            redirect: '/'
+        }*/
     ]
 });
 

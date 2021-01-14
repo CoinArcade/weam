@@ -36,32 +36,16 @@ Route::middleware(['translations', 'cache.headers:public;max_age=2628000;etag'])
 
 	Route::get('/', 'App\Http\Controllers\Views\HomeController@index');
 
-	Route::get('/{any}', 'App\Http\Controllers\Views\HomeController@index')->where('any', '.*');
+	//Route::get('/{any}', 'App\Http\Controllers\Views\HomeController@index')->where('any', '.*');
 
 });
 
 // user views
-Route::middleware(['translations', 'cache.headers:public;max_age=2628000;etag', 'verified'])->group(function() {
+Route::middleware(['translations', 'cache.headers:public;max_age=2628000;etag', 'auth', 'verified'])->group(function() {
 
     Route::get('/settings', 'App\Http\Controllers\Views\SettingsController@index');
 
 });
 
 // authentication
-Auth::routes();
-
-Route::get('/email/verify', function () {
-    return view('auth.verify');
-})->middleware('auth')->name('verification.notice');
-
-Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
-    $request->fulfill();
-
-    return redirect('/');
-})->middleware(['auth', 'signed'])->name('verification.verify');
-
-Route::post('/email/verification-notification', function (Request $request) {
-    $request->user()->sendEmailVerificationNotification();
-
-    return back()->with('message', 'Verification link sent!');
-})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+Auth::routes(['verify' => true]);

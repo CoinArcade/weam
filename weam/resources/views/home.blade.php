@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Weam</title>
-        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-        <link rel="preload" href="{{ mix('css/async.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+        <link rel="preload" href="{{ mix('/css/async.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="{{ mix('css/async.css') }}"></noscript>
 
         <script>
@@ -21,8 +21,8 @@
             <app></app>
         </div>
 
-        <script src="{{ mix('js/app.js') }}" defer=""></script>
-        <script src="{{ mix('js/lib.js') }}" defer=""></script>
+        <script src="{{ mix('/js/app.js') }}" defer=""></script>
+        <script src="{{ mix('/js/lib.js') }}" defer=""></script>
 
     </body>
 

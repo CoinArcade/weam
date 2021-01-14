@@ -53128,11 +53128,13 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
       title: _translations__WEBPACK_IMPORTED_MODULE_3___default.a.methods.__('Tasks'),
       page: 'settings'
     }
-  }, // Not found
-  {
-    path: '*',
-    redirect: '/settings'
-  }]
+  } // Not found
+
+  /*{
+      path: '*',
+      redirect: '/'
+  }*/
+  ]
 }); // Page title
 
 router.beforeEach(function (to, from, next) {

@@ -19,14 +19,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="sign up form backend validation">
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="signup form email verification">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/.env" beforeDir="false" afterPath="$PROJECT_DIR$/weam/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/HomeController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/views/settings.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/views/settings.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,14 +162,8 @@
       <workItem from="1610135864864" duration="1591000" />
       <workItem from="1610361300534" duration="5302000" />
       <workItem from="1610526135797" duration="19819000" />
-      <workItem from="1610609393433" duration="5420000" />
-    </task>
-    <task id="LOCAL-00015" summary="First vue component">
-      <created>1602361977298</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1602361977298</updated>
+      <workItem from="1610609393433" duration="8903000" />
+      <workItem from="1610643942264" duration="5085000" />
     </task>
     <task id="LOCAL-00016" summary="update requirements">
       <created>1602409142472</created>
@@ -502,7 +501,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610574631213</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="signup form email verification">
+      <created>1610618510585</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1610618510586</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -524,7 +530,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="get from weam-multiplatform (adding multilanguage module support)" />
     <MESSAGE value="remove font-awesome" />
     <MESSAGE value="remove bootstrap + install and configure tailwindcss" />
     <MESSAGE value="removing node_modules directory from github" />
@@ -549,6 +554,7 @@
     <MESSAGE value="add passport to project and modify users table" />
     <MESSAGE value="add passport table and start registration" />
     <MESSAGE value="sign up form backend validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="sign up form backend validation" />
+    <MESSAGE value="signup form email verification" />
+    <option name="LAST_COMMIT_MESSAGE" value="signup form email verification" />
   </component>
 </project>
