@@ -43,7 +43,54 @@ return [
     // CSRF error
     'Invalid token' => 'The request was lost ! Maybe his privilege level was not high enough...',
 
-    // Error codes
-    //'Code 000' => 'Code 000 : quelqu\'un tente de s\'infiltrer, mais il semblerait que les informations fournit ne soient pas valides',
+    //Form validation errors
+    'Required' => [
+        'username' => '',
+        'email' => '',
+        'password' => '',
+        'birthdate' => '',
+    ],
 
+    'Unique' => [
+        'username' => '',
+        'email' => '',
+    ],
+
+    'String' => [
+        'username' => '',
+        'email' => '',
+        'password' => '',
+    ],
+
+    'Min' => [
+        'password' => '',
+    ],
+
+    'Max' => [
+        'email' => '',
+    ],
+
+    'Between' => [
+        'username' => '',
+    ],
+
+    'Email' => [
+        'email' => '',
+    ],
+
+    'Date' => [
+        'birthdate' => '',
+    ],
+
+    'DateFormat' => [
+        'birthdate' => 'test',
+    ],
+
+    'Before' => [
+        'birthdate' => '',
+    ],
+
+    'After' => [
+        'birthdate' => '',
+    ],
 ];

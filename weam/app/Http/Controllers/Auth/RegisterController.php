@@ -57,7 +57,7 @@ class RegisterController extends Controller
             'username' => ['required', 'string', 'between:3,25', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'birthdate' => ['required', 'date', 'date_format:m-d', 'size:10', "before:$beforeDate", "after:$afterDate"]
+            'birthdate' => ['required', 'date', 'date_format:m-d-Y', 'size:10', "before:$beforeDate", "after:$afterDate"]
         ]);
     }
 

@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 
 /*
@@ -14,8 +16,7 @@ use Illuminate\Support\Facades\Cache;
 |
 */
 
-// TODO: add gzip/brotli support to the server, modify middleware SetEncoding and add 'encoding' as middleware to serve compressed ressources at user
-
+// languages
 Route::prefix('languages')->group(function() {
 
 	Route::get('list','\App\Http\Controllers\Settings\LanguageController@availableLanguagesCodeAndLanguage');
@@ -28,24 +29,39 @@ Route::prefix('languages')->group(function() {
 
 });
 
-Route::prefix('checkup')->group(function() {
+// TODO: add gzip/brotli support to the server, modify middleware SetEncoding and add 'encoding' as middleware to serve compressed ressources at user
 
-    Route::post('login', 'App\Http\Controllers\Security\LoginController@index');
-
-    Route::post('signup', 'App\Http\Controllers\Security\SignupController@index');
-
-});
-
+// public views
 Route::middleware(['translations', 'cache.headers:public;max_age=2628000;etag'])->group(function() {
 
 	Route::get('/', 'App\Http\Controllers\Views\HomeController@index');
-
-	Route::get('/settings', 'App\Http\Controllers\Views\SettingsController@index');
 
 	Route::get('/{any}', 'App\Http\Controllers\Views\HomeController@index')->where('any', '.*');
 
 });
 
+// user views
+Route::middleware(['translations', 'cache.headers:public;max_age=2628000;etag', 'verified'])->group(function() {
+
+    Route::get('/settings', 'App\Http\Controllers\Views\SettingsController@index');
+
+});
+
+// authentication
 Auth::routes();
 
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/email/verify', function () {
+    return view('auth.verify');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+
+    return redirect('/');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
