@@ -34,10 +34,13 @@ Vue.mixin(VueTranslation)
 // App
 let App = require('./components/AppComponent').default;
 
-// App components
+// Authentication components
+let EmailResend = require('./components/auth/VerifyComponent').default;
+
+// Public components
 let Home = require('./components/home/HomeComponent').default;
 
-// Settings components
+// Verified components
 let Tasks = require('./components/settings/TaskComponent').default;
 
 // Swal components
@@ -51,31 +54,38 @@ const router = new VueRouter({
     //base: '/weam/weam/public',
     routes: [
 
-        // App
+        // Authentication path
+        {
+            path: '/email/resend',
+            component: EmailResend,
+            meta: {
+                title: VueTranslation.methods.__('Weam - Account verification')
+            }
+        },
+
+        // Public path
         {
             path: '/',
             component: Home,
             meta: {
-                title: VueTranslation.methods.__('Weam'),
-                page: 'home'
+                title: VueTranslation.methods.__('Weam')
             }
         },
 
-        // Settings
+        // Verified path
         {
             path: '/settings',
             component: Tasks,
             meta: {
-                title: VueTranslation.methods.__('Tasks'),
-                page: 'settings'
+                title: VueTranslation.methods.__('Tasks')
             }
         },
 
         // Not found
-        /*{
+        {
             path: '*',
             redirect: '/'
-        }*/
+        }
     ]
 });
 

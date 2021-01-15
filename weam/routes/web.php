@@ -36,7 +36,8 @@ Route::middleware(['translations', 'cache.headers:public;max_age=2628000;etag'])
 
 	Route::get('/', 'App\Http\Controllers\Views\HomeController@index');
 
-	//Route::get('/{any}', 'App\Http\Controllers\Views\HomeController@index')->where('any', '.*');
+	// autorize vuejs routes
+	Route::get('/{any}', 'App\Http\Controllers\Views\HomeController@index')->where('any', '.*');
 
 });
 
