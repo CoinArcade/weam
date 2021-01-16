@@ -25,7 +25,7 @@ return [
     'Password do not match' => 'Password do not match.',
     'Email address' => 'Email address',
     'Enter your email address' => 'Enter your email address',
-    'Please enter a valid e-mail address' => 'Please enter a valid e-mail address.',
+    'Please enter a valid email address' => 'Please enter a valid email address.',
     'Date of birth' => 'Date of birth',
     'Day' => 'Day',
     'Month' => 'Month',

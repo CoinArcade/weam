@@ -17,7 +17,7 @@
 
     <body class="antialiased bg-th-body">
 
-    <!--@guest
+    @guest
         @if (Route::has('login'))
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -47,14 +47,13 @@
                 </form>
             </div>
         </li>
-    @endguest-->
+    @endguest
 
         <div id="app" class="vh-100">
             <app></app>
         </div>
 
         <script src="{{ mix('/js/app.js') }}" defer=""></script>
-        <script src="{{ mix('/js/lib.js') }}" defer=""></script>
 
     </body>
 

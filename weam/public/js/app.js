@@ -6516,13 +6516,13 @@ __webpack_require__.r(__webpack_exports__);
   name: 'App',
   watch: {
     $route: function $route(to, from) {
-      var cookieLanguage = getCookie("language");
+      var cookieLanguage = this.getCookie("language");
 
       if (cookieLanguage !== undefined && cookieLanguage !== null) {
-        eraseCookie("language");
-        setCookie("language", getCookie("language"), 364);
+        this.eraseCookie("language");
+        this.setCookie("language", this.getCookie("language"), 364);
       } else {
-        setCookie("language", this.__('Default language'), 364);
+        this.setCookie("language", this.__('Default language'), 364);
       }
     }
   }
@@ -6553,8 +6553,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "VerifyComponent"
+  name: "VerifyComponent",
+  data: function data() {
+    return {
+      token: this.getCSRFToken()
+    };
+  }
 });
 
 /***/ }),
@@ -7012,7 +7029,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 this.checkupLoginError = '';
                 submit = false, url = this.$appURL + '/checkup/login', formData = new FormData();
-                formData.append('_token', getCSRFToken());
+                formData.append('_token', this.getCSRFToken());
                 formData.append('username', this.loginUsername);
                 formData.append('password', this.loginPassword);
                 axios.post(url, formData, {
@@ -7065,11 +7082,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       this.checkSignupForm();
     },
-    // check if e-mail address is valid
+    // check if email address is valid
     emailSignupValidation: function emailSignupValidation(value) {
       if (!/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/.test(value)) {
         this.signupEmail = null;
-        this.$refs.signupEmail.showErrorMsg("Please enter a valid e-mail address");
+        this.$refs.signupEmail.showErrorMsg("Please enter a valid email address");
       } else {
         this.signupEmail = value;
         this.$refs.signupEmail.resetErrorMsg();
@@ -7198,7 +7215,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var submitted = false,
           url = this.$appURL + '/register',
           data = {
-        _token: getCSRFToken(),
+        _token: this.getCSRFToken(),
         username: this.signupUsername,
         email: this.signupEmail,
         password: this.signupPassword,
@@ -7406,10 +7423,10 @@ __webpack_require__.r(__webpack_exports__);
   name: 'HomeTopMenu',
   methods: {
     parameters: function parameters() {
-      VueSwal2('swalLang', null, null);
+      this.VueSwal2('swalLang', null, null);
     },
     loginAndSigninForm: function loginAndSigninForm() {
-      VueSwal2('swalLoginAndSigninForm', null, {
+      this.VueSwal2('swalLoginAndSigninForm', null, {
         popup: 'swal2-width-login'
       });
     }
@@ -35404,29 +35421,72 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    { staticClass: "flex items-center justify-center h-screen" },
+    [
+      _c(
+        "div",
+        {
+          staticClass:
+            "bg-th-card text-black rounded-lg shadow mx-2 xs:max-w-sm md:max-w-xl"
+        },
+        [
+          _c("p", { staticClass: "font-bold m-5 mt-10 xs:m-10 xs:mb-5" }, [
+            _vm._v(
+              "\n            " +
+                _vm._s(_vm.__("Verify your email address")) +
+                "\n        "
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "m-5 mt-0 xs:m-10" }, [
+            _vm._v(
+              "\n            " +
+                _vm._s(
+                  _vm.__(
+                    "A fresh verification link has been sent to your email address"
+                  )
+                ) +
+                "\n            " +
+                _vm._s(
+                  _vm.__(
+                    "Before proceeding, please check your email for a verification link"
+                  )
+                ) +
+                "\n            " +
+                _vm._s(_vm.__("If you did not receive the email")) +
+                "\n            "
+            ),
+            _c(
+              "form",
+              {
+                staticClass: "d-inline",
+                attrs: { method: "POST", action: "/email/resend" }
+              },
+              [
+                _c("input", {
+                  attrs: { type: "hidden", name: "_token" },
+                  domProps: { value: this.token }
+                }),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-link p-0 m-0 align-baseline",
+                    attrs: { type: "submit" }
+                  },
+                  [_vm._v(_vm._s(_vm.__("click here to request another")))]
+                )
+              ]
+            )
+          ])
+        ]
+      )
+    ]
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "flex items-center justify-center h-screen" },
-      [
-        _c(
-          "div",
-          {
-            staticClass:
-              "bg-indigo-800 text-white font-bold rounded-lg border shadow-lg p-10"
-          },
-          [_vm._v("\n\n        Centered Content\n\n    ")]
-        )
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -36091,7 +36151,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("nav", { staticClass: "bg-white shadow" }, [
+  return _c("nav", { staticClass: "bg-th-menu shadow" }, [
     _c("div", { staticClass: "max-w-7xl mx-auto px-2 sm:px-6 lg:px-8" }, [
       _c(
         "div",
@@ -53138,8 +53198,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var vue_sweetalert2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-sweetalert2 */ "./node_modules/vue-sweetalert2/dist/index.js");
-/* harmony import */ var _translations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./translations */ "./resources/js/translations.js");
-/* harmony import */ var _translations__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_translations__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lib */ "./resources/js/lib.js");
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_lib__WEBPACK_IMPORTED_MODULE_3__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -53158,7 +53218,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
 Vue.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 Vue.use(vue_sweetalert2__WEBPACK_IMPORTED_MODULE_2__["default"]);
-Vue.mixin(_translations__WEBPACK_IMPORTED_MODULE_3___default.a);
+Vue.mixin(_lib__WEBPACK_IMPORTED_MODULE_3___default.a);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -53193,27 +53253,29 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
     path: '/email/resend',
     component: EmailResend,
     meta: {
-      title: _translations__WEBPACK_IMPORTED_MODULE_3___default.a.methods.__('Weam - Account verification')
+      title: _lib__WEBPACK_IMPORTED_MODULE_3___default.a.methods.__('Weam - Account verification')
     }
   }, // Public path
   {
     path: '/',
     component: Home,
     meta: {
-      title: _translations__WEBPACK_IMPORTED_MODULE_3___default.a.methods.__('Weam')
+      title: _lib__WEBPACK_IMPORTED_MODULE_3___default.a.methods.__('Weam')
     }
   }, // Verified path
   {
     path: '/settings',
     component: Tasks,
     meta: {
-      title: _translations__WEBPACK_IMPORTED_MODULE_3___default.a.methods.__('Tasks')
+      title: _lib__WEBPACK_IMPORTED_MODULE_3___default.a.methods.__('Tasks')
     }
-  }, // Not found
-  {
-    path: '*',
-    redirect: '/'
-  }]
+  } // Not found
+
+  /*{
+      path: '*',
+      redirect: '/'
+  }*/
+  ]
 }); // Page title
 
 router.beforeEach(function (to, from, next) {
@@ -54105,17 +54167,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/translations.js":
-/*!**************************************!*\
-  !*** ./resources/js/translations.js ***!
-  \**************************************/
+/***/ "./resources/js/lib.js":
+/*!*****************************!*\
+  !*** ./resources/js/lib.js ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 module.exports = {
   methods: {
     /**
-     * Translate the given key.
+     * Allows to translate the given key
+     *
+     * @param key - the key to translate
+     * @param count - the number indicating the appropriate conjugation
+     * @param replace - variable values to replace in the translated sentence
+     * @returns the translated sentence or the key
      */
     __: function __(key) {
       var count = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
@@ -54150,6 +54217,79 @@ module.exports = {
       }
 
       return translation;
+    },
+
+    /**
+     * Show a vue sweet alert modal
+     *
+     * @param component - component to mount in modal
+     * @param propsData - property of the component to mount
+     * @param customClass - class to apply to the modal
+     */
+    VueSwal2: function VueSwal2(component, propsData, customClass) {
+      Vue.swal({
+        html: '<div id="swal-component"></div>',
+        showConfirmButton: false,
+        customClass: customClass,
+        willOpen: function willOpen() {
+          var ComponentClass = Vue.extend(Vue.component(component));
+          var instance = new ComponentClass({
+            propsData: propsData
+          });
+          instance.$mount();
+          document.getElementById('swal-component').appendChild(instance.$el);
+        }
+      });
+    },
+
+    /**
+     * CSRF token handler
+     *
+     * @returns the csrf token
+     */
+    getCSRFToken: function getCSRFToken() {
+      return document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    },
+
+    /**
+     * Set a cookie
+     *
+     * @param name - cookie name
+     * @param value - cookie value
+     * @param days - cookie expiration, expressed in days
+     */
+    setCookie: function setCookie(name, value, days) {
+      var expires = "";
+      var date = "";
+
+      if (days) {
+        date = new Date();
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+        expires = ";expires=" + date.toUTCString();
+      }
+
+      document.cookie = name + "=" + (value || "") + expires + ";path=/";
+    },
+
+    /**
+     * Allows to get the value of a cookie with his name
+     *
+     * @param name - name of the cookie to get
+     * @returns cookie value
+     */
+    getCookie: function getCookie(name) {
+      var value = "; ".concat(document.cookie);
+      var parts = value.split("; ".concat(name, "="));
+      if (parts.length === 2) return parts.pop().split(';').shift();
+    },
+
+    /**
+     * Allows to erase a cookie with his name
+     *
+     * @param name - name of the cookie to erase
+     */
+    eraseCookie: function eraseCookie(name) {
+      document.cookie = name + '= ;Path=/;Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     }
   }
 };

@@ -15,6 +15,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
+      xs: '400px',
       sm: '640px',
       md: '768px',
       lg: '1024px',
@@ -36,6 +37,8 @@ module.exports = {
       purple: colors.violet,
       pink: colors.pink,
       'th-body': 'var(--theme-body)',
+      'th-menu': 'var(--theme-menu)',
+      'th-card': 'var(--theme-card)',
       'th-color': 'var(--theme-color)',
       'th-btn': 'var(--btn-focus-ring-color)',
       'th-btn-soft': 'var(--btn-focus-ring-color-soft)'

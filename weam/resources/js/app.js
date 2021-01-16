@@ -7,7 +7,7 @@
 import VueRouter from 'vue-router'
 import Vuex from 'vuex'
 import VueSweetalert2 from 'vue-sweetalert2'
-import VueTranslation from './translations'
+import VueLibraries from './lib'
 
 require('./bootstrap');
 require('@fortawesome/fontawesome-free/js/all.js');
@@ -18,7 +18,7 @@ Vue.use(VueRouter)
 Vue.use(Vuex)
 Vue.use(VueSweetalert2)
 
-Vue.mixin(VueTranslation)
+Vue.mixin(VueLibraries)
 
 /**
  * The following block of code may be used to automatically register your
@@ -59,7 +59,7 @@ const router = new VueRouter({
             path: '/email/resend',
             component: EmailResend,
             meta: {
-                title: VueTranslation.methods.__('Weam - Account verification')
+                title: VueLibraries.methods.__('Weam - Account verification')
             }
         },
 
@@ -68,7 +68,7 @@ const router = new VueRouter({
             path: '/',
             component: Home,
             meta: {
-                title: VueTranslation.methods.__('Weam')
+                title: VueLibraries.methods.__('Weam')
             }
         },
 
@@ -77,15 +77,15 @@ const router = new VueRouter({
             path: '/settings',
             component: Tasks,
             meta: {
-                title: VueTranslation.methods.__('Tasks')
+                title: VueLibraries.methods.__('Tasks')
             }
         },
 
         // Not found
-        {
+        /*{
             path: '*',
             redirect: '/'
-        }
+        }*/
     ]
 });
 

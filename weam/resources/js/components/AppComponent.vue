@@ -18,16 +18,16 @@
 
         	$route (to, from) {
 
-        	    let cookieLanguage = getCookie("language");
+        	    let cookieLanguage = this.getCookie("language");
 
                 if (cookieLanguage !== undefined && cookieLanguage !== null) {
 
-                    eraseCookie("language");
-                    setCookie("language", getCookie("language"), 364);
+                    this.eraseCookie("language");
+                    this.setCookie("language", this.getCookie("language"), 364);
 
                 } else {
 
-                    setCookie("language", this.__('Default language'), 364);
+                    this.setCookie("language", this.__('Default language'), 364);
 
                 }
 

@@ -31,16 +31,6 @@ Route::prefix('languages')->group(function() {
 
 // TODO: add gzip/brotli support to the server, modify middleware SetEncoding and add 'encoding' as middleware to serve compressed ressources at user
 
-// public views
-Route::middleware(['translations', 'cache.headers:public;max_age=2628000;etag'])->group(function() {
-
-	Route::get('/', 'App\Http\Controllers\Views\HomeController@index');
-
-	// autorize vuejs routes
-	Route::get('/{any}', 'App\Http\Controllers\Views\HomeController@index')->where('any', '.*');
-
-});
-
 // user views
 Route::middleware(['translations', 'cache.headers:public;max_age=2628000;etag', 'auth', 'verified'])->group(function() {
 
@@ -48,5 +38,15 @@ Route::middleware(['translations', 'cache.headers:public;max_age=2628000;etag', 
 
 });
 
-// authentication
-Auth::routes(['verify' => true]);
+// public views
+Route::middleware(['translations', 'cache.headers:public;max_age=2628000;etag'])->group(function() {
+
+	Route::get('/', 'App\Http\Controllers\Views\HomeController@index');
+
+    // authentication
+    Auth::routes(['verify' => true]);
+
+	// authorize vuejs routes
+	Route::get('/{any}', 'App\Http\Controllers\Views\HomeController@index')->where('any', '.*');
+
+});

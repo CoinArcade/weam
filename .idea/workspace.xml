@@ -19,16 +19,37 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="try to fix routing bug">
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/components/auth/VerifyComponent.vue" afterDir="false" />
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="setup resend of email verification component">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements/nginx/nginx-module/nginx-http-flv-module/.github/CODE_OF_CONDUCT.md" beforeDir="false" afterPath="$PROJECT_DIR$/requirements/nginx/nginx-module/nginx-http-flv-module/.github/CODE_OF_CONDUCT.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/weam/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/config/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/js/app.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/js/app.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/js/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/lib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/js/lib.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/js/manifest.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/js/vendor.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/AppComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/AppComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/auth/VerifyComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/auth/VerifyComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/menus/HomeTopMenuComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/menus/HomeTopMenuComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/lib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/translations.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/lang/en_GB/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/en_GB/validation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/views/auth/passwords/email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/views/auth/register.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,13 +183,7 @@
       <workItem from="1610609393433" duration="8903000" />
       <workItem from="1610643942264" duration="12085000" />
       <workItem from="1610707273622" duration="948000" />
-    </task>
-    <task id="LOCAL-00018" summary="fix mix-manifest generation and update requirements">
-      <created>1602412844604</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1602412844605</updated>
+      <workItem from="1610792134477" duration="9387000" />
     </task>
     <task id="LOCAL-00019" summary="remove jquery loading">
       <created>1602413515455</created>
@@ -506,7 +521,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610654700494</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="setup resend of email verification component">
+      <created>1610749033188</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1610749033188</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,7 +550,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="remove bootstrap + install and configure tailwindcss" />
     <MESSAGE value="removing node_modules directory from github" />
     <MESSAGE value="perform language module" />
     <MESSAGE value="create login form" />
@@ -553,6 +574,7 @@
     <MESSAGE value="sign up form backend validation" />
     <MESSAGE value="signup form email verification" />
     <MESSAGE value="try to fix routing bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="try to fix routing bug" />
+    <MESSAGE value="setup resend of email verification component" />
+    <option name="LAST_COMMIT_MESSAGE" value="setup resend of email verification component" />
   </component>
 </project>

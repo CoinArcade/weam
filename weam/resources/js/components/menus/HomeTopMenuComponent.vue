@@ -25,7 +25,7 @@
     </div>-->
 
     <!-- This example requires Tailwind CSS v2.0+ -->
-    <nav class="bg-white shadow">
+    <nav class="bg-th-menu shadow">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div class="relative flex items-center justify-between h-16">
                 <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -133,11 +133,11 @@
         methods: {
 
             parameters() {
-                VueSwal2('swalLang', null, null)
+                this.VueSwal2('swalLang', null, null)
             },
 
             loginAndSigninForm() {
-                VueSwal2('swalLoginAndSigninForm', null, {popup: 'swal2-width-login'})
+                this.VueSwal2('swalLoginAndSigninForm', null, {popup: 'swal2-width-login'})
             }
 
         }
