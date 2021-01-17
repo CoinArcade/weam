@@ -19,9 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="update library handler and the verify email component">
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="test resend email functionality">
+      <change afterPath="$PROJECT_DIR$/weam/resources/js/components/store/UserNotificationsBannerStore.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weam/resources/js/components/store/UserStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/home/HomeComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/home/HomeComponent.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +40,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -155,14 +160,10 @@
       <workItem from="1610609393433" duration="8903000" />
       <workItem from="1610643942264" duration="12085000" />
       <workItem from="1610707273622" duration="948000" />
-      <workItem from="1610792134477" duration="10640000" />
-    </task>
-    <task id="LOCAL-00020" summary="adding composer.json">
-      <created>1602487744772</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1602487744772</updated>
+      <workItem from="1610792134477" duration="10680000" />
+      <workItem from="1610878257897" duration="3204000" />
+      <workItem from="1610896368667" duration="936000" />
+      <workItem from="1610907142307" duration="3709000" />
     </task>
     <task id="LOCAL-00021" summary="spa test + add requirement">
       <created>1602691116995</created>
@@ -500,7 +501,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610810023764</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="test resend email functionality">
+      <created>1610811744590</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1610811744590</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -522,7 +530,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="perform language module" />
     <MESSAGE value="create login form" />
     <MESSAGE value="create login and signin tabs" />
     <MESSAGE value="design login tab" />
@@ -547,6 +554,7 @@
     <MESSAGE value="try to fix routing bug" />
     <MESSAGE value="setup resend of email verification component" />
     <MESSAGE value="update library handler and the verify email component" />
-    <option name="LAST_COMMIT_MESSAGE" value="update library handler and the verify email component" />
+    <MESSAGE value="test resend email functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="test resend email functionality" />
   </component>
 </project>

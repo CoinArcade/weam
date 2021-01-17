@@ -109,6 +109,9 @@
                 signupBirthdateMonth: null,
                 signupBirthdateYear: null,
 
+                // last password entered for signup even if value is wrong, for password confirmation verification
+                lastSignupPassword: null,
+
                 // signup birthdate errors
                 signupBirthdateIsValid: true,
                 errorBirthdateMsg: '',
@@ -209,6 +212,9 @@
              * SIGNUP FORM VALIDATION
              */
 
+            // TODO: check if username or email are already used
+            // TODO: check strong of password
+
             // check if username is valid
             usernameSignupValidation: function(value) {
 
@@ -242,6 +248,18 @@
             // check if password is valid
             passwordSignupValidation: function(value) {
 
+                // check if confirmation password match
+                if (value !== this.signupPasswordConfirmation) {
+                    this.signupPasswordConfirmation = null
+                    this.$refs.signupPasswordConfirmation.showErrorMsg('Password do not match')
+                } else {
+                    this.signupPasswordConfirmation = value
+                    this.$refs.signupPasswordConfirmation.resetErrorMsg()
+                }
+
+                // save the last value for check with the confirmation password input
+                this.lastSignupPassword = value
+
                 if (!/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/.test(value)) {
                     this.signupPassword = null
                     this.$refs.signupPassword.showErrorMsg('Password must contain at least 8 characters, including 1 upper case, 1 lower case and 1 number')
@@ -257,7 +275,7 @@
             // check if passwords match
             passwordConfirmationSignupValidation: function(value) {
 
-                if (value !== this.signupPassword) {
+                if (value !== this.lastSignupPassword) {
                     this.signupPasswordConfirmation = null
                     this.$refs.signupPasswordConfirmation.showErrorMsg('Password do not match')
                 } else {

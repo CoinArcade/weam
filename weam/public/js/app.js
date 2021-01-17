@@ -6972,6 +6972,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       signupBirthdateDay: null,
       signupBirthdateMonth: null,
       signupBirthdateYear: null,
+      // last password entered for signup even if value is wrong, for password confirmation verification
+      lastSignupPassword: null,
       // signup birthdate errors
       signupBirthdateIsValid: true,
       errorBirthdateMsg: '',
@@ -7070,6 +7072,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /*
      * SIGNUP FORM VALIDATION
      */
+    // TODO: check if username or email are already used
+    // TODO: check strong of password
     // check if username is valid
     usernameSignupValidation: function usernameSignupValidation(value) {
       if (!/^[_a-zA-Z0-9]{3,25}$/.test(value)) {
@@ -7096,6 +7100,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     // check if password is valid
     passwordSignupValidation: function passwordSignupValidation(value) {
+      // check if confirmation password match
+      if (value !== this.signupPasswordConfirmation) {
+        this.signupPasswordConfirmation = null;
+        this.$refs.signupPasswordConfirmation.showErrorMsg('Password do not match');
+      } else {
+        this.signupPasswordConfirmation = value;
+        this.$refs.signupPasswordConfirmation.resetErrorMsg();
+      } // save the last value for check with the confirmation password input
+
+
+      this.lastSignupPassword = value;
+
       if (!/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/.test(value)) {
         this.signupPassword = null;
         this.$refs.signupPassword.showErrorMsg('Password must contain at least 8 characters, including 1 upper case, 1 lower case and 1 number');
@@ -7108,7 +7124,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     // check if passwords match
     passwordConfirmationSignupValidation: function passwordConfirmationSignupValidation(value) {
-      if (value !== this.signupPassword) {
+      if (value !== this.lastSignupPassword) {
         this.signupPasswordConfirmation = null;
         this.$refs.signupPasswordConfirmation.showErrorMsg('Password do not match');
       } else {
@@ -7258,6 +7274,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _menus_HomeTopMenuComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../menus/HomeTopMenuComponent */ "./resources/js/components/menus/HomeTopMenuComponent.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _store_UserNotificationsBannerStore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/UserNotificationsBannerStore */ "./resources/js/components/store/UserNotificationsBannerStore.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
 //
 //
 //
@@ -7275,11 +7300,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Home',
+  store: _store_UserNotificationsBannerStore__WEBPACK_IMPORTED_MODULE_2__["default"],
   components: {
     'MenuTop': _menus_HomeTopMenuComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
-  }
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])(['notifications']))
 });
 
 /***/ }),
@@ -36123,7 +36152,10 @@ var render = function() {
           _c("a", { attrs: { href: "#" } }, [
             _vm._v(_vm._s(_vm.__("Welcome", 1, ["test"])))
           ])
-        ])
+        ]),
+        _vm._v(
+          "\n            " + _vm._s(_vm.notifications[0].message) + "\n\n    \t"
+        )
       ])
     ],
     1
@@ -53269,13 +53301,11 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
     meta: {
       title: _lib__WEBPACK_IMPORTED_MODULE_3___default.a.methods.__('Tasks')
     }
-  } // Not found
-
-  /*{
-      path: '*',
-      redirect: '/'
-  }*/
-  ]
+  }, // Not found
+  {
+    path: '*',
+    redirect: '/'
+  }]
 }); // Page title
 
 router.beforeEach(function (to, from, next) {
@@ -54164,6 +54194,51 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TaskComponent_vue_vue_type_template_id_674ccc12___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/components/store/UserNotificationsBannerStore.js":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/store/UserNotificationsBannerStore.js ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+
+var state = {
+  notifications: [{
+    message: 'Hello, je suis une bannière d\'information',
+    button: false,
+    buttonMessage: 'test',
+    closable: false
+  }]
+};
+var mutations = {
+  ADD_NOTIFICATION: function ADD_NOTIFICATION(state, message, button, buttonMessage, closable) {
+    state.notifications.push({
+      message: message,
+      button: button,
+      buttonMessage: buttonMessage,
+      closable: closable
+    });
+  }
+};
+var getters = {
+  notifications: function notifications(state) {
+    return state.notifications;
+  }
+};
+var UserNotificationsBannerStore = new vuex__WEBPACK_IMPORTED_MODULE_0__["default"].Store({
+  state: state,
+  mutations: mutations,
+  getters: getters,
+  actions: {},
+  strict: true
+});
+/* harmony default export */ __webpack_exports__["default"] = (UserNotificationsBannerStore);
 
 /***/ }),
 
