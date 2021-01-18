@@ -1,24 +1,20 @@
 import Vuex from 'vuex'
 
 const state = {
-    notifications: [
-        {
-            message: 'Hello, je suis une bannière d\'information',
-            button: false,
-            buttonMessage: 'test',
-            closable: false
-        }
-    ]
+    notifications: []
 }
 
 const mutations = {
 
-    ADD_NOTIFICATION: (state, message, button, buttonMessage, closable) => {
+    ADD_NOTIFICATION: (state, {title, message, action, actionMessage, actionLink, closable}) => {
         state.notifications.push({
+            title: title,
             message: message,
-            button: button,
-            buttonMessage: buttonMessage,
-            closable: closable
+            action: action,
+            actionMessage: actionMessage,
+            actionLink: actionLink,
+            closable: closable,
+            key: state.notifications.length === 0 ? 0 : state.notifications[state.notifications.length - 1].key + 1
         })
     }
 
@@ -26,18 +22,27 @@ const mutations = {
 
 const getters = {
 
-    notifications: state => state.notifications
+    notifications: state => state.notifications,
+    notification_exists: (state) => (title) => {
+        return state.notifications.find(n => n.title === title)
+    }
 
 }
 
-let UserNotificationsBannerStore = new Vuex.Store({
+const actions = {
+
+    addNotification: (store, {title, message, action, actionMessage, actionLink, closable}) => {
+        store.commit('ADD_NOTIFICATION', {title, message, action, actionMessage, actionLink, closable})
+    }
+
+}
+
+export default new Vuex.Store({
 
     state,
     mutations,
     getters,
-    actions: {},
+    actions: actions,
     strict: true
 
 })
-
-export default UserNotificationsBannerStore

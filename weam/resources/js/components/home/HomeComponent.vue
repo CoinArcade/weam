@@ -4,12 +4,21 @@
 
 		<menu-top></menu-top>
 
-    	<div class="container">
+        <div class="mx-20">
 
-        	<h1><a href="#">{{ __("Welcome", 1, ["test"]) }}</a></h1>
-            {{ notifications[0].message }}
+            <h1 class="mt-8"><a href="#">{{ __("Welcome", 1, ["test"]) }}</a></h1>
 
-    	</div>
+            <user-notification-banner v-for="n in notifications"
+                                      :key="n.key"
+                                      :title="n.title"
+                                      :message="n.message"
+                                      :action="n.action"
+                                      :action-message="n.actionMessage"
+                                      :action-link="n.actionLink"
+                                      :closable="n.closable">
+            </user-notification-banner>
+
+        </div>
 
     </div>
 
@@ -18,6 +27,7 @@
 <script>
 
     import MenuTop from '../menus/HomeTopMenuComponent';
+    import UserNotificationBanner from "../general/notifications/UserNotificationBannerComponent";
 
     import { mapState } from "vuex";
     import UserBannerNotificationStore from "../store/UserNotificationsBannerStore";
@@ -29,7 +39,8 @@
         store: UserBannerNotificationStore,
 
         components: {
-            'MenuTop': MenuTop
+            'MenuTop': MenuTop,
+            'UserNotificationBanner': UserNotificationBanner
         },
 
         computed: {

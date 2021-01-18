@@ -78,9 +78,14 @@
     import FormError from '../form/FormErrorComponent';
     import ButtonLoader from '../form/ButtonLoaderComponent';
 
+    import { mapActions } from 'vuex';
+    import UserNotificationsBannerStore from "../../store/UserNotificationsBannerStore";
+
     export default {
 
         name: "LoginAndSigninForm",
+
+        store: UserNotificationsBannerStore,
 
         components: {
             FormLabel,
@@ -133,11 +138,14 @@
 
                 return this.signupBirthdateMonth + '-' + this.signupBirthdateDay + '-' + this.signupBirthdateYear
 
-            }
+            },
 
         },
 
         methods: {
+
+            // allow to add a notification in the store
+            ...mapActions(['addNotification']),
 
             /*
              * LOGIN FORM VALIDATION
@@ -417,6 +425,14 @@
                         this.$refs.submitSignupButton.stopLoader()
                         if (submitted) {
                             Vue.swal.close()
+                            this.addNotification({
+                                title: 'email verification',
+                                message: 'an email has been sent',
+                                action: true,
+                                actionMessage: 'resend email',
+                                actionLink: '/email/resend',
+                                closable: false
+                            })
                             this.$swalRouter.go(0)
                         }
                     })

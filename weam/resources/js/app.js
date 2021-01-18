@@ -54,15 +54,6 @@ const router = new VueRouter({
     //base: '/weam/weam/public',
     routes: [
 
-        // Authentication path
-        {
-            path: '/email/resend',
-            component: EmailResend,
-            meta: {
-                title: VueLibraries.methods.__('Weam - Account verification')
-            }
-        },
-
         // Public path
         {
             path: '/',
