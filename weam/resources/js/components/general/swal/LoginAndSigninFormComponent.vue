@@ -151,6 +151,8 @@
              * LOGIN FORM VALIDATION
              */
 
+            // TODO: remember me token
+
             // check if user with this username/email address exists
             usernameLoginValidation: function(value) {
 
@@ -188,27 +190,28 @@
 
                 this.checkupLoginError = ''
 
-                let submit = false,
-                    url = this.$appURL + '/checkup/login',
-                    formData = new FormData();
-
-                formData.append('_token', this.getCSRFToken())
-                formData.append('username', this.loginUsername)
-                formData.append('password', this.loginPassword)
+                let submitted = false,
+                    url = this.$appURL + '/login',
+                    data = {
+                        _token: this.getCSRFToken(),
+                        username: this.loginUsername,
+                        password: this.loginPassword
+                    };
 
                 axios
-                    .post(url, formData, {responseType: 'json'})
+                    .post(url, data, {responseType: 'json'})
                     .then(response => {
-                        if (response.data.success === 'login') {
-                            submit = true
+                        if (response.data.success) {
+                            submitted = true
                         } else {
-                            this.checkupLoginError = response.data.error
+                            console.log(response)
+                            this.checkupLoginError = this.__(response.data.error)
                         }
                     })
                     .catch(error => this.checkupLoginError = error)
                     .finally(() => {
                         this.$refs.submitLoginButton.stopLoader()
-                        if (submit) {
+                        if (submitted) {
                             Vue.swal.close()
                             this.$swalRouter.go(0)
                         }
@@ -416,7 +419,6 @@
                         if (response.data.success) {
                             submitted = true
                         } else {
-                            console.log(response)
                             this.checkupSignupError = this.__(response.data.error)
                         }
                     })
@@ -425,14 +427,14 @@
                         this.$refs.submitSignupButton.stopLoader()
                         if (submitted) {
                             Vue.swal.close()
-                            this.addNotification({
+                            /*this.addNotification({
                                 title: 'email verification',
                                 message: 'an email has been sent',
                                 action: true,
                                 actionMessage: 'resend email',
                                 actionLink: '/email/resend',
                                 closable: false
-                            })
+                            })*/
                             this.$swalRouter.go(0)
                         }
                     })

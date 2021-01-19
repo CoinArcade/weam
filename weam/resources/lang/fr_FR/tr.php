@@ -11,6 +11,7 @@ return [
     'Parameters' => 'Paramètres',
     'Log In' => 'Connexion',
     'Sign Up' => 'Inscription',
+    'Log Out' => 'Déconnexion',
     'Current language' => App::getLocale(),
     'Default language' => config("app.fallback_locale"),
 
@@ -33,6 +34,8 @@ return [
     'Please enter a valid date' => 'Veuillez entrer une date valide',
     'You must be at least 13 years old to create an account' => 'Vous devez être âgé d\'au moins 13 ans pour créer un compte.',
     'You don\'t look your age ! But if you are 150 years old or older you are not human' => 'Vous ne faites pas votre âge ! Mais si vous avez 150 ans ou plus vous n\'êtes pas humain, et seuls les habitants de la planète Terre sont autorisés ici. Pour le moment...',
+    'Sorry, this user is not from here' => 'Désolé, cet utilisateur n\'est pas d\'ici.',
+    'Too many login attempts' => 'Trop de tentatives de connexion. Veuillez réessayer dans :seconds secondes.',
 
     // Signup email verification
     'Weam - Account verification' => 'Weam - Vérification du compte',
@@ -46,7 +49,7 @@ return [
     // CSRF error
     'Invalid token' => 'La requête s\'est perdue ! Peut être que son niveau de privilèges n\'était pas assez élevé...',
 
-    //Form validation errors
+    // Form validation errors
     'Required' => [
         'username' => '',
         'email' => '',

@@ -11,6 +11,7 @@ return [
     'Parameters' => 'Parameters',
     'Log In' => 'Log In',
     'Sign Up' => 'Sign Up',
+    'Log Out' => 'Log Out',
     'Current language' => App::getLocale(),
     'Default language' => config("app.fallback_locale"),
 
@@ -33,6 +34,8 @@ return [
     'Please enter a valid date' => 'Please enter a valid date.',
     'You must be at least 13 years old to create an account' => 'You must be at least 13 years old to create an account.',
     'You don\'t look your age ! But if you are 150 years old or older you are not human' => 'You don\'t look your age ! But if you are 150 years old or older you are not human, and only residents of planet Earth are allowed here. For the time being...',
+    'Sorry, this user is not from here' => 'Sorry, this user is not from here.',
+    'Too many login attempts' => 'Too many login attempts. Please try again in :seconds seconds.',
 
     // Signup email verification
     'Weam - Account verification' => 'Weam - Account verification',

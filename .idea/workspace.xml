@@ -19,18 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="Start notification banner system and implement vuex with user and userNotificationsBanner">
-      <change afterPath="$PROJECT_DIR$/sketch/SPOILER_Home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/components/general/notifications/UserNotificationBannerComponent.vue" afterDir="false" />
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="Finish user banner notification system">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/home/HomeComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/home/HomeComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/menus/HomeTopMenuComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/menus/HomeTopMenuComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/store/UserNotificationsBannerStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/store/UserNotificationsBannerStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +46,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/0xARK/weam" />
+      </set>
+    </option>
   </component>
   <component name="ProjectId" id="1idMmqOw1SpjzKrFSZhzOo6Wv93" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -168,14 +177,12 @@
       <workItem from="1610878257897" duration="3204000" />
       <workItem from="1610896368667" duration="936000" />
       <workItem from="1610907142307" duration="3987000" />
-      <workItem from="1610960214227" duration="18000000" />
-    </task>
-    <task id="LOCAL-00022" summary="fix router">
-      <created>1602878218206</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1602878218206</updated>
+      <workItem from="1610960214227" duration="18135000" />
+      <workItem from="1611002597257" duration="598000" />
+      <workItem from="1611066430648" duration="382000" />
+      <workItem from="1611066833315" duration="599000" />
+      <workItem from="1611067498928" duration="248000" />
+      <workItem from="1611068569790" duration="6134000" />
     </task>
     <task id="LOCAL-00023" summary="fix spa">
       <created>1602926068342</created>
@@ -513,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610922498735</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Finish user banner notification system">
+      <created>1610979390662</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1610979390663</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -535,7 +549,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="create login and signin tabs" />
     <MESSAGE value="design login tab" />
     <MESSAGE value="login + signup form design finished" />
     <MESSAGE value="login loading bar" />
@@ -560,6 +573,7 @@
     <MESSAGE value="update library handler and the verify email component" />
     <MESSAGE value="test resend email functionality" />
     <MESSAGE value="Start notification banner system and implement vuex with user and userNotificationsBanner" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start notification banner system and implement vuex with user and userNotificationsBanner" />
+    <MESSAGE value="Finish user banner notification system" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish user banner notification system" />
   </component>
 </project>
