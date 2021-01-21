@@ -420,6 +420,7 @@
                         this.$refs.submitSignupButton.stopLoader()
                         if (submitted) {
                             Vue.swal.close()
+                            this.VueSwal2('swalEmailVerification', null, null)
                             /*this.addNotification({
                                 title: 'email verification',
                                 message: 'an email has been sent',
@@ -428,7 +429,7 @@
                                 actionLink: '/email/resend',
                                 closable: false
                             })*/
-                            this.$swalRouter.go(0)
+                            //this.$swalRouter.go(0)
                         }
                     })
 

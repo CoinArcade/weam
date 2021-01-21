@@ -20,13 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="Rework on error form system and fix all error display">
+      <change afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/VerifyEmailComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/form/FormErrorComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/form/FormErrorComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/form/FormInputComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/form/FormInputComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/js/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/lib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/lib.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,13 +73,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/weam/resources/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/weam/resources/js/components/general/swal" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/weam/resources/js/components/general/swal" />
       <recent name="$PROJECT_DIR$/weam/resources/views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -186,20 +187,7 @@
       <workItem from="1611067498928" duration="248000" />
       <workItem from="1611068569790" duration="6285000" />
       <workItem from="1611133226926" duration="14009000" />
-    </task>
-    <task id="LOCAL-00024" summary="delete auth, fix migration and created app component for spa control">
-      <created>1602928553897</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1602928553897</updated>
-    </task>
-    <task id="LOCAL-00025" summary="modify style">
-      <created>1603802488156</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1603802488156</updated>
+      <workItem from="1611213579953" duration="6703000" />
     </task>
     <task id="LOCAL-00026" summary="add all directrories and files">
       <created>1603961689370</created>
@@ -530,7 +518,21 @@
       <option name="project" value="LOCAL" />
       <updated>1611075093124</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="rework on the form error message system">
+      <created>1611214093418</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1611214093418</updated>
+    </task>
+    <task id="LOCAL-00074" summary="rework on the form error message system">
+      <created>1611214113299</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1611214113299</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,7 +554,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="login loading bar" />
     <MESSAGE value="implementation of the redirection system for login and signup" />
     <MESSAGE value="implementation of the verification system for login and signup" />
     <MESSAGE value="fix verification bug with prevent default" />
@@ -577,6 +578,7 @@
     <MESSAGE value="Finish user banner notification system" />
     <MESSAGE value="Setup user login and login error handler" />
     <MESSAGE value="Rework on error form system and fix all error display" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rework on error form system and fix all error display" />
+    <MESSAGE value="rework on the form error message system" />
+    <option name="LAST_COMMIT_MESSAGE" value="rework on the form error message system" />
   </component>
 </project>

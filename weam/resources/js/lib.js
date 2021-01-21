@@ -50,8 +50,9 @@ module.exports = {
          * @param component - component to mount in modal
          * @param propsData - property of the component to mount
          * @param customClass - class to apply to the modal
+         * @param onClose - callback function executed on close event
          */
-        VueSwal2(component, propsData, customClass) {
+        VueSwal2(component, propsData, customClass, onClose = () => {}) {
 
             Vue.swal({
                 html: '<div id="swal-component"></div>',
@@ -64,7 +65,8 @@ module.exports = {
                     });
                     instance.$mount();
                     document.getElementById('swal-component').appendChild(instance.$el);
-                }
+                },
+                willClose: onClose
             });
 
         },
