@@ -13,7 +13,7 @@
                :class="[this.error ? 'border-red-600 focus:border-red-600' : 'border-transparent focus:border-purple-600', this.inputClass ? this.inputClass : '']"
         >
 
-        <form-error v-if="!this.disableError" :error-msg="this.errorMsg"></form-error>
+        <form-error v-if="!this.disableError" :error-msg="this.errorMsg" :error-count="this.errorCount" :error-replace="this.errorReplace"></form-error>
 
     </div>
 
@@ -42,7 +42,9 @@
                 entry: '',
                 inputId: this.$vnode.key,
                 error: false,
-                errorMsg: ''
+                errorMsg: '',
+                errorCount: 1,
+                errorReplace: []
 
             }
 
@@ -56,11 +58,13 @@
 
             },
 
-            showErrorMsg: function(val) {
+            showErrorMsg: function(key, count = 1, replace = []) {
 
                 if (!this.disableError) {
                     this.error = true
-                    this.errorMsg = val
+                    this.errorMsg = key
+                    this.errorCount = count
+                    this.errorReplace = replace
                 }
 
             },
@@ -68,7 +72,9 @@
             resetErrorMsg: function() {
 
                 this.error = false
-                this.errorMsg = ""
+                this.errorMsg = ''
+                this.errorCount = 1
+                this.errorReplace = []
 
             },
 

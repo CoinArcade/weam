@@ -20,7 +20,7 @@
             <form-input @validate="passwordLoginValidation" key="login-password" input-type="password"
                         label="Password" placeholder="************" ref="loginPassword"></form-input>
 
-            <form-error :error-msg="this.checkupLoginError"></form-error>
+            <form-error :error-msg="this.checkupLoginError[0]" :error-count="this.checkupLoginError[1]" :error-replace="this.checkupLoginError[2]"></form-error>
 
             <div class="w-full mt-5">
                 <button-loader @submitted="submitLogin" key="loginSubmitButton" text="Log In" ref="submitLoginButton"></button-loader>
@@ -55,11 +55,11 @@
                                 disable-error="true" ref="signupBirthdateYear"></form-input>
                 </div>
 
-                <form-error :error-msg="this.errorBirthdateMsg"></form-error>
+                <form-error :error-msg="this.errorBirthdateMsg[0]" :error-count="this.errorBirthdateMsg[1]" :error-replace="this.errorBirthdateMsg[2]"></form-error>
 
             </div>
 
-            <form-error :error-msg="this.checkupSignupError"></form-error>
+            <form-error :error-msg="this.checkupSignupError[0]" :error-count="this.checkupSignupError[1]" :error-replace="this.checkupSignupError[2]"></form-error>
 
             <div class="w-full mt-5">
                 <button-loader @submitted="submitSignup" key="signupSubmitButton" text="Sign Up" ref="submitSignupButton"></button-loader>
@@ -119,11 +119,11 @@
 
                 // signup birthdate errors
                 signupBirthdateIsValid: true,
-                errorBirthdateMsg: '',
+                errorBirthdateMsg: [],
 
                 // checkup forms error
-                checkupLoginError: '',
-                checkupSignupError: ''
+                checkupLoginError: [],
+                checkupSignupError: []
 
             }
         },
@@ -145,7 +145,7 @@
         methods: {
 
             // allow to add a notification in the store
-            ...mapActions(['addNotification']),
+            //...mapActions(['addNotification']),
 
             /*
              * LOGIN FORM VALIDATION
@@ -153,19 +153,10 @@
 
             // TODO: remember me token
 
-            // check if user with this username/email address exists
+            // check presence of username
             usernameLoginValidation: function(value) {
-
-                if (value.length < 3) {
-                    this.loginUsername = null
-                    this.$refs.loginUsername.showErrorMsg("error, at least 3 characters excpected !")
-                } else {
-                    this.loginUsername = value
-                    this.$refs.loginUsername.resetErrorMsg()
-                }
-
+                this.loginUsername = value
                 this.checkLoginForm()
-
             },
 
             // check presence of password
@@ -188,7 +179,7 @@
             // submit login form
             submitLogin: async function() {
 
-                this.checkupLoginError = ''
+                this.checkupLoginError = []
 
                 let submitted = false,
                     url = this.$appURL + '/login',
@@ -204,11 +195,10 @@
                         if (response.data.success) {
                             submitted = true
                         } else {
-                            console.log(response)
-                            this.checkupLoginError = this.__(response.data.error)
+                            this.checkupLoginError = response.data.error
                         }
                     })
-                    .catch(error => this.checkupLoginError = error)
+                    .catch(error => this.checkupLoginError = ['An error occured', 1, []])
                     .finally(() => {
                         this.$refs.submitLoginButton.stopLoader()
                         if (submitted) {
@@ -376,9 +366,9 @@
                     }
 
                     if (!this.signupBirthdateDay || !this.signupBirthdateMonth || !this.signupBirthdateYear || !this.signupBirthdateIsValid) {
-                        this.errorBirthdateMsg = errorMsg
+                        this.errorBirthdateMsg = [errorMsg, 1, []]
                     } else {
-                        this.errorBirthdateMsg = ''
+                        this.errorBirthdateMsg = []
                     }
 
                     this.checkSignupForm()
@@ -400,7 +390,7 @@
             // submit signup form
             submitSignup: function() {
 
-                this.checkupSignupError = ''
+                this.checkupSignupError = []
 
                 let submitted = false,
                     url = this.$appURL + '/register',
@@ -416,13 +406,16 @@
                 axios
                     .post(url, data, {responseType: 'json'})
                     .then(response => {
-                        if (response.data.success) {
+                        console.log(response)
+                        if (response.data && response.data.success) {
+                            console.log('success')
                             submitted = true
                         } else {
-                            this.checkupSignupError = this.__(response.data.error)
+                            console.log('no success')
+                            this.checkupSignupError = response.data.error
                         }
                     })
-                    .catch(error => this.checkupSignupError = error)
+                    .catch(error => {this.checkupSignupError = ['An error occured', 1, []];console.log('error')})
                     .finally(() => {
                         this.$refs.submitSignupButton.stopLoader()
                         if (submitted) {

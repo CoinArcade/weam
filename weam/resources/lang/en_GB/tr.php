@@ -89,7 +89,7 @@ return [
     ],
 
     'DateFormat' => [
-        'birthdate' => 'test',
+        'birthdate' => '',
     ],
 
     'Before' => [

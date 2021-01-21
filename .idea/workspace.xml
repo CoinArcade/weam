@@ -19,9 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="Finish user banner notification system">
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="Rework on error form system and fix all error display">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/form/FormErrorComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/form/FormErrorComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/form/FormInputComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/form/FormInputComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" afterDir="false" />
@@ -182,14 +184,8 @@
       <workItem from="1611066430648" duration="382000" />
       <workItem from="1611066833315" duration="599000" />
       <workItem from="1611067498928" duration="248000" />
-      <workItem from="1611068569790" duration="6134000" />
-    </task>
-    <task id="LOCAL-00023" summary="fix spa">
-      <created>1602926068342</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1602926068342</updated>
+      <workItem from="1611068569790" duration="6285000" />
+      <workItem from="1611133226926" duration="14009000" />
     </task>
     <task id="LOCAL-00024" summary="delete auth, fix migration and created app component for spa control">
       <created>1602928553897</created>
@@ -527,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610979390663</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Setup user login and login error handler">
+      <created>1611075093123</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1611075093124</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -549,8 +552,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="design login tab" />
-    <MESSAGE value="login + signup form design finished" />
     <MESSAGE value="login loading bar" />
     <MESSAGE value="implementation of the redirection system for login and signup" />
     <MESSAGE value="implementation of the verification system for login and signup" />
@@ -574,6 +575,8 @@
     <MESSAGE value="test resend email functionality" />
     <MESSAGE value="Start notification banner system and implement vuex with user and userNotificationsBanner" />
     <MESSAGE value="Finish user banner notification system" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish user banner notification system" />
+    <MESSAGE value="Setup user login and login error handler" />
+    <MESSAGE value="Rework on error form system and fix all error display" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rework on error form system and fix all error display" />
   </component>
 </project>

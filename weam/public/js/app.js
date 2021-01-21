@@ -6665,7 +6665,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FormError",
-  props: ['errorMsg']
+  props: {
+    errorMsg: {
+      type: String
+    },
+    errorCount: {
+      type: Number,
+      "default": function _default() {
+        return 1;
+      }
+    },
+    errorReplace: {
+      type: Array,
+      "default": function _default() {
+        return [];
+      }
+    }
+  }
 });
 
 /***/ }),
@@ -6716,22 +6732,31 @@ __webpack_require__.r(__webpack_exports__);
       entry: '',
       inputId: this.$vnode.key,
       error: false,
-      errorMsg: ''
+      errorMsg: '',
+      errorCount: 1,
+      errorReplace: []
     };
   },
   methods: {
     validation: function validation() {
       this.$emit('validate', this.entry);
     },
-    showErrorMsg: function showErrorMsg(val) {
+    showErrorMsg: function showErrorMsg(key) {
+      var count = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+      var replace = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
+
       if (!this.disableError) {
         this.error = true;
-        this.errorMsg = val;
+        this.errorMsg = key;
+        this.errorCount = count;
+        this.errorReplace = replace;
       }
     },
     resetErrorMsg: function resetErrorMsg() {
       this.error = false;
-      this.errorMsg = "";
+      this.errorMsg = '';
+      this.errorCount = 1;
+      this.errorReplace = [];
     },
     showError: function showError() {
       this.error = true;
@@ -6932,12 +6957,6 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 //
 //
 //
@@ -7045,10 +7064,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       lastSignupPassword: null,
       // signup birthdate errors
       signupBirthdateIsValid: true,
-      errorBirthdateMsg: '',
+      errorBirthdateMsg: [],
       // checkup forms error
-      checkupLoginError: '',
-      checkupSignupError: ''
+      checkupLoginError: [],
+      checkupSignupError: []
     };
   },
   computed: {
@@ -7059,21 +7078,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return this.signupBirthdateMonth + '-' + this.signupBirthdateDay + '-' + this.signupBirthdateYear;
     }
   },
-  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_5__["mapActions"])(['addNotification'])), {}, {
+  methods: {
+    // allow to add a notification in the store
+    //...mapActions(['addNotification']),
+
     /*
      * LOGIN FORM VALIDATION
      */
     // TODO: remember me token
-    // check if user with this username/email address exists
+    // check presence of username
     usernameLoginValidation: function usernameLoginValidation(value) {
-      if (value.length < 3) {
-        this.loginUsername = null;
-        this.$refs.loginUsername.showErrorMsg("error, at least 3 characters excpected !");
-      } else {
-        this.loginUsername = value;
-        this.$refs.loginUsername.resetErrorMsg();
-      }
-
+      this.loginUsername = value;
       this.checkLoginForm();
     },
     // check presence of password
@@ -7099,7 +7114,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                this.checkupLoginError = '';
+                this.checkupLoginError = [];
                 submitted = false, url = this.$appURL + '/login', data = {
                   _token: this.getCSRFToken(),
                   username: this.loginUsername,
@@ -7111,11 +7126,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                   if (response.data.success) {
                     submitted = true;
                   } else {
-                    console.log(response);
-                    _this.checkupLoginError = _this.__(response.data.error);
+                    _this.checkupLoginError = response.data.error;
                   }
                 })["catch"](function (error) {
-                  return _this.checkupLoginError = error;
+                  return _this.checkupLoginError = ['An error occured', 1, []];
                 })["finally"](function () {
                   _this.$refs.submitLoginButton.stopLoader();
 
@@ -7279,9 +7293,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }
 
         if (!this.signupBirthdateDay || !this.signupBirthdateMonth || !this.signupBirthdateYear || !this.signupBirthdateIsValid) {
-          this.errorBirthdateMsg = errorMsg;
+          this.errorBirthdateMsg = [errorMsg, 1, []];
         } else {
-          this.errorBirthdateMsg = '';
+          this.errorBirthdateMsg = [];
         }
 
         this.checkSignupForm();
@@ -7299,7 +7313,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     submitSignup: function submitSignup() {
       var _this2 = this;
 
-      this.checkupSignupError = '';
+      this.checkupSignupError = [];
       var submitted = false,
           url = this.$appURL + '/register',
           data = {
@@ -7313,13 +7327,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       axios.post(url, data, {
         responseType: 'json'
       }).then(function (response) {
-        if (response.data.success) {
+        console.log(response);
+
+        if (response.data && response.data.success) {
+          console.log('success');
           submitted = true;
         } else {
-          _this2.checkupSignupError = _this2.__(response.data.error);
+          console.log('no success');
+          _this2.checkupSignupError = response.data.error;
         }
       })["catch"](function (error) {
-        return _this2.checkupSignupError = error;
+        _this2.checkupSignupError = ['An error occured', 1, []];
+        console.log('error');
       })["finally"](function () {
         _this2.$refs.submitSignupButton.stopLoader();
 
@@ -7338,7 +7357,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }
       });
     }
-  })
+  }
 });
 
 /***/ }),
@@ -35691,7 +35710,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   return this.errorMsg
     ? _c("p", { staticClass: "text-red-600 text-xs text-left mt-2" }, [
-        _vm._v("\n    " + _vm._s(_vm.__(this.errorMsg)) + "\n")
+        _vm._v(
+          "\n    " +
+            _vm._s(_vm.__(this.errorMsg, this.errorCount, this.errorReplace)) +
+            "\n"
+        )
       ])
     : _vm._e()
 }
@@ -35847,7 +35870,13 @@ var render = function() {
           }),
       _vm._v(" "),
       !this.disableError
-        ? _c("form-error", { attrs: { "error-msg": this.errorMsg } })
+        ? _c("form-error", {
+            attrs: {
+              "error-msg": this.errorMsg,
+              "error-count": this.errorCount,
+              "error-replace": this.errorReplace
+            }
+          })
         : _vm._e()
     ],
     1
@@ -36130,7 +36159,11 @@ var render = function() {
             }),
             _vm._v(" "),
             _c("form-error", {
-              attrs: { "error-msg": this.checkupLoginError }
+              attrs: {
+                "error-msg": this.checkupLoginError[0],
+                "error-count": this.checkupLoginError[1],
+                "error-replace": this.checkupLoginError[2]
+              }
             }),
             _vm._v(" "),
             _c(
@@ -36254,14 +36287,22 @@ var render = function() {
                 ),
                 _vm._v(" "),
                 _c("form-error", {
-                  attrs: { "error-msg": this.errorBirthdateMsg }
+                  attrs: {
+                    "error-msg": this.errorBirthdateMsg[0],
+                    "error-count": this.errorBirthdateMsg[1],
+                    "error-replace": this.errorBirthdateMsg[2]
+                  }
                 })
               ],
               1
             ),
             _vm._v(" "),
             _c("form-error", {
-              attrs: { "error-msg": this.checkupSignupError }
+              attrs: {
+                "error-msg": this.checkupSignupError[0],
+                "error-count": this.checkupSignupError[1],
+                "error-replace": this.checkupSignupError[2]
+              }
             }),
             _vm._v(" "),
             _c(
