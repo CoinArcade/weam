@@ -15,27 +15,22 @@ return [
     'Current language' => App::getLocale(),
     'Default language' => config("app.fallback_locale"),
 
-    // Log In/Sign Up
+    // Log In/Sign Up modal
     'Username' => 'Username',
     'Enter your username' => 'Enter your username',
-    'Username must contain between 3 and 25 alphanumeric characters' => 'Username must contain between 3 and 25 alphanumeric characters.',
     'Password' => 'Password',
     'Password confirmation' => 'Password confirmation',
     '************' => '************',
-    'Password must contain at least 8 characters, including 1 upper case, 1 lower case and 1 number' => 'Password must contain at least 8 characters, including 1 upper case, 1 lower case and 1 number.',
-    'Password do not match' => 'Password do not match.',
     'Email address' => 'Email address',
     'Enter your email address' => 'Enter your email address',
-    'Please enter a valid email address' => 'Please enter a valid email address.',
     'Date of birth' => 'Date of birth',
     'Day' => 'Day',
     'Month' => 'Month',
     'Year' => 'Year',
-    'Please enter a valid date' => 'Please enter a valid date.',
-    'You must be at least 13 years old to create an account' => 'You must be at least 13 years old to create an account.',
-    'You don\'t look your age ! But if you are 150 years old or older you are not human' => 'You don\'t look your age ! But if you are 150 years old or older you are not human, and only residents of planet Earth are allowed here. For the time being...',
     'Sorry, this user is not from here' => 'Sorry, this user is not from here.',
-    'Too many login attempts' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'Too many login attempts' => 'Some limits are made to be exceeded... But not this one. Please try again in :seconds seconds.',
+    'A verification link has been sent to your email address, if you did not receive the email, you can request another from your profile' => 'A verification link has been sent to your email address. If you did not receive the email, you can request another from your profile.',
+    'View my profile' => 'View my profile',
 
     // Signup email verification
     'Weam - Account verification' => 'Weam - Account verification',
@@ -49,54 +44,66 @@ return [
     // CSRF error
     'Invalid token' => 'The request was lost ! Maybe his privilege level was not high enough...',
 
+    // Other errors
+    'An error occured' => 'An unknown error has occurred. Please try again later.',
+
     //Form validation errors
     'Required' => [
-        'username' => '',
-        'email' => '',
-        'password' => '',
-        'birthdate' => '',
+        'username' => 'The "username" field has not been filled in correctly.',
+        'email' => 'The "email" field has not been filled in correctly.',
+        'password' => 'The "password" field has not been filled in correctly.',
+        'birthdate' => 'The "date of birth" field has not been filled in correctly.',
     ],
 
     'Unique' => [
-        'username' => '',
-        'email' => '',
+        'username' => 'You are unique. Your username must also be unique.',
+        'email' => 'This email address is already associated with an account.',
     ],
 
     'String' => [
-        'username' => '',
-        'email' => '',
-        'password' => '',
+        'username' => 'The username is not a valid string',
+        'email' => 'The email is not a valid string',
+        'password' => 'The password is not a valid string',
+    ],
+
+    'Regex' => [
+        'username' => 'Username must contain between 3 and 25 alphanumeric characters.',
+        'password' => 'Password must contain at least 8 characters, including 1 upper case, 1 lower case and 1 number.',
     ],
 
     'Min' => [
-        'password' => '',
+        'password' => 'Password must contain at least 8 characters, including 1 upper case, 1 lower case and 1 number.',
     ],
 
     'Max' => [
-        'email' => '',
+        'email' => 'Email address must not exceed 75 characters.',
     ],
 
     'Between' => [
-        'username' => '',
+        'username' => 'Username must contain between 3 and 25 alphanumeric characters.',
     ],
 
     'Email' => [
-        'email' => '',
+        'email' => 'Please enter a valid email address.',
+    ],
+
+    'Confirmed' => [
+        'password' => 'Passwords do not match.',
     ],
 
     'Date' => [
-        'birthdate' => '',
+        'birthdate' => 'Please enter a valid date.',
     ],
 
     'DateFormat' => [
-        'birthdate' => '',
+        'birthdate' => 'Date of birth must be in the format mm-dd-yyyy.',
     ],
 
     'Before' => [
-        'birthdate' => '',
+        'birthdate' => 'You must be at least 13 years old to create an account.',
     ],
 
     'After' => [
-        'birthdate' => '',
+        'birthdate' => 'You don\'t look your age ! But if you are 150 years old or older you are not human, and only residents of planet Earth are allowed here. For the time being...',
     ],
 ];

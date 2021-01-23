@@ -54,9 +54,9 @@ class RegisterController extends Controller
         $afterDate = date('Y-m-d', strtotime(date('Y-m-d').' -149 year'));
 
         return Validator::make($data, [
-            'username' => ['required', 'string', 'between:3,25', 'unique:users'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'username' => ['required', 'string', 'between:3,25', 'unique:users', 'regex:/^[_a-zA-Z0-9]{3,25}$/'],
+            'email' => ['required', 'string', 'email', 'max:75', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed', 'regex:/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/'],
             'birthdate' => ['required', 'date', 'date_format:m-d-Y', 'size:10', "before:$beforeDate", "after:$afterDate"]
         ]);
     }

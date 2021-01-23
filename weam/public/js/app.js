@@ -7164,7 +7164,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     usernameSignupValidation: function usernameSignupValidation(value) {
       if (!/^[_a-zA-Z0-9]{3,25}$/.test(value)) {
         this.signupUsername = null;
-        this.$refs.signupUsername.showErrorMsg("Username must contain between 3 and 25 alphanumeric characters");
+        this.$refs.signupUsername.showErrorMsg("Regex.username");
       } else {
         this.signupUsername = value;
         this.$refs.signupUsername.resetErrorMsg();
@@ -7174,9 +7174,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     // check if email address is valid
     emailSignupValidation: function emailSignupValidation(value) {
-      if (!/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/.test(value)) {
+      if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(value)) {
         this.signupEmail = null;
-        this.$refs.signupEmail.showErrorMsg("Please enter a valid email address");
+        this.$refs.signupEmail.showErrorMsg("Email.email");
       } else {
         this.signupEmail = value;
         this.$refs.signupEmail.resetErrorMsg();
@@ -7189,7 +7189,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       // check if confirmation password match
       if (value !== this.signupPasswordConfirmation) {
         this.signupPasswordConfirmation = null;
-        this.$refs.signupPasswordConfirmation.showErrorMsg('Password do not match');
+        this.$refs.signupPasswordConfirmation.showErrorMsg('Confirmed.password');
       } else {
         this.signupPasswordConfirmation = value;
         this.$refs.signupPasswordConfirmation.resetErrorMsg();
@@ -7200,7 +7200,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       if (!/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/.test(value)) {
         this.signupPassword = null;
-        this.$refs.signupPassword.showErrorMsg('Password must contain at least 8 characters, including 1 upper case, 1 lower case and 1 number');
+        this.$refs.signupPassword.showErrorMsg('Regex.password');
       } else {
         this.signupPassword = value;
         this.$refs.signupPassword.resetErrorMsg();
@@ -7212,7 +7212,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     passwordConfirmationSignupValidation: function passwordConfirmationSignupValidation(value) {
       if (value !== this.lastSignupPassword) {
         this.signupPasswordConfirmation = null;
-        this.$refs.signupPasswordConfirmation.showErrorMsg('Password do not match');
+        this.$refs.signupPasswordConfirmation.showErrorMsg('Confirmed.password');
       } else {
         this.signupPasswordConfirmation = value;
         this.$refs.signupPasswordConfirmation.resetErrorMsg();
@@ -7245,7 +7245,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             minYear = date.getFullYear() - 13,
             minMonth = date.getMonth() + 1,
             minDay = date.getDate(),
-            errorMsg = 'Please enter a valid date';
+            errorMsg = 'Date.birthdate';
 
         if (this.signupBirthdateDay.length > 2 || this.signupBirthdateDay < 1) {
           this.signupBirthdateDay = null;
@@ -7263,21 +7263,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }
 
         if (this.signupBirthdateYear && this.signupBirthdateYear < maxYear) {
-          errorMsg = 'You don\'t look your age ! But if you are 150 years old or older you are not human';
+          errorMsg = 'After.birthdate';
           this.signupBirthdateYear = null;
           this.$refs.signupBirthdateYear.showError();
         }
 
         if (this.signupBirthdateDay && this.signupBirthdateMonth && this.signupBirthdateYear && parseInt(this.signupBirthdateYear) > minYear) {
-          errorMsg = 'You must be at least 13 years old to create an account';
+          errorMsg = 'Before.birthdate';
           this.signupBirthdateYear = null;
           this.$refs.signupBirthdateYear.showError();
         } else if (this.signupBirthdateDay && this.signupBirthdateMonth && this.signupBirthdateYear && parseInt(this.signupBirthdateYear) === minYear && this.signupBirthdateMonth > minMonth) {
-          errorMsg = 'You must be at least 13 years old to create an account';
+          errorMsg = 'Before.birthdate';
           this.signupBirthdateMonth = null;
           this.$refs.signupBirthdateMonth.showError();
         } else if (this.signupBirthdateDay && this.signupBirthdateMonth && this.signupBirthdateYear && parseInt(this.signupBirthdateYear) === minYear && parseInt(this.signupBirthdateMonth) === minMonth && this.signupBirthdateDay > minDay) {
-          errorMsg = 'You must be at least 13 years old to create an account';
+          errorMsg = 'Before.birthdate';
           this.signupBirthdateDay = null;
           this.$refs.signupBirthdateDay.showError();
         }
@@ -7345,7 +7345,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         if (submitted) {
           Vue.swal.close();
 
-          _this2.VueSwal2('swalEmailVerification', null, null);
+          _this2.VueSwal2('swalEmailVerification', null, null, function () {
+            _this2.VueSwal2('swalEmailVerification', null, null);
+          });
           /*this.addNotification({
               title: 'email verification',
               message: 'an email has been sent',
@@ -7373,6 +7375,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _form_FormErrorComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../form/FormErrorComponent */ "./resources/js/components/general/form/FormErrorComponent.vue");
 //
 //
 //
@@ -7394,17 +7397,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "VerifyEmail",
-  data: function data() {
-    return {
-      token: this.getCSRFToken()
-    };
+  components: {
+    FormError: _form_FormErrorComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
 
@@ -7613,8 +7610,12 @@ __webpack_require__.r(__webpack_exports__);
       this.VueSwal2('swalLang', null, null);
     },
     loginAndSigninForm: function loginAndSigninForm() {
+      var _this = this;
+
       this.VueSwal2('swalLoginAndSigninForm', null, {
         popup: 'swal2-width-login'
+      }, function () {
+        _this.VueSwal2('swalEmailVerification', null, null);
       });
     }
   }
@@ -36405,70 +36406,33 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "flex items-center justify-center h-screen" },
-    [
-      _c(
-        "div",
-        {
-          staticClass:
-            "bg-th-card text-black rounded-lg shadow mx-2 xs:max-w-sm md:max-w-xl"
-        },
-        [
-          _c("p", { staticClass: "font-bold m-5 mt-10 xs:m-10 xs:mb-5" }, [
-            _vm._v(
-              "\n            " +
-                _vm._s(_vm.__("Verify your email address")) +
-                "\n        "
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "m-5 mt-0 xs:m-10" }, [
-            _vm._v(
-              "\n            " +
-                _vm._s(
-                  _vm.__(
-                    "A fresh verification link has been sent to your email address"
-                  )
-                ) +
-                "\n            " +
-                _vm._s(
-                  _vm.__(
-                    "Before proceeding, please check your email for a verification link"
-                  )
-                ) +
-                "\n            " +
-                _vm._s(_vm.__("If you did not receive the email")) +
-                "\n            "
-            ),
-            _c(
-              "form",
-              {
-                staticClass: "d-inline",
-                attrs: { method: "POST", action: "/email/resend" }
-              },
-              [
-                _c("input", {
-                  attrs: { type: "hidden", name: "_token" },
-                  domProps: { value: this.token }
-                }),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-link p-0 m-0 align-baseline",
-                    attrs: { type: "submit" }
-                  },
-                  [_vm._v(_vm._s(_vm.__("click here to request another")))]
-                )
-              ]
-            )
-          ])
-        ]
+  return _c("div", { staticClass: "text-left" }, [
+    _c("p", { staticClass: "font-bold m-5 mt-10 xs:m-10 xs:mb-2" }, [
+      _vm._v(
+        "\n        " + _vm._s(_vm.__("Verify your email address")) + "\n    "
       )
-    ]
-  )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "mt-5 mx-2 xs:mx-10 text-sm" }, [
+      _vm._v(
+        "\n        " +
+          _vm._s(
+            _vm.__(
+              "A verification link has been sent to your email address, if you did not receive the email, you can request another from your profile"
+            )
+          ) +
+          "\n    "
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        staticClass: "btn btn-link p-0 mt-5 mx-2 mb-2 xs:mx-10 xs:mb-10 text-sm"
+      },
+      [_vm._v(_vm._s(_vm.__("View my profile")))]
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

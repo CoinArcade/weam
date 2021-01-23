@@ -137,7 +137,9 @@
             },
 
             loginAndSigninForm() {
-                this.VueSwal2('swalLoginAndSigninForm', null, {popup: 'swal2-width-login'})
+                this.VueSwal2('swalLoginAndSigninForm', null, {popup: 'swal2-width-login'}, () => {
+                    this.VueSwal2('swalEmailVerification', null, null)
+                })
             }
 
         }

@@ -18,24 +18,19 @@ return [
     // Log In/Sign Up
     'Username' => 'Nom d\'utilisateur',
     'Enter your username' => 'Entrez votre nom d\'utilisateur',
-    'Username must contain between 3 and 25 alphanumeric characters' => 'Le nom d\'utilisateur doit contenir entre 3 et 25 caractères alphanumériques.',
     'Password' => 'Mot de passe',
     'Password confirmation' => 'Confirmation du mot de passe',
     '************' => '************',
-    'Password must contain at least 8 characters, including 1 upper case, 1 lower case and 1 number' => 'Le mot de passe doit contenir au moins 8 caractères, dont une majuscule, une minuscule et un chiffre.',
-    'Password do not match' => 'Les mots de passe de correspondent pas.',
     'Email address' => 'Adresse email',
     'Enter your email address' => 'Entrez votre adresse email',
-    'Please enter a valid email address' => 'Veuillez entrer une adresse email valide.',
     'Date of birth' => 'Date de naissance',
     'Day' => 'Jour',
     'Month' => 'Mois',
     'Year' => 'Année',
-    'Please enter a valid date' => 'Veuillez entrer une date valide',
-    'You must be at least 13 years old to create an account' => 'Vous devez être âgé d\'au moins 13 ans pour créer un compte.',
-    'You don\'t look your age ! But if you are 150 years old or older you are not human' => 'Vous ne faites pas votre âge ! Mais si vous avez 150 ans ou plus vous n\'êtes pas humain, et seuls les habitants de la planète Terre sont autorisés ici. Pour le moment...',
     'Sorry, this user is not from here' => 'Désolé, cet utilisateur n\'est pas d\'ici.',
-    'Too many login attempts' => 'Trop de tentatives de connexion. Veuillez réessayer dans :seconds secondes.',
+    'Too many login attempts' => 'Certaines limites sont faites pour être dépassées... Mais pas celle-ci. Veuillez réessayer dans :seconds secondes.',
+    'A verification link has been sent to your email address, if you did not receive the email, you can request another from your profile' => 'Un lien de vérification a été envoyé à votre adresse email. Si vous n\'avez pas reçu de lien, vous pouvez en demander un autre depuis votre profil.',
+    'View my profile' => 'Voir mon profil',
 
     // Signup email verification
     'Weam - Account verification' => 'Weam - Vérification du compte',
@@ -49,54 +44,66 @@ return [
     // CSRF error
     'Invalid token' => 'La requête s\'est perdue ! Peut être que son niveau de privilèges n\'était pas assez élevé...',
 
+    // Other errors
+    'An error occured' => 'Une erreur inconnue est survenue. Veuillez réessayer plus tard.',
+
     // Form validation errors
     'Required' => [
-        'username' => '',
-        'email' => '',
-        'password' => '',
-        'birthdate' => '',
+        'username' => 'Le champ "nom d\'utilisateur" n\'a pas été rempli correctement',
+        'email' => 'Le champ "adresse email" n\'a pas été rempli correctement',
+        'password' => 'Le champ "mot de passe" n\'a pas été rempli correctement',
+        'birthdate' => 'Le champ "date de naissance" n\'a pas été rempli correctement',
     ],
 
     'Unique' => [
-        'username' => '',
-        'email' => '',
+        'username' => 'Vous êtes unique. Votre nom d\'utilisateur doit l\'être également.',
+        'email' => 'Cette adresse email est déjà associée à un compte.',
     ],
 
     'String' => [
-        'username' => '',
-        'email' => '',
-        'password' => '',
+        'username' => 'Le nom d\'utilisateur saisi n\'est pas une chaîne de caractères valide.',
+        'email' => 'L\'adresse email saisie n\'est pas une chaîne de caractères valide.',
+        'password' => 'Le mot de passe saisi n\'est pas une chaîne de caractères valide.',
+    ],
+
+    'Regex' => [
+        'username' => 'Le nom d\'utilisateur doit contenir entre 3 et 25 carcatères alphanumériques.',
+        'password' => 'Le mot de passe doit contenir au moins 8 caractères, dont 1 majuscule, 1 minuscule et 1 chiffre.',
     ],
 
     'Min' => [
-        'password' => '',
+        'password' => 'Le mot de passe doit contenir au moins 8 caractères, dont 1 majuscule, 1 minuscule et 1 chiffre.',
     ],
 
     'Max' => [
-        'email' => '',
+        'email' => 'L\'adresse email ne doit pas excéder 75 caractères.',
     ],
 
     'Between' => [
-        'username' => '',
+        'username' => 'Le nom d\'utilisateur doit contenir entre 3 et 25 carcatères alphanumériques.',
     ],
 
     'Email' => [
-        'email' => '',
+        'email' => 'Veuillez saisir une adresse email valide.',
+    ],
+
+    'Confirmed' => [
+        'password' => 'Les mots de passe ne correspondent pas.',
     ],
 
     'Date' => [
-        'birthdate' => '',
+        'birthdate' => 'Veuillez entrer une date valide.',
     ],
 
     'DateFormat' => [
-        'birthdate' => '',
+        'birthdate' => 'La date doit être au format mm-jj-yyyy',
     ],
 
     'Before' => [
-        'birthdate' => '',
+        'birthdate' => 'Vous devez être âgé d\'au moins 13 pour créer un compte.',
     ],
 
     'After' => [
-        'birthdate' => '',
+        'birthdate' => 'Vous ne faites pas votre âge ! Mais si vous êtes âgés de 150 ans ou plus vous n\'êtes pas humains, et seuls les habitants de la planète Terre sont autorisés ici. Pour le moment...',
     ],
 ];

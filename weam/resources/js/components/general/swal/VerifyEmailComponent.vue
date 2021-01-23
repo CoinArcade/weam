@@ -1,24 +1,19 @@
 <template>
 
-    <div class="flex items-center justify-center h-screen">
+    <!--<div class="flex items-center justify-center h-screen">
 
-        <div class="bg-th-card text-black rounded-lg shadow mx-2 xs:max-w-sm md:max-w-xl">
+        <div class="bg-th-card text-black rounded-lg shadow mx-2 xs:max-w-sm md:max-w-xl">-->
+    <div class="text-left">
 
-            <p class="font-bold m-5 mt-10 xs:m-10 xs:mb-5">
-                {{ __('Verify your email address') }}
-            </p>
+        <p class="font-bold m-5 mt-10 xs:m-10 xs:mb-2">
+            {{ __('Verify your email address') }}
+        </p>
 
-            <div class="m-5 mt-0 xs:m-10">
-                {{ __('A fresh verification link has been sent to your email address') }}
-                {{ __('Before proceeding, please check your email for a verification link') }}
-                {{ __('If you did not receive the email') }}
-                <form class="d-inline" method="POST" action="/email/resend">
-                    <input type="hidden" name="_token" :value="this.token">
-                    <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>
-                </form>
-            </div>
-
+        <div class="mt-5 mx-2 xs:mx-10 text-sm">
+            {{ __('A verification link has been sent to your email address, if you did not receive the email, you can request another from your profile') }}
         </div>
+
+        <button class="btn btn-link p-0 mt-5 mx-2 mb-2 xs:mx-10 xs:mb-10 text-sm">{{ __('View my profile') }}</button>
 
     </div>
 
@@ -26,18 +21,14 @@
 
 <script>
 
+    import FormError from '../form/FormErrorComponent';
+
     export default {
 
         name: "VerifyEmail",
 
-        data: function () {
-
-            return {
-
-                token: this.getCSRFToken()
-
-            }
-
+        components: {
+            FormError
         }
 
     }

@@ -221,7 +221,7 @@
 
                 if (!/^[_a-zA-Z0-9]{3,25}$/.test(value)) {
                     this.signupUsername = null
-                    this.$refs.signupUsername.showErrorMsg("Username must contain between 3 and 25 alphanumeric characters")
+                    this.$refs.signupUsername.showErrorMsg("Regex.username")
                 } else {
                     this.signupUsername = value
                     this.$refs.signupUsername.resetErrorMsg()
@@ -234,9 +234,9 @@
             // check if email address is valid
             emailSignupValidation: function(value) {
 
-                if (!/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/.test(value)) {
+                if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(value)) {
                     this.signupEmail = null
-                    this.$refs.signupEmail.showErrorMsg("Please enter a valid email address")
+                    this.$refs.signupEmail.showErrorMsg("Email.email")
                 } else {
                     this.signupEmail = value
                     this.$refs.signupEmail.resetErrorMsg()
@@ -252,7 +252,7 @@
                 // check if confirmation password match
                 if (value !== this.signupPasswordConfirmation) {
                     this.signupPasswordConfirmation = null
-                    this.$refs.signupPasswordConfirmation.showErrorMsg('Password do not match')
+                    this.$refs.signupPasswordConfirmation.showErrorMsg('Confirmed.password')
                 } else {
                     this.signupPasswordConfirmation = value
                     this.$refs.signupPasswordConfirmation.resetErrorMsg()
@@ -263,7 +263,7 @@
 
                 if (!/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/.test(value)) {
                     this.signupPassword = null
-                    this.$refs.signupPassword.showErrorMsg('Password must contain at least 8 characters, including 1 upper case, 1 lower case and 1 number')
+                    this.$refs.signupPassword.showErrorMsg('Regex.password')
                 } else {
                     this.signupPassword = value
                     this.$refs.signupPassword.resetErrorMsg()
@@ -278,7 +278,7 @@
 
                 if (value !== this.lastSignupPassword) {
                     this.signupPasswordConfirmation = null
-                    this.$refs.signupPasswordConfirmation.showErrorMsg('Password do not match')
+                    this.$refs.signupPasswordConfirmation.showErrorMsg('Confirmed.password')
                 } else {
                     this.signupPasswordConfirmation = value
                     this.$refs.signupPasswordConfirmation.resetErrorMsg()
@@ -318,7 +318,7 @@
                         minYear = date.getFullYear() - 13,
                         minMonth = date.getMonth() + 1,
                         minDay = date.getDate(),
-                        errorMsg = 'Please enter a valid date';
+                        errorMsg = 'Date.birthdate';
 
                     if (this.signupBirthdateDay.length > 2 || this.signupBirthdateDay < 1) {
                         this.signupBirthdateDay = null
@@ -336,21 +336,21 @@
                     }
 
                     if (this.signupBirthdateYear && this.signupBirthdateYear < maxYear) {
-                        errorMsg = 'You don\'t look your age ! But if you are 150 years old or older you are not human'
+                        errorMsg = 'After.birthdate'
                         this.signupBirthdateYear = null
                         this.$refs.signupBirthdateYear.showError()
                     }
 
                     if (this.signupBirthdateDay && this.signupBirthdateMonth && this.signupBirthdateYear && parseInt(this.signupBirthdateYear) > minYear) {
-                        errorMsg = 'You must be at least 13 years old to create an account'
+                        errorMsg = 'Before.birthdate'
                         this.signupBirthdateYear = null
                         this.$refs.signupBirthdateYear.showError()
                     } else if (this.signupBirthdateDay && this.signupBirthdateMonth && this.signupBirthdateYear && parseInt(this.signupBirthdateYear) === minYear && this.signupBirthdateMonth > minMonth) {
-                        errorMsg = 'You must be at least 13 years old to create an account'
+                        errorMsg = 'Before.birthdate'
                         this.signupBirthdateMonth = null
                         this.$refs.signupBirthdateMonth.showError()
                     } else if (this.signupBirthdateDay && this.signupBirthdateMonth && this.signupBirthdateYear && parseInt(this.signupBirthdateYear) === minYear && parseInt(this.signupBirthdateMonth) === minMonth && this.signupBirthdateDay > minDay) {
-                        errorMsg = 'You must be at least 13 years old to create an account'
+                        errorMsg = 'Before.birthdate'
                         this.signupBirthdateDay = null
                         this.$refs.signupBirthdateDay.showError()
                     }
@@ -420,7 +420,9 @@
                         this.$refs.submitSignupButton.stopLoader()
                         if (submitted) {
                             Vue.swal.close()
-                            this.VueSwal2('swalEmailVerification', null, null)
+                            this.VueSwal2('swalEmailVerification', null, null, () => {
+                                this.VueSwal2('swalEmailVerification', null, null)
+                            })
                             /*this.addNotification({
                                 title: 'email verification',
                                 message: 'an email has been sent',

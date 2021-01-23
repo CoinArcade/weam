@@ -19,14 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="Rework on error form system and fix all error display">
-      <change afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/VerifyEmailComponent.vue" afterDir="false" />
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="add resend email verification swal popup after registration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/public/js/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/lib.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/lib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/VerifyEmailComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/VerifyEmailComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/menus/HomeTopMenuComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/menus/HomeTopMenuComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,14 +188,11 @@
       <workItem from="1611067498928" duration="248000" />
       <workItem from="1611068569790" duration="6285000" />
       <workItem from="1611133226926" duration="14009000" />
-      <workItem from="1611213579953" duration="6703000" />
-    </task>
-    <task id="LOCAL-00026" summary="add all directrories and files">
-      <created>1603961689370</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1603961689370</updated>
+      <workItem from="1611213579953" duration="6767000" />
+      <workItem from="1611261426235" duration="1932000" />
+      <workItem from="1611304751989" duration="4790000" />
+      <workItem from="1611317109282" duration="12360000" />
+      <workItem from="1611412921564" duration="481000" />
     </task>
     <task id="LOCAL-00027" summary="add all directrories and files">
       <created>1603962087922</created>
@@ -532,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611214113299</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="add resend email verification swal popup after registration">
+      <created>1611235603258</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1611235603258</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,7 +559,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="implementation of the redirection system for login and signup" />
     <MESSAGE value="implementation of the verification system for login and signup" />
     <MESSAGE value="fix verification bug with prevent default" />
     <MESSAGE value="finish verification system for signup" />
@@ -579,6 +583,7 @@
     <MESSAGE value="Setup user login and login error handler" />
     <MESSAGE value="Rework on error form system and fix all error display" />
     <MESSAGE value="rework on the form error message system" />
-    <option name="LAST_COMMIT_MESSAGE" value="rework on the form error message system" />
+    <MESSAGE value="add resend email verification swal popup after registration" />
+    <option name="LAST_COMMIT_MESSAGE" value="add resend email verification swal popup after registration" />
   </component>
 </project>
