@@ -41,11 +41,13 @@ return [
     // Tasks
     'Tasks' => 'Tasks',
 
-    // CSRF error
+    // CSRF and token errors
     'Invalid token' => 'The request was lost ! Maybe his privilege level was not high enough...',
+    'We are unable to retrieve your access token' => 'We are unable to retrieve your access token. As a result, some requests will not have the necessary level of privilege.',
 
     // Other errors
     'An error occured' => 'An unknown error has occurred. Please try again later.',
+    'Your data could not be saved' => 'Intergalactic interference has occurred : your data could not be saved.',
 
     //Form validation errors
     'Required' => [

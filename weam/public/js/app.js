@@ -7327,18 +7327,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       axios.post(url, data, {
         responseType: 'json'
       }).then(function (response) {
-        console.log(response);
-
         if (response.data && response.data.success) {
-          console.log('success');
+          var api_token = response.data.token;
+          alert(api_token);
           submitted = true;
         } else {
-          console.log('no success');
           _this2.checkupSignupError = response.data.error;
         }
       })["catch"](function (error) {
-        _this2.checkupSignupError = ['An error occured', 1, []];
-        console.log('error');
+        return _this2.checkupSignupError = ['An error occured', 1, []];
       })["finally"](function () {
         _this2.$refs.submitSignupButton.stopLoader();
 
@@ -7346,7 +7343,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           Vue.swal.close();
 
           _this2.VueSwal2('swalEmailVerification', null, null, function () {
-            _this2.VueSwal2('swalEmailVerification', null, null);
+            _this2.$swalRouter.go(0);
           });
           /*this.addNotification({
               title: 'email verification',
@@ -7610,12 +7607,8 @@ __webpack_require__.r(__webpack_exports__);
       this.VueSwal2('swalLang', null, null);
     },
     loginAndSigninForm: function loginAndSigninForm() {
-      var _this = this;
-
       this.VueSwal2('swalLoginAndSigninForm', null, {
         popup: 'swal2-width-login'
-      }, function () {
-        _this.VueSwal2('swalEmailVerification', null, null);
       });
     }
   }
@@ -53594,6 +53587,7 @@ router.beforeEach(function (to, from, next) {
 }); // Vue global variables
 
 Vue.prototype.$appURL = "http://weam.tv";
+Vue.prototype.$apiURL = "http://weam.tv/api";
 Vue.prototype.$swalRouter = router; // Vue app
 
 var app = new Vue({

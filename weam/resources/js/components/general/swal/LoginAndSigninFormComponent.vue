@@ -406,22 +406,21 @@
                 axios
                     .post(url, data, {responseType: 'json'})
                     .then(response => {
-                        console.log(response)
                         if (response.data && response.data.success) {
-                            console.log('success')
+                            let api_token = response.data.token
+                            alert(api_token)
                             submitted = true
                         } else {
-                            console.log('no success')
                             this.checkupSignupError = response.data.error
                         }
                     })
-                    .catch(error => {this.checkupSignupError = ['An error occured', 1, []];console.log('error')})
+                    .catch(error => this.checkupSignupError = ['An error occured', 1, []])
                     .finally(() => {
                         this.$refs.submitSignupButton.stopLoader()
                         if (submitted) {
                             Vue.swal.close()
                             this.VueSwal2('swalEmailVerification', null, null, () => {
-                                this.VueSwal2('swalEmailVerification', null, null)
+                                this.$swalRouter.go(0)
                             })
                             /*this.addNotification({
                                 title: 'email verification',
