@@ -7332,6 +7332,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           alert(api_token);
           submitted = true;
         } else {
+          console.log(response.data.error);
           _this2.checkupSignupError = response.data.error;
         }
       })["catch"](function (error) {

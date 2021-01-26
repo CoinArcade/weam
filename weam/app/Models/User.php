@@ -42,4 +42,14 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function findForPassport($username)
+    {
+        return self::where('username', $username);
+    }
+
+    public function validateForPassportPasswordGrant($password)
+    {
+        return Hash::check('password', $this->password);
+    }
 }

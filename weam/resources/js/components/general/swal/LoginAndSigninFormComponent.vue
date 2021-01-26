@@ -411,6 +411,7 @@
                             alert(api_token)
                             submitted = true
                         } else {
+                            console.log(response.data.error)
                             this.checkupSignupError = response.data.error
                         }
                     })

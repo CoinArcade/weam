@@ -19,22 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="update resend email verification swal popup after registration">
-      <change afterPath="$PROJECT_DIR$/weam/app/Models/Stream.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weam/database/migrations/2021_01_25_120937_create_streams_table.php" afterDir="false" />
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="make api authentication and create stream table">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Security/LoginController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Security/SignupController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/config/auth.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/menus/HomeTopMenuComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/menus/HomeTopMenuComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,14 +193,8 @@
       <workItem from="1611501569465" duration="838000" />
       <workItem from="1611510517648" duration="1337000" />
       <workItem from="1611558701049" duration="13465000" />
-      <workItem from="1611590649355" duration="5903000" />
-    </task>
-    <task id="LOCAL-00028" summary="add all directrories and files">
-      <created>1603968165815</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1603968165815</updated>
+      <workItem from="1611590649355" duration="6153000" />
+      <workItem from="1611661335748" duration="10266000" />
     </task>
     <task id="LOCAL-00029" summary="update multiplatform.sh">
       <created>1604313395410</created>
@@ -548,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611413442172</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="make api authentication and create stream table">
+      <created>1611610132997</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1611610132998</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,7 +561,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="fix verification bug with prevent default" />
     <MESSAGE value="finish verification system for signup" />
     <MESSAGE value="fix bug on error displaying" />
     <MESSAGE value="fix empty translation" />
@@ -595,6 +585,7 @@
     <MESSAGE value="rework on the form error message system" />
     <MESSAGE value="add resend email verification swal popup after registration" />
     <MESSAGE value="update resend email verification swal popup after registration" />
-    <option name="LAST_COMMIT_MESSAGE" value="update resend email verification swal popup after registration" />
+    <MESSAGE value="make api authentication and create stream table" />
+    <option name="LAST_COMMIT_MESSAGE" value="make api authentication and create stream table" />
   </component>
 </project>
