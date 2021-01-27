@@ -72,11 +72,11 @@ const router = new VueRouter({
             }
         },
 
-        // Not found
-        {
+        // Channel
+        /*{
             path: '*',
             redirect: '/'
-        }
+        }*/
     ]
 });
 

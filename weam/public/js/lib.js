@@ -127,6 +127,35 @@ module.exports = {
 
             document.cookie = name +'= ;Path=/;Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 
+        },
+
+        /**
+         * Allows to save a value in localStorage
+         *
+         * @param name - name of the item
+         * @param value - value of the item
+         */
+        setLSI(name, value) {
+            localStorage.setItem(name, value)
+        },
+
+        /**
+         * Allows to get a value assigned to a key in localStorage
+         *
+         * @param name - name of the item to get
+         * @returns item value
+         */
+        getLSI(name) {
+            return localStorage.getItem(name)
+        },
+
+        /**
+         * Allows to delete an item in localStorage
+         *
+         * @param name - item to delete
+         */
+        deleteLSI(name) {
+            localStorage.removeItem(name)
         }
 
     }

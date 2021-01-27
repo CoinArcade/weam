@@ -407,6 +407,7 @@
                     .post(url, data, {responseType: 'json'})
                     .then(response => {
                         if (response.data && response.data.success) {
+                            this.setLSI('token', response.data.token)
                             submitted = true
                         } else {
                             this.checkupSignupError = response.data.error

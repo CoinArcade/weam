@@ -7328,6 +7328,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         responseType: 'json'
       }).then(function (response) {
         if (response.data && response.data.success) {
+          _this2.setLSI('token', response.data.token);
+
           submitted = true;
         } else {
           _this2.checkupSignupError = response.data.error;
@@ -53572,11 +53574,13 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
     meta: {
       title: _lib__WEBPACK_IMPORTED_MODULE_3___default.a.methods.__('Tasks')
     }
-  }, // Not found
-  {
-    path: '*',
-    redirect: '/'
-  }]
+  } // Channel
+
+  /*{
+      path: '*',
+      redirect: '/'
+  }*/
+  ]
 }); // Page title
 
 router.beforeEach(function (to, from, next) {
@@ -54806,6 +54810,35 @@ module.exports = {
      */
     eraseCookie: function eraseCookie(name) {
       document.cookie = name + '= ;Path=/;Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    },
+
+    /**
+     * Allows to save a value in localStorage
+     *
+     * @param name - name of the item
+     * @param value - value of the item
+     */
+    setLSI: function setLSI(name, value) {
+      localStorage.setItem(name, value);
+    },
+
+    /**
+     * Allows to get a value assigned to a key in localStorage
+     *
+     * @param name - name of the item to get
+     * @returns item value
+     */
+    getLSI: function getLSI(name) {
+      return localStorage.getItem(name);
+    },
+
+    /**
+     * Allows to delete an item in localStorage
+     *
+     * @param name - item to delete
+     */
+    deleteLSI: function deleteLSI(name) {
+      localStorage.removeItem(name);
     }
   }
 };
