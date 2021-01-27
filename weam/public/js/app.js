@@ -7328,11 +7328,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         responseType: 'json'
       }).then(function (response) {
         if (response.data && response.data.success) {
-          var api_token = response.data.token;
-          alert(api_token);
           submitted = true;
         } else {
-          console.log(response.data.error);
           _this2.checkupSignupError = response.data.error;
         }
       })["catch"](function (error) {

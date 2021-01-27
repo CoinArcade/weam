@@ -43,7 +43,7 @@ return [
 
     // CSRF and token errors
     'Invalid token' => 'La requête s\'est perdue ! Peut être que son niveau de privilèges n\'était pas assez élevé...',
-    'We are unable to retrieve your access token' => 'Nous sommes incapable de retrouver votre jeton d\'accès. Par conséquent, certaines requêtes ne posséderont pas le niveau de privilège nécessaire.',
+    'We are unable to retrieve get access token' => 'Nous sommes incapable d\'obtenir votre jeton d\'accès. Par conséquent, certaines requêtes ne posséderont pas le niveau de privilège nécessaire.',
 
     // Other errors
     'An error occured' => 'Une erreur inconnue est survenue. Veuillez réessayer plus tard.',

@@ -407,11 +407,8 @@
                     .post(url, data, {responseType: 'json'})
                     .then(response => {
                         if (response.data && response.data.success) {
-                            let api_token = response.data.token
-                            alert(api_token)
                             submitted = true
                         } else {
-                            console.log(response.data.error)
                             this.checkupSignupError = response.data.error
                         }
                     })

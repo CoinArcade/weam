@@ -27,6 +27,9 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Passport::routes();
+        Passport::tokensCan([
+            'user' => 'Access to user data'
+        ]);
 
         Passport::loadKeysFrom(__DIR__.'/../../storage');
     }

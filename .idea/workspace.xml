@@ -19,12 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="make api authentication and create stream table">
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="make api authentication">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Http/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Providers/AuthServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,14 +199,8 @@
       <workItem from="1611510517648" duration="1337000" />
       <workItem from="1611558701049" duration="13465000" />
       <workItem from="1611590649355" duration="6153000" />
-      <workItem from="1611661335748" duration="10266000" />
-    </task>
-    <task id="LOCAL-00029" summary="update multiplatform.sh">
-      <created>1604313395410</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1604313395410</updated>
+      <workItem from="1611661335748" duration="10334000" />
+      <workItem from="1611731215400" duration="10977000" />
     </task>
     <task id="LOCAL-00030" summary="update multiplatform scripts">
       <created>1604340439873</created>
@@ -539,7 +538,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611610132998</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="make api authentication">
+      <created>1611697510279</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1611697510280</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -561,7 +567,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="finish verification system for signup" />
     <MESSAGE value="fix bug on error displaying" />
     <MESSAGE value="fix empty translation" />
     <MESSAGE value="change requirements and add passport" />
@@ -586,6 +591,7 @@
     <MESSAGE value="add resend email verification swal popup after registration" />
     <MESSAGE value="update resend email verification swal popup after registration" />
     <MESSAGE value="make api authentication and create stream table" />
-    <option name="LAST_COMMIT_MESSAGE" value="make api authentication and create stream table" />
+    <MESSAGE value="make api authentication" />
+    <option name="LAST_COMMIT_MESSAGE" value="make api authentication" />
   </component>
 </project>

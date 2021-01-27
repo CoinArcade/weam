@@ -14,10 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->group(function() {
+Route::middleware(['auth:api', 'scopes:user'])->group(function() {
 
-    Route::get('/user', function (Request $request) {
-        return $request->user();
-    });
+    //Route::prefix('/user')->group(function() {
+
+        Route::get('/user', function (Request $request) {
+            return $request->user();
+        });
+
+    //});
 
 });
