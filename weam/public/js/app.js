@@ -6949,8 +6949,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _form_FormInputComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../form/FormInputComponent */ "./resources/js/components/general/form/FormInputComponent.vue");
 /* harmony import */ var _form_FormErrorComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../form/FormErrorComponent */ "./resources/js/components/general/form/FormErrorComponent.vue");
 /* harmony import */ var _form_ButtonLoaderComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../form/ButtonLoaderComponent */ "./resources/js/components/general/form/ButtonLoaderComponent.vue");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _store_UserNotificationsBannerStore__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../store/UserNotificationsBannerStore */ "./resources/js/components/store/UserNotificationsBannerStore.js");
+/* harmony import */ var _store_UserNotificationsBannerStore__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../store/UserNotificationsBannerStore */ "./resources/js/components/store/UserNotificationsBannerStore.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -7033,12 +7032,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
-
+ //import { mapActions } from 'vuex';
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "LoginAndSigninForm",
-  store: _store_UserNotificationsBannerStore__WEBPACK_IMPORTED_MODULE_6__["default"],
+  store: _store_UserNotificationsBannerStore__WEBPACK_IMPORTED_MODULE_5__["default"],
   components: {
     FormLabel: _form_FormLabelComponent__WEBPACK_IMPORTED_MODULE_1__["default"],
     FormInput: _form_FormInputComponent__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -7085,7 +7084,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /*
      * LOGIN FORM VALIDATION
      */
-    // TODO: remember me token
     // check presence of username
     usernameLoginValidation: function usernameLoginValidation(value) {
       this.loginUsername = value;
@@ -7123,7 +7121,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 axios.post(url, data, {
                   responseType: 'json'
                 }).then(function (response) {
-                  if (response.data.success) {
+                  if (response.data && response.data.success) {
+                    _this.setLSI('token', response.data.token);
+
+                    _this.setLSI('username', _this.loginUsername);
+
                     submitted = true;
                   } else {
                     _this.checkupLoginError = response.data.error;
@@ -7162,24 +7164,50 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     // TODO: check strong of password
     // check if username is valid
     usernameSignupValidation: function usernameSignupValidation(value) {
-      if (!/^[_a-zA-Z0-9]{3,25}$/.test(value)) {
+      var _this2 = this;
+
+      if (/^[_a-zA-Z0-9]{3,25}$/.test(value)) {
+        axios.get(this.$apiURL + '/exist/username/' + value).then(function (response) {
+          if (response.data) {
+            if (response.data.used === true) {
+              _this2.signupUsername = null;
+
+              _this2.$refs.signupUsername.showErrorMsg('Unique.username');
+            } else {
+              _this2.signupUsername = value;
+
+              _this2.$refs.signupUsername.resetErrorMsg();
+            }
+          }
+        });
+      } else {
         this.signupUsername = null;
         this.$refs.signupUsername.showErrorMsg("Regex.username");
-      } else {
-        this.signupUsername = value;
-        this.$refs.signupUsername.resetErrorMsg();
       }
 
       this.checkSignupForm();
     },
     // check if email address is valid
     emailSignupValidation: function emailSignupValidation(value) {
-      if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(value)) {
+      var _this3 = this;
+
+      if (/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(value)) {
+        axios.get(this.$apiURL + '/exist/email/' + value).then(function (response) {
+          if (response.data) {
+            if (response.data.used === true) {
+              _this3.signupEmail = null;
+
+              _this3.$refs.signupEmail.showErrorMsg("Unique.email");
+            } else {
+              _this3.signupEmail = value;
+
+              _this3.$refs.signupEmail.resetErrorMsg();
+            }
+          }
+        });
+      } else {
         this.signupEmail = null;
         this.$refs.signupEmail.showErrorMsg("Email.email");
-      } else {
-        this.signupEmail = value;
-        this.$refs.signupEmail.resetErrorMsg();
       }
 
       this.checkSignupForm();
@@ -7311,7 +7339,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     // submit signup form
     submitSignup: function submitSignup() {
-      var _this2 = this;
+      var _this4 = this;
 
       this.checkupSignupError = [];
       var submitted = false,
@@ -7328,22 +7356,24 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         responseType: 'json'
       }).then(function (response) {
         if (response.data && response.data.success) {
-          _this2.setLSI('token', response.data.token);
+          _this4.setLSI('token', response.data.token);
+
+          _this4.setLSI('username', _this4.signupUsername);
 
           submitted = true;
         } else {
-          _this2.checkupSignupError = response.data.error;
+          _this4.checkupSignupError = response.data.error;
         }
       })["catch"](function (error) {
-        return _this2.checkupSignupError = ['An error occured', 1, []];
+        return _this4.checkupSignupError = ['An error occured', 1, []];
       })["finally"](function () {
-        _this2.$refs.submitSignupButton.stopLoader();
+        _this4.$refs.submitSignupButton.stopLoader();
 
         if (submitted) {
           Vue.swal.close();
 
-          _this2.VueSwal2('swalEmailVerification', null, null, function () {
-            _this2.$swalRouter.go(0);
+          _this4.VueSwal2('swalEmailVerification', null, null, function () {
+            _this4.$swalRouter.go(0);
           });
           /*this.addNotification({
               title: 'email verification',

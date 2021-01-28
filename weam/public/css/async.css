@@ -28,7 +28,7 @@
   position: absolute;
   left: 8px;
   width: 8px;
-  background: #ddd;
+  background: white;
   -webkit-animation: loader-bar 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
           animation: loader-bar 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
 }
@@ -47,14 +47,14 @@
 
 .loader-bar div:nth-child(3) {
   left: 48px;
-  -webkit-animation-delay: 0;
-          animation-delay: 0;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
 }
 
 @-webkit-keyframes loader-bar {
   0% {
-    top: -28px;
-    height: 46px;
+    top: -20px;
+    height: 30px;
   }
 
   50%, 100% {
@@ -65,8 +65,8 @@
 
 @keyframes loader-bar {
   0% {
-    top: -28px;
-    height: 46px;
+    top: -20px;
+    height: 30px;
   }
 
   50%, 100% {

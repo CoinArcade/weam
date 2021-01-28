@@ -32,7 +32,7 @@
     position: absolute;
     left: 8px;
     width: 8px;
-    background: #ddd;
+    background: white;
     animation: loader-bar 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
 }
 
@@ -48,13 +48,13 @@
 
 .loader-bar div:nth-child(3) {
     left: 48px;
-    animation-delay: 0;
+    animation-delay: 0s;
 }
 
 @keyframes loader-bar {
     0% {
-        top: -28px;
-        height: 46px;
+        top: -20px;
+        height: 30px;
     }
     50%, 100% {
         top: -12px;

@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -74,6 +75,40 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'birthdate' => $data['birthdate'],
             'password' => Hash::make($data['password']),
+        ]);
+    }
+
+    /**
+     * This method allows to check if a username is already in use or not
+     *
+     * @param $username - username to check
+     * @return \Illuminate\Http\JsonResponse with true if username exist or false
+     */
+    public function checkIfUsernameExist($username)
+    {
+        $result = DB::table('users')->where('username', $username)->get();
+
+        !$result->isEmpty() ? $inUse = true : $inUse = false;
+
+        return response()->json([
+            'used' => $inUse
+        ]);
+    }
+
+    /**
+     * This method allows to check if an email is already in use or not
+     *
+     * @param $email - email to check
+     * @return \Illuminate\Http\JsonResponse with true if username exist or false
+     */
+    public function checkIfEmailExist($email)
+    {
+        $result = DB::table('users')->where('email', $email)->get();
+
+        !$result->isEmpty() ? $inUse = true : $inUse = false;
+
+        return response()->json([
+            'used' => $inUse
         ]);
     }
 }

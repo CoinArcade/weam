@@ -61,6 +61,7 @@
 # php artisan migrate
 # php artisan passport:install --uuids
 # php artisan passport:keys
+# TODO: put client id and client secret on .env file
 
 # TODO: replace content of resources/sass/app.scss by the following :
 # @tailwind base;
@@ -85,7 +86,7 @@
 #      ]
 #  }
 
-# TODO : update webpack.mix.js with these lines :
+# optional
 #
 # const tailwindcss = require('tailwindcss')
 #
@@ -114,4 +115,5 @@
 #
 
 # TODO: change app url in resources/js/app.js and config/app.php
+# TODO: change app_key in .env file
 # npm run dev

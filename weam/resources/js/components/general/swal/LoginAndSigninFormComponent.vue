@@ -78,7 +78,7 @@
     import FormError from '../form/FormErrorComponent';
     import ButtonLoader from '../form/ButtonLoaderComponent';
 
-    import { mapActions } from 'vuex';
+    //import { mapActions } from 'vuex';
     import UserNotificationsBannerStore from "../../store/UserNotificationsBannerStore";
 
     export default {
@@ -151,8 +151,6 @@
              * LOGIN FORM VALIDATION
              */
 
-            // TODO: remember me token
-
             // check presence of username
             usernameLoginValidation: function(value) {
                 this.loginUsername = value
@@ -192,7 +190,9 @@
                 axios
                     .post(url, data, {responseType: 'json'})
                     .then(response => {
-                        if (response.data.success) {
+                        if (response.data && response.data.success) {
+                            this.setLSI('token', response.data.token)
+                            this.setLSI('username', this.loginUsername)
                             submitted = true
                         } else {
                             this.checkupLoginError = response.data.error
@@ -219,12 +219,25 @@
             // check if username is valid
             usernameSignupValidation: function(value) {
 
-                if (!/^[_a-zA-Z0-9]{3,25}$/.test(value)) {
+                if (/^[_a-zA-Z0-9]{3,25}$/.test(value)) {
+
+                    axios
+                        .get(this.$apiURL + '/exist/username/' + value)
+                        .then(response => {
+                            if (response.data) {
+                                if (response.data.used === true) {
+                                    this.signupUsername = null
+                                    this.$refs.signupUsername.showErrorMsg('Unique.username')
+                                } else {
+                                    this.signupUsername = value
+                                    this.$refs.signupUsername.resetErrorMsg()
+                                }
+                            }
+                        })
+
+                } else {
                     this.signupUsername = null
                     this.$refs.signupUsername.showErrorMsg("Regex.username")
-                } else {
-                    this.signupUsername = value
-                    this.$refs.signupUsername.resetErrorMsg()
                 }
 
                 this.checkSignupForm()
@@ -234,12 +247,25 @@
             // check if email address is valid
             emailSignupValidation: function(value) {
 
-                if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(value)) {
+                if (/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(value)) {
+
+                    axios
+                        .get(this.$apiURL + '/exist/email/' + value)
+                        .then(response => {
+                            if (response.data) {
+                                if (response.data.used === true) {
+                                    this.signupEmail = null
+                                    this.$refs.signupEmail.showErrorMsg("Unique.email")
+                                } else {
+                                    this.signupEmail = value
+                                    this.$refs.signupEmail.resetErrorMsg()
+                                }
+                            }
+                        })
+
+                } else {
                     this.signupEmail = null
                     this.$refs.signupEmail.showErrorMsg("Email.email")
-                } else {
-                    this.signupEmail = value
-                    this.$refs.signupEmail.resetErrorMsg()
                 }
 
                 this.checkSignupForm()
@@ -408,6 +434,7 @@
                     .then(response => {
                         if (response.data && response.data.success) {
                             this.setLSI('token', response.data.token)
+                            this.setLSI('username', this.signupUsername)
                             submitted = true
                         } else {
                             this.checkupSignupError = response.data.error

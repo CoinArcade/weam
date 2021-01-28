@@ -14,14 +14,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(['auth:api', 'scopes:user'])->group(function() {
 
-    //Route::prefix('/user')->group(function() {
 
-        Route::get('/user', function (Request $request) {
+/**
+ * non protected api routes
+ */
+Route::prefix('/exist')->group(function() {
+
+    Route::get('/username/{username}', 'App\Http\Controllers\Auth\RegisterController@checkIfUsernameExist')->where('username', '^[_a-zA-Z0-9]{3,25}$');
+    Route::get('/email/{email}', 'App\Http\Controllers\Auth\RegisterController@checkIfEmailExist')->where('email', '^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$');
+
+});
+
+
+
+/**
+ * protected api routes
+ */
+Route::middleware(['auth:api', 'scopes:user-data'])->group(function() {
+
+    Route::prefix('/user')->group(function() {
+
+        Route::get('/', function (Request $request) {
             return $request->user();
         });
 
-    //});
+    });
 
 });

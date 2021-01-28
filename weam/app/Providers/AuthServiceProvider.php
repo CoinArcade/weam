@@ -28,7 +28,7 @@ class AuthServiceProvider extends ServiceProvider
 
         Passport::routes();
         Passport::tokensCan([
-            'user' => 'Access to user data'
+            'user-data' => 'Access to user data'
         ]);
 
         Passport::loadKeysFrom(__DIR__.'/../../storage');

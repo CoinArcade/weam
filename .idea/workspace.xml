@@ -19,13 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="setup personnal access tokens">
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="finalize api token implementation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements/others-install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/requirements/others-install.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/css/async.css" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/css/async.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/public/js/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/lib.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/lib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/sass/async.scss" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/sass/async.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,14 +201,8 @@
       <workItem from="1611590649355" duration="6153000" />
       <workItem from="1611661335748" duration="10334000" />
       <workItem from="1611731215400" duration="14608000" />
-      <workItem from="1611764910894" duration="3927000" />
-    </task>
-    <task id="LOCAL-00031" summary="platform changed">
-      <created>1604341506892</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1604341506892</updated>
+      <workItem from="1611764910894" duration="11352000" />
+      <workItem from="1611829631816" duration="18076000" />
     </task>
     <task id="LOCAL-00032" summary="changed platform and update scripts">
       <created>1604341863164</created>
@@ -542,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611756979939</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="finalize api token implementation">
+      <created>1611768868072</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1611768868073</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -564,7 +569,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="fix empty translation" />
     <MESSAGE value="change requirements and add passport" />
     <MESSAGE value="change requirements, add passport and update all" />
     <MESSAGE value="make csrf verification and update php version" />
@@ -589,6 +593,7 @@
     <MESSAGE value="make api authentication and create stream table" />
     <MESSAGE value="make api authentication" />
     <MESSAGE value="setup personnal access tokens" />
-    <option name="LAST_COMMIT_MESSAGE" value="setup personnal access tokens" />
+    <MESSAGE value="finalize api token implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="finalize api token implementation" />
   </component>
 </project>
