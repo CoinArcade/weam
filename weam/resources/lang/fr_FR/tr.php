@@ -44,10 +44,13 @@ return [
     // CSRF and token errors
     'Invalid token' => 'La requête s\'est perdue ! Peut être que son niveau de privilèges n\'était pas assez élevé...',
     'We are unable to retrieve get access token' => 'Nous sommes incapable d\'obtenir votre jeton d\'accès. Par conséquent, certaines requêtes ne posséderont pas le niveau de privilège nécessaire.',
+    'Invalid user access token' => 'Jeton d\'accès utilisateur invalide. Afin que nous puissions récupérer vos données correctement, veuillez vous reconnecter.',
 
     // Other errors
     'An error occured' => 'Une erreur inconnue est survenue. Veuillez réessayer plus tard.',
-    'Your data could not be saved' => 'Une interférence intergalactique est survenue : vos données n\'ont pas pu être sauvegardées.',
+    'Your data could not be saved' => 'Une interférence intergalactique est survenue : vos données n\'ont pas pu être sauvegardées. Veuillez réessayer plus tard.',
+    'Error' => 'Erreur',
+    'We are unable to retrieve your data' => 'Nous ne sommes pas en mesure de récupérer vos données. Afin que nous puissions récupérer vos données correctement, veuillez vous connecter à nouveau.',
 
     // Form validation errors
     'Required' => [

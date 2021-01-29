@@ -156,8 +156,19 @@ module.exports = {
          */
         deleteLSI(name) {
             localStorage.removeItem(name)
-        }
+        },
 
+        /**
+         * Allows to completely disconnect a user
+         */
+        logout() {
+            localStorage.clear()
+            axios
+                .post(this.$appURL + '/logout', {
+                    _token: this.getCSRFToken()
+                })
+                .then(response => this.$router.go(0))
+        }
     }
 
 }

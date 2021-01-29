@@ -20,16 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="finalize api token implementation">
+      <change afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/WarningComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements/others-install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/requirements/others-install.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/public/css/async.css" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/css/async.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/js/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/lib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/AppComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/AppComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/sass/async.scss" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/sass/async.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/store/UserStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/store/UserStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/lib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,14 +203,9 @@
       <workItem from="1611661335748" duration="10334000" />
       <workItem from="1611731215400" duration="14608000" />
       <workItem from="1611764910894" duration="11352000" />
-      <workItem from="1611829631816" duration="18076000" />
-    </task>
-    <task id="LOCAL-00032" summary="changed platform and update scripts">
-      <created>1604341863164</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1604341863164</updated>
+      <workItem from="1611829631816" duration="18451000" />
+      <workItem from="1611904145081" duration="2996000" />
+      <workItem from="1611912693630" duration="6288000" />
     </task>
     <task id="LOCAL-00033" summary="update multiplatform scripts">
       <created>1605969041831</created>
@@ -547,7 +543,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611768868073</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="Implement JWT generation and store on login + check if username and email exists on registration">
+      <created>1611868590137</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1611868590138</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +572,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="change requirements and add passport" />
     <MESSAGE value="change requirements, add passport and update all" />
     <MESSAGE value="make csrf verification and update php version" />
     <MESSAGE value="vendor commit" />
@@ -594,6 +596,7 @@
     <MESSAGE value="make api authentication" />
     <MESSAGE value="setup personnal access tokens" />
     <MESSAGE value="finalize api token implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="finalize api token implementation" />
+    <MESSAGE value="Implement JWT generation and store on login + check if username and email exists on registration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement JWT generation and store on login + check if username and email exists on registration" />
   </component>
 </project>

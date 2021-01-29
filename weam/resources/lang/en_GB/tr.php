@@ -44,10 +44,13 @@ return [
     // CSRF and token errors
     'Invalid token' => 'The request was lost ! Maybe his privilege level was not high enough...',
     'We are unable to get your access token' => 'We are unable to get your access token. As a result, some requests will not have the necessary level of privilege.',
+    'Invalid user access token' => 'Invalid user access token. In order for us to recover your data correctly, please log in again.',
 
     // Other errors
     'An error occured' => 'An unknown error has occurred. Please try again later.',
-    'Your data could not be saved' => 'Intergalactic interference has occurred : your data could not be saved.',
+    'Your data could not be saved' => 'Intergalactic interference has occurred : your data could not be saved. Please try again later.',
+    'Error' => 'Error',
+    'We are unable to retrieve your data' => 'We are unable to retrieve your data. In order for us to recover your data correctly, please log in again.',
 
     //Form validation errors
     'Required' => [

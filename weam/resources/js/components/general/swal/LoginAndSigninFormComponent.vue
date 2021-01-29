@@ -78,14 +78,9 @@
     import FormError from '../form/FormErrorComponent';
     import ButtonLoader from '../form/ButtonLoaderComponent';
 
-    //import { mapActions } from 'vuex';
-    import UserNotificationsBannerStore from "../../store/UserNotificationsBannerStore";
-
     export default {
 
         name: "LoginAndSigninForm",
-
-        store: UserNotificationsBannerStore,
 
         components: {
             FormLabel,
@@ -143,9 +138,6 @@
         },
 
         methods: {
-
-            // allow to add a notification in the store
-            //...mapActions(['addNotification']),
 
             /*
              * LOGIN FORM VALIDATION
@@ -213,7 +205,6 @@
              * SIGNUP FORM VALIDATION
              */
 
-            // TODO: check if username or email are already used
             // TODO: check strong of password
 
             // check if username is valid
@@ -448,15 +439,6 @@
                             this.VueSwal2('swalEmailVerification', null, null, () => {
                                 this.$swalRouter.go(0)
                             })
-                            /*this.addNotification({
-                                title: 'email verification',
-                                message: 'an email has been sent',
-                                action: true,
-                                actionMessage: 'resend email',
-                                actionLink: '/email/resend',
-                                closable: false
-                            })*/
-                            //this.$swalRouter.go(0)
                         }
                     })
 

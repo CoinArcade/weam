@@ -1,21 +1,21 @@
 import Vuex from 'vuex'
 
 const state = {
-    user: [
-        {
-            message: 'Hello, je suis une bannière d\'information',
-            button: false,
-            buttonMessage: 'test',
-            closable: false
-        }
-    ]
+    user: []
 }
 
 const mutations = {
 
-    ADD_NOTIFICATION: (state) => {
+    ADD_USER: (state, {id, username, email, verified, role, birthdate}) => {
+        state.user = []
         state.user.push({
-
+            id,
+            username,
+            email,
+            verified,
+            role,
+            birthdate,
+            key: 1
         })
     }
 
@@ -23,18 +23,24 @@ const mutations = {
 
 const getters = {
 
-    notifications: state => state.notifications
+    user: state => state.user
 
 }
 
-let UserStore = new Vuex.Store({
+const actions = {
+
+    addUser: (store, {id, username, email, verified, role, birthdate}) => {
+        store.commit('ADD_USER', {id, username, email, verified, role, birthdate})
+    }
+
+}
+
+export default new Vuex.Store({
 
     state,
     mutations,
     getters,
-    actions: {},
+    actions: actions,
     strict: true
 
 })
-
-export default UserStore
