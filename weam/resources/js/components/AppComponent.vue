@@ -10,7 +10,7 @@
 
 <script>
 
-    import { mapActions } from 'vuex';
+    import { mapActions, mapGetters } from 'vuex';
     import UserStore from "./store/UserStore";
 
     export default {
@@ -21,12 +21,24 @@
 
         created: function() {
 
+            this.setPageLoading(true)
+
             if (this.getLSI('token')) {
+
+                let continueButton = [
+                        {
+                            key: 0,
+                            content: 'Continue',
+                            action: function() {
+                                Vue.swal.close()
+                            }
+                        }
+                    ];
 
                 axios
                     .get(this.$apiURL + '/user', {
                         headers: {
-                            Authorization: 'Bearer ' + this.getLSI('token') + 'a'
+                            Authorization: 'Bearer ' + this.getLSI('token')
                         }
                     })
                     .then(response => {
@@ -45,8 +57,8 @@
                             this.VueSwal2('swalWarning', {
                                 'title': 'Error',
                                 'message': 'We are unable to retrieve your data',
-                                'showButtons': false,
-                                'buttons': null
+                                'showButtons': true,
+                                'buttons': continueButton
                             }, null, () => {
                                 this.logout()
                             })
@@ -57,26 +69,28 @@
                             'title': 'Error',
                             'message': 'Invalid user access token',
                             'showButtons': true,
-                            'buttons': [
-                                {
-                                    content: 'test',
-                                    action: function() {
-                                        Vue.swal.close()
-                                    }
-                                }
-                            ]
+                            'buttons': continueButton
                         }, null, () => {
                             this.logout()
                         })
                     })
 
             }
+
+            this.setPageLoading(false)
+
+        },
+
+        computed: {
+
+            ...mapGetters(['user'])
+
         },
 
         methods: {
 
             // allow to add a user in the store
-            ...mapActions(['addUser'])
+            ...mapActions(['addUser', 'setPageLoading'])
 
         },
 

@@ -159,6 +159,15 @@ module.exports = {
         },
 
         /**
+         * Allows to autologin a user safely
+         */
+        autologin() {
+            if (this.getLSI('token')) {
+
+            }
+        },
+
+        /**
          * Allows to completely disconnect a user
          */
         logout() {

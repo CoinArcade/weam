@@ -46,7 +46,6 @@ let Tasks = require('./components/settings/TaskComponent').default;
 // Swal components
 let swalLang = Vue.component('swalLang', require('./components/general/swal/ChooseLanguageComponent').default);
 let swalLoginAndSigninForm = Vue.component('swalLoginAndSigninForm', require('./components/general/swal/LoginAndSigninFormComponent').default);
-let swalEmailVerification = Vue.component('swalEmailVerification', require('./components/general/swal/VerifyEmailComponent').default);
 let swalWarning = Vue.component('swalWarning', require('./components/general/swal/WarningComponent').default);
 
 // Vue router

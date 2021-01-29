@@ -31,6 +31,7 @@ return [
     'Too many login attempts' => 'Certaines limites sont faites pour être dépassées... Mais pas celle-ci. Veuillez réessayer dans :seconds secondes.',
     'A verification link has been sent to your email address, if you did not receive the email, you can request another from your profile' => 'Un lien de vérification a été envoyé à votre adresse email. Si vous n\'avez pas reçu de lien, vous pouvez en demander un autre depuis votre profil.',
     'View my profile' => 'Voir mon profil',
+    'Continue' => 'Continuer',
 
     // Signup email verification
     'Weam - Account verification' => 'Weam - Vérification du compte',

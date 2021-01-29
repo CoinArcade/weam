@@ -11,7 +11,7 @@ return [
     'Parameters' => 'Parameters',
     'Log In' => 'Log In',
     'Sign Up' => 'Sign Up',
-    'Log Out' => 'Log Out',
+    'Log Out' => 'Log out',
     'Current language' => App::getLocale(),
     'Default language' => config("app.fallback_locale"),
 
@@ -31,6 +31,7 @@ return [
     'Too many login attempts' => 'Some limits are made to be exceeded... But not this one. Please try again in :seconds seconds.',
     'A verification link has been sent to your email address, if you did not receive the email, you can request another from your profile' => 'A verification link has been sent to your email address. If you did not receive the email, you can request another from your profile.',
     'View my profile' => 'View my profile',
+    'Continue' => 'Continue',
 
     // Signup email verification
     'Weam - Account verification' => 'Weam - Account verification',

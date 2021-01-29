@@ -69,7 +69,8 @@
                 </div>
                 <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                     <a @click="parameters" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 cursor-pointer">{{ __('Parameters') }}</a>
-                    <a @click="loginAndSigninForm" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 cursor-pointer">{{ __('Log In') }}</a>
+                    <a v-if="this.logged" @click="this.logout" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 cursor-pointer">{{ __('Log Out') }}</a>
+                    <a v-else @click="loginAndSigninForm" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 cursor-pointer">{{ __('Log In') }}</a>
                     <button class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                         <span class="sr-only">View notifications</span>
                         <!-- Heroicon name: bell -->
@@ -126,9 +127,20 @@
 
 <script>
 
+    import {mapState} from "vuex";
+    import UserStore from "../store/UserStore";
+
     export default {
 
         name: 'HomeTopMenu',
+
+        store: UserStore,
+
+        computed: {
+
+            ...mapState(['user', 'logged'])
+
+        },
 
         methods: {
 
@@ -138,6 +150,12 @@
 
             loginAndSigninForm() {
                 this.VueSwal2('swalLoginAndSigninForm', null, {popup: 'swal2-width-login'})
+            },
+
+            checkLogin() {
+                /*if (this.user[0] !== undefined) {
+                    alert(this.isLogin(this.user[0].id, this.user[0].username, this.user[0].email))
+                }*/
             }
 
         }

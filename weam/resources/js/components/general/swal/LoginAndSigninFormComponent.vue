@@ -436,7 +436,20 @@
                         this.$refs.submitSignupButton.stopLoader()
                         if (submitted) {
                             Vue.swal.close()
-                            this.VueSwal2('swalEmailVerification', null, null, () => {
+                            this.VueSwal2('swalWarning', {
+                                'title': 'Verify your email address',
+                                'message': 'A verification link has been sent to your email address, if you did not receive the email, you can request another from your profile',
+                                'showButtons': true,
+                                'buttons': [
+                                    {
+                                        key: 0,
+                                        content: 'View my profile',
+                                        action: function () {
+                                            Vue.swal.close()
+                                        }
+                                    }
+                                ]
+                            }, null, () => {
                                 this.$swalRouter.go(0)
                             })
                         }

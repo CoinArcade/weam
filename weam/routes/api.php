@@ -21,8 +21,10 @@ use Illuminate\Support\Facades\Route;
  */
 Route::prefix('/exist')->group(function() {
 
-    Route::get('/username/{username}', 'App\Http\Controllers\Auth\RegisterController@checkIfUsernameExist')->where('username', '^[_a-zA-Z0-9]{3,25}$');
-    Route::get('/email/{email}', 'App\Http\Controllers\Auth\RegisterController@checkIfEmailExist')->where('email', '^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$');
+    Route::get('/username/{username}', 'App\Http\Controllers\Auth\RegisterController@checkIfUsernameExist')
+        ->where('username', '^[_a-zA-Z0-9]{3,25}$');
+    Route::get('/email/{email}', 'App\Http\Controllers\Auth\RegisterController@checkIfEmailExist')
+        ->where('email', '^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$');
 
 });
 

@@ -8,7 +8,7 @@
 
             <h1 class="mt-8"><a href="#">{{ __("Welcome", 1, ["test"]) }}</a></h1>
 
-            <user-notification-banner v-for="n in notifications"
+            <!--<user-notification-banner v-for="n in notifications"
                                       :key="n.key"
                                       :title="n.title"
                                       :message="n.message"
@@ -16,7 +16,7 @@
                                       :action-message="n.actionMessage"
                                       :action-link="n.actionLink"
                                       :closable="n.closable">
-            </user-notification-banner>
+            </user-notification-banner>-->
 
         </div>
 
@@ -29,25 +29,25 @@
     import MenuTop from '../menus/HomeTopMenuComponent';
     import UserNotificationBanner from "../general/notifications/UserNotificationBannerComponent";
 
-    import { mapState } from "vuex";
-    import UserBannerNotificationStore from "../store/UserNotificationsBannerStore";
+    //import { mapState } from "vuex";
+    //import UserBannerNotificationStore from "../store/UserNotificationsBannerStore";
 
     export default {
 
     	name: 'Home',
 
-        store: UserBannerNotificationStore,
+        //store: UserBannerNotificationStore,
 
         components: {
             'MenuTop': MenuTop,
             'UserNotificationBanner': UserNotificationBanner
         },
 
-        computed: {
+        /*computed: {
 
     	    ...mapState(['notifications'])
 
-        }
+        }*/
 
     }
 

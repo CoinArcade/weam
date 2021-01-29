@@ -73,6 +73,6 @@ button:focus {
     color: var(--theme-color);
 }
 
-.tabs-content .tab:not(.active):hover, .tabs-content .tab:not(.active):focus {
+.tabs-content .tab:not(.active):hover, .tabs-content .tab:not(.active):focus, .btn-hover-theme {
     background-color: var(--theme-body);
 }
