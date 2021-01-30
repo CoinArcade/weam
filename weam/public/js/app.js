@@ -55031,13 +55031,6 @@ module.exports = {
     },
 
     /**
-     * Allows to autologin a user safely
-     */
-    autologin: function autologin() {
-      if (this.getLSI('api_token')) {}
-    },
-
-    /**
      * Allows to completely disconnect a user
      */
     logout: function logout() {
