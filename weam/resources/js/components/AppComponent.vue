@@ -27,6 +27,7 @@
                 this.setLSI('last_path', '/')
                 this.setLSI('current_path', '/')
             } else {
+                this.setLSI('last_path', this.getLSI('current_path'))
                 this.setLSI('current_path', this.$route.path)
             }
 
