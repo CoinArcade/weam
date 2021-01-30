@@ -63,6 +63,22 @@ const router = new VueRouter({
             }
         },
 
+        {
+            path: '/app/login',
+            component: Home,
+            meta: {
+                title: VueLibraries.methods.__('Weam')
+            }
+        },
+
+        {
+            path: '/app/register',
+            component: Home,
+            meta: {
+                title: VueLibraries.methods.__('Weam')
+            }
+        },
+
         // Verified path
         {
             path: '/settings',

@@ -49,6 +49,16 @@
 
         }*/
 
+        created: function() {
+
+            if (this.getLSI('current_path') === '/app/login') {
+                this.showLogin({'tab': 1})
+            } else if (this.getLSI('current_path') === '/app/register') {
+                this.showLogin({'tab': 2})
+            }
+
+        }
+
     }
 
 </script>

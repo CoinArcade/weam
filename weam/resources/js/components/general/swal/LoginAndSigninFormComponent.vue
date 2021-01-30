@@ -28,7 +28,7 @@
 
         </form>
 
-        <form v-if="activeTab === 2" class="bg-white rounded mb-2 flex flex-col col-span-full md:col-start-2 md:col-span-10">
+        <form v-else class="bg-white rounded mb-2 flex flex-col col-span-full md:col-start-2 md:col-span-10">
 
             <form-input @validate="usernameSignupValidation" key="signup-username"
                         label="Username" placeholder="Enter your username" ref="signupUsername"></form-input>
@@ -89,12 +89,19 @@
             ButtonLoader
         },
 
+        props: {
+            'tab': {
+                type: Number,
+                default: 1
+            }
+        },
+
         data: function() {
 
             return {
 
                 // tab
-                activeTab: 1,
+                activeTab: this.tab,
 
                 // login form values
                 loginUsername: null,
@@ -183,8 +190,8 @@
                     .post(url, data, {responseType: 'json'})
                     .then(response => {
                         if (response.data && response.data.success) {
-                            this.setLSI('token', response.data.token)
-                            this.setLSI('username', this.loginUsername)
+                            this.setLSI('api_token', response.data.token)
+                            this.setCookie('api_token_copy', response.data.token, 365)
                             submitted = true
                         } else {
                             this.checkupLoginError = response.data.error
@@ -424,8 +431,8 @@
                     .post(url, data, {responseType: 'json'})
                     .then(response => {
                         if (response.data && response.data.success) {
-                            this.setLSI('token', response.data.token)
-                            this.setLSI('username', this.signupUsername)
+                            this.setLSI('api_token', response.data.token)
+                            this.setCookie('api_token_copy', response.data.token, 365)
                             submitted = true
                         } else {
                             this.checkupSignupError = response.data.error

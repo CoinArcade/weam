@@ -6526,62 +6526,75 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   name: 'App',
   store: _store_UserStore__WEBPACK_IMPORTED_MODULE_1__["default"],
   created: function created() {
-    var _this = this;
-
     this.setPageLoading(true);
 
-    if (this.getLSI('token')) {
-      var continueButton = [{
-        key: 0,
-        content: 'Continue',
-        action: function action() {
-          Vue.swal.close();
-        }
-      }];
-      axios.get(this.$apiURL + '/user', {
-        headers: {
-          Authorization: 'Bearer ' + this.getLSI('token')
-        }
-      }).then(function (response) {
-        try {
-          if (response.data) {
-            _this.addUser({
-              id: response.data.id,
-              username: response.data.username,
-              email: response.data.email,
-              verified: response.data.email_verified_at,
-              role: response.data.role,
-              birthdate: response.data.birthdate
+    if (this.getLSI('last_path') === null || this.getLSI('current_path') === null) {
+      this.setLSI('last_path', '/');
+      this.setLSI('current_path', '/');
+    } else {
+      this.setLSI('current_path', this.$route.path);
+    }
+
+    this.checkAuth();
+    this.setPageLoading(false);
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(['user'])),
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])(['addUser', 'setPageLoading'])), {}, {
+    // check if a user and his api token are valid
+    checkAuth: function checkAuth() {
+      var _this = this;
+
+      if (this.getLSI('api_token')) {
+        var continueButton = [{
+          key: 0,
+          content: 'Continue',
+          action: function action() {
+            Vue.swal.close();
+          }
+        }];
+        axios.get(this.$apiURL + '/user', {
+          headers: {
+            Authorization: 'Bearer ' + this.getLSI('api_token')
+          }
+        }).then(function (response) {
+          try {
+            if (response.data) {
+              _this.addUser({
+                id: response.data.id,
+                username: response.data.username,
+                email: response.data.email,
+                verified: response.data.email_verified_at,
+                role: response.data.role,
+                birthdate: response.data.birthdate
+              });
+            }
+          } catch (error) {
+            _this.VueSwal2('swalWarning', {
+              'title': 'Error',
+              'message': 'We are unable to retrieve your data',
+              'showButtons': true,
+              'buttons': continueButton
+            }, null, function () {
+              _this.logout();
             });
           }
-        } catch (error) {
+        })["catch"](function (error) {
           _this.VueSwal2('swalWarning', {
             'title': 'Error',
-            'message': 'We are unable to retrieve your data',
+            'message': 'Invalid user access token',
             'showButtons': true,
             'buttons': continueButton
           }, null, function () {
             _this.logout();
           });
-        }
-      })["catch"](function (error) {
-        _this.VueSwal2('swalWarning', {
-          'title': 'Error',
-          'message': 'Invalid user access token',
-          'showButtons': true,
-          'buttons': continueButton
-        }, null, function () {
-          _this.logout();
         });
-      });
+      }
     }
-
-    this.setPageLoading(false);
-  },
-  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(['user'])),
-  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])(['addUser', 'setPageLoading'])),
+  }),
   watch: {
     $route: function $route(to, from) {
+      this.setLSI('last_path', from.path);
+      this.setLSI('current_path', to.path);
       var cookieLanguage = this.getCookie("language");
 
       if (cookieLanguage !== undefined && cookieLanguage !== null) {
@@ -7106,10 +7119,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     FormError: _form_FormErrorComponent__WEBPACK_IMPORTED_MODULE_3__["default"],
     ButtonLoader: _form_ButtonLoaderComponent__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
+  props: {
+    'tab': {
+      type: Number,
+      "default": 1
+    }
+  },
   data: function data() {
     return {
       // tab
-      activeTab: 1,
+      activeTab: this.tab,
       // login form values
       loginUsername: null,
       loginPassword: null,
@@ -7181,9 +7200,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   responseType: 'json'
                 }).then(function (response) {
                   if (response.data && response.data.success) {
-                    _this.setLSI('token', response.data.token);
+                    _this.setLSI('api_token', response.data.token);
 
-                    _this.setLSI('username', _this.loginUsername);
+                    _this.setCookie('api_token_copy', response.data.token, 365);
 
                     submitted = true;
                   } else {
@@ -7414,9 +7433,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         responseType: 'json'
       }).then(function (response) {
         if (response.data && response.data.success) {
-          _this4.setLSI('token', response.data.token);
+          _this4.setLSI('api_token', response.data.token);
 
-          _this4.setLSI('username', _this4.signupUsername);
+          _this4.setCookie('api_token_copy', response.data.token, 365);
 
           submitted = true;
         } else {
@@ -7546,11 +7565,22 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     'MenuTop': _menus_HomeTopMenuComponent__WEBPACK_IMPORTED_MODULE_0__["default"],
     'UserNotificationBanner': _general_notifications_UserNotificationBannerComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
-  }
+  },
+
   /*computed: {
     ...mapState(['notifications'])
    }*/
-
+  created: function created() {
+    if (this.getLSI('current_path') === '/app/login') {
+      this.showLogin({
+        'tab': 1
+      });
+    } else if (this.getLSI('current_path') === '/app/register') {
+      this.showLogin({
+        'tab': 2
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -7709,9 +7739,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     parameters: function parameters() {
       this.VueSwal2('swalLang', null, null);
     },
-    loginAndSigninForm: function loginAndSigninForm() {
-      this.VueSwal2('swalLoginAndSigninForm', null, {
-        popup: 'swal2-width-login'
+    loginForm: function loginForm() {
+      this.showLogin({
+        'tab': 1
       });
     },
     checkLogin: function checkLogin() {
@@ -36332,10 +36362,7 @@ var render = function() {
           ],
           1
         )
-      : _vm._e(),
-    _vm._v(" "),
-    _vm.activeTab === 2
-      ? _c(
+      : _c(
           "form",
           {
             staticClass:
@@ -36471,7 +36498,6 @@ var render = function() {
           ],
           1
         )
-      : _vm._e()
   ])
 }
 var staticRenderFns = [
@@ -36801,7 +36827,7 @@ var render = function() {
                     {
                       staticClass:
                         "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 cursor-pointer",
-                      on: { click: _vm.loginAndSigninForm }
+                      on: { click: _vm.loginForm }
                     },
                     [_vm._v(_vm._s(_vm.__("Log In")))]
                   ),
@@ -53693,6 +53719,18 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
     meta: {
       title: _lib__WEBPACK_IMPORTED_MODULE_3___default.a.methods.__('Weam')
     }
+  }, {
+    path: '/app/login',
+    component: Home,
+    meta: {
+      title: _lib__WEBPACK_IMPORTED_MODULE_3___default.a.methods.__('Weam')
+    }
+  }, {
+    path: '/app/register',
+    component: Home,
+    meta: {
+      title: _lib__WEBPACK_IMPORTED_MODULE_3___default.a.methods.__('Weam')
+    }
   }, // Verified path
   {
     path: '/settings',
@@ -54983,10 +55021,19 @@ module.exports = {
     },
 
     /**
+     * Allows to show the login form
+     */
+    showLogin: function showLogin(propsData) {
+      this.VueSwal2('swalLoginAndSigninForm', propsData, {
+        popup: 'swal2-width-login'
+      });
+    },
+
+    /**
      * Allows to autologin a user safely
      */
     autologin: function autologin() {
-      if (this.getLSI('token')) {}
+      if (this.getLSI('api_token')) {}
     },
 
     /**
@@ -54995,7 +55042,8 @@ module.exports = {
     logout: function logout() {
       var _this = this;
 
-      localStorage.clear();
+      this.deleteLSI('api_token');
+      this.eraseCookie('api_token_copy');
       axios.post(this.$appURL + '/logout', {
         _token: this.getCSRFToken()
       }).then(function (response) {

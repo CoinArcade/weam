@@ -159,10 +159,17 @@ module.exports = {
         },
 
         /**
+         * Allows to show the login form
+         */
+        showLogin(propsData) {
+            this.VueSwal2('swalLoginAndSigninForm', propsData, {popup: 'swal2-width-login'})
+        },
+
+        /**
          * Allows to autologin a user safely
          */
         autologin() {
-            if (this.getLSI('token')) {
+            if (this.getLSI('api_token')) {
 
             }
         },
@@ -171,7 +178,8 @@ module.exports = {
          * Allows to completely disconnect a user
          */
         logout() {
-            localStorage.clear()
+            this.deleteLSI('api_token')
+            this.eraseCookie('api_token_copy')
             axios
                 .post(this.$appURL + '/logout', {
                     _token: this.getCSRFToken()

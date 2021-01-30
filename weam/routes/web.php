@@ -44,10 +44,9 @@ Route::middleware(['translations', 'cache.headers:public;max_age=2628000;etag'])
 
 	Route::get('/', 'App\Http\Controllers\Views\HomeController@index');
 
-    // authentication
     Auth::routes(['verify' => true]);
 
-	// authorize vuejs routes
+	// Authorize vuejs routes
 	Route::get('/{any}', 'App\Http\Controllers\Views\HomeController@index')->where('any', '.*');
 
 });
