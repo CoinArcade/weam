@@ -36,6 +36,18 @@
     animation: loader-bar 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
 }
 
+.loader-bar-white div {
+    background-color: white;
+}
+
+.loader-bar-text div {
+    background-color: var(--theme-text-color);
+}
+
+.loader-bar-theme div {
+    background-color: var(--theme-color);
+}
+
 .loader-bar div:nth-child(1) {
     left: 16px;
     animation-delay: -0.24s;

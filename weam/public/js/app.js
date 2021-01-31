@@ -6811,7 +6811,7 @@ __webpack_require__.r(__webpack_exports__);
     FormLabel: _FormLabelComponent__WEBPACK_IMPORTED_MODULE_0__["default"],
     FormError: _FormErrorComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
-  props: ['containerWidth', 'containerClass', 'label', 'placeholder', 'inputType', 'inputClass', 'disableError', 'strong'],
+  props: ['containerWidth', 'containerClass', 'label', 'placeholder', 'inputType', 'inputClass', 'disableError', 'strong', 'loading'],
   data: function data() {
     return {
       entry: '',
@@ -6819,7 +6819,8 @@ __webpack_require__.r(__webpack_exports__);
       error: false,
       errorMsg: '',
       errorCount: 1,
-      errorReplace: []
+      errorReplace: [],
+      loadData: false
     };
   },
   methods: {
@@ -6848,6 +6849,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     resetError: function resetError() {
       this.error = false;
+    },
+    setLoadData: function setLoadData(value) {
+      this.loadData = value;
     }
   }
 });
@@ -6874,9 +6878,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FormLabel",
-  props: ['labelMsg', 'labelFor', 'strong'],
+  props: ['labelMsg', 'labelFor', 'strong', 'loading'],
   data: function data() {
     return {
       color: ''
@@ -7277,6 +7288,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this2 = this;
 
       if (/^[_a-zA-Z0-9]{3,25}$/.test(value)) {
+        this.$refs.signupUsername.setLoadData(true);
         axios.get(this.$apiURL + '/signin/username/' + value).then(function (response) {
           if (response.data) {
             if (response.data.used === true) {
@@ -7289,6 +7301,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               _this2.$refs.signupUsername.resetErrorMsg();
             }
           }
+        })["finally"](function () {
+          _this2.$refs.signupUsername.setLoadData(false);
         });
       } else {
         this.signupUsername = null;
@@ -7302,6 +7316,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this3 = this;
 
       if (/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(value)) {
+        this.$refs.signupEmail.setLoadData(true);
         axios.get(this.$apiURL + '/signin/email/' + value).then(function (response) {
           if (response.data) {
             if (response.data.used === true) {
@@ -7314,6 +7329,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               _this3.$refs.signupEmail.resetErrorMsg();
             }
           }
+        })["finally"](function () {
+          _this3.$refs.signupEmail.setLoadData(false);
         });
       } else {
         this.signupEmail = null;
@@ -7338,6 +7355,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       this.lastSignupPassword = value; // check password strength
 
+      this.$refs.signupPassword.setLoadData(true);
       axios.post(this.$apiURL + '/signin/password/', {
         password: value
       }, {
@@ -7361,6 +7379,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
           _this4.$refs.signupPassword.resetErrorMsg();
         }
+      })["finally"](function () {
+        _this4.$refs.signupPassword.setLoadData(false);
       });
       this.checkSignupForm();
     },
@@ -35915,7 +35935,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "loader-bar" }, [
+    return _c("div", { staticClass: "loader-bar loader-bar-white" }, [
       _c("div"),
       _vm._v(" "),
       _c("div"),
@@ -35991,7 +36011,8 @@ var render = function() {
             attrs: {
               "label-for": this.inputId,
               "label-msg": this.label,
-              strong: this.strong
+              strong: this.strong,
+              loading: this.loadData
             }
           })
         : _vm._e(),
@@ -36151,13 +36172,17 @@ var render = function() {
       staticClass:
         "block tracking-wide text-grey-darker text-xs font-bold mb-2 text-left mt-3",
       class:
-        this.strong >= 0 && this.strong <= 100 ? "flex justify-between" : "",
+        (this.strong >= 0 && this.strong <= 100) || this.loading
+          ? "flex justify-between"
+          : "",
       attrs: { for: this.labelFor }
     },
     [
       _c("span", [_vm._v(_vm._s(_vm.__(this.labelMsg)))]),
       _vm._v(" "),
-      this.strong >= 0 && this.strong <= 100
+      this.loading
+        ? _c("span", [_vm._m(0)])
+        : this.strong >= 0 && this.strong <= 100
         ? _c("span", { staticClass: "w-1/2 h-2 mt-1 rounded bg-th-body" }, [
             _c("div", {
               class: "h-2 " + this.color + " rounded",
@@ -36168,7 +36193,20 @@ var render = function() {
     ]
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "loader-bar loader-bar-text" }, [
+      _c("div"),
+      _vm._v(" "),
+      _c("div"),
+      _vm._v(" "),
+      _c("div")
+    ])
+  }
+]
 render._withStripped = true
 
 

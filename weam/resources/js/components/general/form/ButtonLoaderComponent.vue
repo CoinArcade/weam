@@ -6,7 +6,7 @@
     >
 
         <span v-if="this.isLoading">
-            <div class="loader-bar">
+            <div class="loader-bar loader-bar-white">
                 <div></div>
                 <div></div>
                 <div></div>

@@ -19,19 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="create first auto-login test">
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="add password strength support">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements/others-install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/requirements/others-install.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/weam/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/weam/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/public/css/async.css" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/css/async.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/form/ButtonLoaderComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/form/ButtonLoaderComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/form/FormInputComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/form/FormInputComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/form/FormLabelComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/form/FormLabelComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/en_GB/tr.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/lang/fr_FR/tr.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/sass/async.scss" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/sass/async.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +78,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/weam/resources/js/components/general/swal" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -210,14 +208,8 @@
       <workItem from="1611925626980" duration="17835000" />
       <workItem from="1611954890472" duration="2412000" />
       <workItem from="1612013412131" duration="18792000" />
-      <workItem from="1612087417003" duration="16060000" />
-    </task>
-    <task id="LOCAL-00040" summary="perform language module">
-      <created>1606838161011</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1606838161011</updated>
+      <workItem from="1612087417003" duration="18322000" />
+      <workItem from="1612110372001" duration="506000" />
     </task>
     <task id="LOCAL-00041" summary="perform language module">
       <created>1606849469648</created>
@@ -555,7 +547,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612093506926</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="add password strength support">
+      <created>1612105239696</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1612105239696</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -577,7 +576,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="add passport to project and modify users table" />
     <MESSAGE value="add passport table and start registration" />
     <MESSAGE value="sign up form backend validation" />
     <MESSAGE value="signup form email verification" />
@@ -602,6 +600,11 @@
     <MESSAGE value="store user on client side and handle error with secure logout" />
     <MESSAGE value="create first auto-login test" />
     <MESSAGE value="Fix all language cookie bugs + pass language handler routes under api routes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix all language cookie bugs + pass language handler routes under api routes" />
+    <MESSAGE value="add password strength support" />
+    <option name="LAST_COMMIT_MESSAGE" value="add password strength support" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

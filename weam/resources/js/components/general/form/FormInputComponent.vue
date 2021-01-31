@@ -2,7 +2,7 @@
 
     <div :class="[this.containerWidth ? this.containerWidth : 'w-full', this.containerClass ? this.containerClass : '']">
 
-        <form-label v-if="this.label" :label-for="this.inputId" :label-msg="this.label" :strong="this.strong"></form-label>
+        <form-label v-if="this.label" :label-for="this.inputId" :label-msg="this.label" :strong="this.strong" :loading="this.loadData"></form-label>
 
         <input v-model="entry"
                @keyup="validation"
@@ -33,7 +33,7 @@
             FormError
         },
 
-        props: ['containerWidth', 'containerClass', 'label', 'placeholder', 'inputType', 'inputClass', 'disableError', 'strong'],
+        props: ['containerWidth', 'containerClass', 'label', 'placeholder', 'inputType', 'inputClass', 'disableError', 'strong', 'loading'],
 
         data: function() {
 
@@ -44,7 +44,8 @@
                 error: false,
                 errorMsg: '',
                 errorCount: 1,
-                errorReplace: []
+                errorReplace: [],
+                loadData: false
 
             }
 
@@ -87,6 +88,12 @@
             resetError: function() {
 
                 this.error = false
+
+            },
+
+            setLoadData: function (value) {
+
+                this.loadData = value
 
             }
 

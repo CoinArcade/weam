@@ -220,6 +220,8 @@
 
                 if (/^[_a-zA-Z0-9]{3,25}$/.test(value)) {
 
+                    this.$refs.signupUsername.setLoadData(true)
+
                     axios
                         .get(this.$apiURL + '/signin/username/' + value)
                         .then(response => {
@@ -232,6 +234,9 @@
                                     this.$refs.signupUsername.resetErrorMsg()
                                 }
                             }
+                        })
+                        .finally(() => {
+                            this.$refs.signupUsername.setLoadData(false)
                         })
 
                 } else {
@@ -248,6 +253,8 @@
 
                 if (/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(value)) {
 
+                    this.$refs.signupEmail.setLoadData(true)
+
                     axios
                         .get(this.$apiURL + '/signin/email/' + value)
                         .then(response => {
@@ -260,6 +267,9 @@
                                     this.$refs.signupEmail.resetErrorMsg()
                                 }
                             }
+                        })
+                        .finally(() => {
+                            this.$refs.signupEmail.setLoadData(false)
                         })
 
                 } else {
@@ -287,6 +297,8 @@
                 this.lastSignupPassword = value
 
                 // check password strength
+                this.$refs.signupPassword.setLoadData(true)
+
                 axios
                     .post(this.$apiURL + '/signin/password/', {password: value}, {responseType: 'json'})
                     .then(response => {
@@ -304,6 +316,9 @@
                             this.signupPassword = value
                             this.$refs.signupPassword.resetErrorMsg()
                         }
+                    })
+                    .finally(() => {
+                        this.$refs.signupPassword.setLoadData(false)
                     })
 
                 this.checkSignupForm()
