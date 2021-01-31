@@ -6,10 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use ZxcvbnPhp\Zxcvbn;
 
 class RegisterController extends Controller
 {
@@ -109,6 +110,16 @@ class RegisterController extends Controller
 
         return response()->json([
             'used' => $inUse
+        ]);
+    }
+
+    public function checkPasswordStrength(Request $request)
+    {
+        $zxcvbn = new Zxcvbn();
+        $strength = $zxcvbn->passwordStrength($request->password);
+
+        return response()->json([
+            'strength' => $strength['score']
         ]);
     }
 }

@@ -62,6 +62,7 @@
 # php artisan passport:install --uuids
 # php artisan passport:keys
 # TODO: put client id and client secret on .env file
+# composer require bjeavons/zxcvbn-php
 
 # TODO: replace content of resources/sass/app.scss by the following :
 # @tailwind base;

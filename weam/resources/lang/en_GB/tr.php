@@ -93,6 +93,10 @@ return [
         'email' => 'Please enter a valid email address.',
     ],
 
+    'Strength' => [
+        'password' => 'Your password is too easy to guess.'
+    ],
+
     'Confirmed' => [
         'password' => 'Passwords do not match.',
     ],

@@ -93,6 +93,10 @@ return [
         'email' => 'Veuillez saisir une adresse email valide.',
     ],
 
+    'Strength' => [
+        'password' => 'Votre mot de passe est trop facile à deviner.'
+    ],
+
     'Confirmed' => [
         'password' => 'Les mots de passe ne correspondent pas.',
     ],

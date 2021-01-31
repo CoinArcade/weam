@@ -2,7 +2,7 @@
 
     <div :class="[this.containerWidth ? this.containerWidth : 'w-full', this.containerClass ? this.containerClass : '']">
 
-        <form-label v-if="this.label" :label-for="this.inputId" :label-msg="this.label"></form-label>
+        <form-label v-if="this.label" :label-for="this.inputId" :label-msg="this.label" :strong="this.strong"></form-label>
 
         <input v-model="entry"
                @keyup="validation"
@@ -33,7 +33,7 @@
             FormError
         },
 
-        props: ['containerWidth', 'containerClass', 'label', 'placeholder', 'inputType', 'inputClass', 'disableError'],
+        props: ['containerWidth', 'containerClass', 'label', 'placeholder', 'inputType', 'inputClass', 'disableError', 'strong'],
 
         data: function() {
 

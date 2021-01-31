@@ -6545,14 +6545,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     // check if language cookie exist or if it must be created
     checkLanguage: function checkLanguage() {
       var cookieLanguage = this.getCookie("language");
-      alert(cookieLanguage);
 
       if (cookieLanguage !== undefined && cookieLanguage !== null && cookieLanguage !== "") {
-        alert('checkLanguage : ' + 'cookie defined, set at ' + cookieLanguage);
         this.eraseCookie("language");
         this.setCookie("language", cookieLanguage, 364);
       } else {
-        alert('checkLanguage : ' + 'cookie undefined, set at ' + this.__('Default language'));
         this.setCookie("language", this.__('Default language'), 364);
       }
     },
@@ -6594,7 +6591,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               _this.logout();
             });
           }
-        })["catch"](function (error) {
+        })["catch"](function () {
           _this.VueSwal2('swalWarning', {
             'title': 'Error',
             'message': 'Invalid user access token',
@@ -6814,7 +6811,7 @@ __webpack_require__.r(__webpack_exports__);
     FormLabel: _FormLabelComponent__WEBPACK_IMPORTED_MODULE_0__["default"],
     FormError: _FormErrorComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
-  props: ['containerWidth', 'containerClass', 'label', 'placeholder', 'inputType', 'inputClass', 'disableError'],
+  props: ['containerWidth', 'containerClass', 'label', 'placeholder', 'inputType', 'inputClass', 'disableError', 'strong'],
   data: function data() {
     return {
       entry: '',
@@ -6874,9 +6871,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FormLabel",
-  props: ['labelMsg', 'labelFor']
+  props: ['labelMsg', 'labelFor', 'strong'],
+  data: function data() {
+    return {
+      color: ''
+    };
+  },
+  watch: {
+    strong: function strong(newValue, oldValue) {
+      if (newValue === 25 || newValue === 10) {
+        this.color = 'bg-red-500';
+      } else if (newValue === 50) {
+        this.color = 'bg-orange-600';
+      } else if (newValue === 75) {
+        this.color = 'bg-orange-400';
+      } else if (newValue === 100) {
+        this.color = 'bg-green-500';
+      } else {
+        this.color = '';
+      }
+    }
+  }
 });
 
 /***/ }),
@@ -7148,6 +7168,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       signupUsername: null,
       signupEmail: null,
       signupPassword: null,
+      signupPasswordStrength: 50,
       signupPasswordConfirmation: null,
       signupBirthdateDay: null,
       signupBirthdateMonth: null,
@@ -7256,7 +7277,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this2 = this;
 
       if (/^[_a-zA-Z0-9]{3,25}$/.test(value)) {
-        axios.get(this.$apiURL + '/exist/username/' + value).then(function (response) {
+        axios.get(this.$apiURL + '/signin/username/' + value).then(function (response) {
           if (response.data) {
             if (response.data.used === true) {
               _this2.signupUsername = null;
@@ -7281,7 +7302,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this3 = this;
 
       if (/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(value)) {
-        axios.get(this.$apiURL + '/exist/email/' + value).then(function (response) {
+        axios.get(this.$apiURL + '/signin/email/' + value).then(function (response) {
           if (response.data) {
             if (response.data.used === true) {
               _this3.signupEmail = null;
@@ -7303,6 +7324,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     // check if password is valid
     passwordSignupValidation: function passwordSignupValidation(value) {
+      var _this4 = this;
+
       // check if confirmation password match
       if (value !== this.signupPasswordConfirmation) {
         this.signupPasswordConfirmation = null;
@@ -7313,16 +7336,32 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       } // save the last value for check with the confirmation password input
 
 
-      this.lastSignupPassword = value;
+      this.lastSignupPassword = value; // check password strength
 
-      if (!/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/.test(value)) {
-        this.signupPassword = null;
-        this.$refs.signupPassword.showErrorMsg('Regex.password');
-      } else {
-        this.signupPassword = value;
-        this.$refs.signupPassword.resetErrorMsg();
-      }
+      axios.post(this.$apiURL + '/signin/password/', {
+        password: value
+      }, {
+        responseType: 'json'
+      }).then(function (response) {
+        var strength = response.data.strength * 25;
+        if (strength === 0) strength = 10;
+        if (strength === 10 && value.length === 0 || isNaN(strength)) strength = 0;
+        _this4.signupPasswordStrength = strength;
 
+        if (!/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/.test(value)) {
+          _this4.signupPassword = null;
+
+          _this4.$refs.signupPassword.showErrorMsg('Regex.password');
+        } else if (_this4.signupPasswordStrength < 75) {
+          _this4.signupPassword = null;
+
+          _this4.$refs.signupPassword.showErrorMsg('Strength.password');
+        } else {
+          _this4.signupPassword = value;
+
+          _this4.$refs.signupPassword.resetErrorMsg();
+        }
+      });
       this.checkSignupForm();
     },
     // check if passwords match
@@ -7428,7 +7467,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     // submit signup form
     submitSignup: function submitSignup() {
-      var _this4 = this;
+      var _this5 = this;
 
       this.checkupSignupError = [];
       var submitted = false,
@@ -7445,23 +7484,23 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         responseType: 'json'
       }).then(function (response) {
         if (response.data && response.data.success) {
-          _this4.setLSI('api_token', response.data.token);
+          _this5.setLSI('api_token', response.data.token);
 
-          _this4.setCookie('api_token_copy', response.data.token, 365);
+          _this5.setCookie('api_token_copy', response.data.token, 365);
 
           submitted = true;
         } else {
-          _this4.checkupSignupError = response.data.error;
+          _this5.checkupSignupError = response.data.error;
         }
       })["catch"](function (error) {
-        return _this4.checkupSignupError = ['An error occured', 1, []];
+        return _this5.checkupSignupError = ['An error occured', 1, []];
       })["finally"](function () {
-        _this4.$refs.submitSignupButton.stopLoader();
+        _this5.$refs.submitSignupButton.stopLoader();
 
         if (submitted) {
           Vue.swal.close();
 
-          _this4.VueSwal2('swalWarning', {
+          _this5.VueSwal2('swalWarning', {
             'title': 'Verify your email address',
             'message': 'A verification link has been sent to your email address, if you did not receive the email, you can request another from your profile',
             'showButtons': true,
@@ -7473,7 +7512,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               }
             }]
           }, null, function () {
-            _this4.$swalRouter.go(0);
+            _this5.$swalRouter.go(0);
           });
         }
       });
@@ -35949,7 +35988,11 @@ var render = function() {
     [
       this.label
         ? _c("form-label", {
-            attrs: { "label-for": this.inputId, "label-msg": this.label }
+            attrs: {
+              "label-for": this.inputId,
+              "label-msg": this.label,
+              strong: this.strong
+            }
           })
         : _vm._e(),
       _vm._v(" "),
@@ -36107,9 +36150,22 @@ var render = function() {
     {
       staticClass:
         "block tracking-wide text-grey-darker text-xs font-bold mb-2 text-left mt-3",
+      class:
+        this.strong >= 0 && this.strong <= 100 ? "flex justify-between" : "",
       attrs: { for: this.labelFor }
     },
-    [_vm._v("\n    " + _vm._s(_vm.__(this.labelMsg)) + "\n")]
+    [
+      _c("span", [_vm._v(_vm._s(_vm.__(this.labelMsg)))]),
+      _vm._v(" "),
+      this.strong >= 0 && this.strong <= 100
+        ? _c("span", { staticClass: "w-1/2 h-2 mt-1 rounded bg-th-body" }, [
+            _c("div", {
+              class: "h-2 " + this.color + " rounded",
+              style: { width: this.strong + "%" }
+            })
+          ])
+        : _vm._e()
+    ]
   )
 }
 var staticRenderFns = []
@@ -36411,7 +36467,8 @@ var render = function() {
               attrs: {
                 "input-type": "password",
                 label: "Password",
-                placeholder: "************"
+                placeholder: "************",
+                strong: this.signupPasswordStrength
               },
               on: { validate: _vm.passwordSignupValidation }
             }),

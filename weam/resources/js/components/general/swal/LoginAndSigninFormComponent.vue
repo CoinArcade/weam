@@ -37,7 +37,7 @@
                         label="Email address" placeholder="Enter your email address" ref="signupEmail"></form-input>
 
             <form-input @validate="passwordSignupValidation" key="signup-password" input-type="password"
-                        label="Password" placeholder="************" ref="signupPassword"></form-input>
+                        label="Password" placeholder="************" :strong="this.signupPasswordStrength" ref="signupPassword"></form-input>
 
             <form-input @validate="passwordConfirmationSignupValidation" key="signup-password-confirmation" input-type="password"
                         label="Password confirmation" placeholder="************" ref="signupPasswordConfirmation"></form-input>
@@ -111,6 +111,7 @@
                 signupUsername: null,
                 signupEmail: null,
                 signupPassword: null,
+                signupPasswordStrength: 50,
                 signupPasswordConfirmation: null,
                 signupBirthdateDay: null,
                 signupBirthdateMonth: null,
@@ -220,7 +221,7 @@
                 if (/^[_a-zA-Z0-9]{3,25}$/.test(value)) {
 
                     axios
-                        .get(this.$apiURL + '/exist/username/' + value)
+                        .get(this.$apiURL + '/signin/username/' + value)
                         .then(response => {
                             if (response.data) {
                                 if (response.data.used === true) {
@@ -248,7 +249,7 @@
                 if (/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(value)) {
 
                     axios
-                        .get(this.$apiURL + '/exist/email/' + value)
+                        .get(this.$apiURL + '/signin/email/' + value)
                         .then(response => {
                             if (response.data) {
                                 if (response.data.used === true) {
@@ -285,13 +286,25 @@
                 // save the last value for check with the confirmation password input
                 this.lastSignupPassword = value
 
-                if (!/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/.test(value)) {
-                    this.signupPassword = null
-                    this.$refs.signupPassword.showErrorMsg('Regex.password')
-                } else {
-                    this.signupPassword = value
-                    this.$refs.signupPassword.resetErrorMsg()
-                }
+                // check password strength
+                axios
+                    .post(this.$apiURL + '/signin/password/', {password: value}, {responseType: 'json'})
+                    .then(response => {
+                        let strength = response.data.strength*25
+                        if (strength === 0) strength = 10
+                        if (strength === 10 && value.length === 0 || isNaN(strength)) strength = 0
+                        this.signupPasswordStrength = strength
+                        if (!/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/.test(value)) {
+                            this.signupPassword = null
+                            this.$refs.signupPassword.showErrorMsg('Regex.password')
+                        } else if (this.signupPasswordStrength < 75) {
+                            this.signupPassword = null
+                            this.$refs.signupPassword.showErrorMsg('Strength.password')
+                        } else {
+                            this.signupPassword = value
+                            this.$refs.signupPassword.resetErrorMsg()
+                        }
+                    })
 
                 this.checkSignupForm()
 
