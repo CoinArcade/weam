@@ -54,15 +54,14 @@
             checkLanguage: function() {
 
                 let cookieLanguage = this.getCookie("language");
-                alert(cookieLanguage)
 
                 if (cookieLanguage !== undefined && cookieLanguage !== null && cookieLanguage !== "") {
-                    alert('checkLanguage : ' + 'cookie defined, set at ' + cookieLanguage)
+
                     this.eraseCookie("language");
                     this.setCookie("language", cookieLanguage, 364);
 
                 } else {
-                    alert('checkLanguage : ' + 'cookie undefined, set at ' + this.__('Default language'))
+
                     this.setCookie("language", this.__('Default language'), 364);
 
                 }
@@ -113,7 +112,7 @@
                                 })
                             }
                         })
-                        .catch(error => {
+                        .catch(() => {
                             this.VueSwal2('swalWarning', {
                                 'title': 'Error',
                                 'message': 'Invalid user access token',

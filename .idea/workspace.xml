@@ -21,17 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="create first auto-login test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Settings/LanguageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Http/Controllers/Api/LanguageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/app/Http/Middleware/Translations.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Http/Middleware/Translations.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/public/js/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/lib.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/js/components/AppComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/AppComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/ChooseLanguageComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/ChooseLanguageComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/home/HomeComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/home/HomeComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/lib.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,14 +201,7 @@
       <workItem from="1611925626980" duration="17835000" />
       <workItem from="1611954890472" duration="2412000" />
       <workItem from="1612013412131" duration="18792000" />
-      <workItem from="1612087417003" duration="5845000" />
-    </task>
-    <task id="LOCAL-00038" summary="removing node_modules directory from github">
-      <created>1606050882083</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1606050882083</updated>
+      <workItem from="1612087417003" duration="6081000" />
     </task>
     <task id="LOCAL-00039" summary="removing node_modules directory from github">
       <created>1606051554404</created>
@@ -555,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612036324029</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="Fix all language cookie bugs + pass language handler routes under api routes">
+      <created>1612093429570</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1612093429571</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -577,7 +568,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="remove passport from project" />
     <MESSAGE value="add passport to project and modify users table" />
     <MESSAGE value="add passport table and start registration" />
     <MESSAGE value="sign up form backend validation" />
@@ -602,6 +592,7 @@
     <MESSAGE value="Implement route memory + create app login and register routes" />
     <MESSAGE value="store user on client side and handle error with secure logout" />
     <MESSAGE value="create first auto-login test" />
-    <option name="LAST_COMMIT_MESSAGE" value="create first auto-login test" />
+    <MESSAGE value="Fix all language cookie bugs + pass language handler routes under api routes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix all language cookie bugs + pass language handler routes under api routes" />
   </component>
 </project>
