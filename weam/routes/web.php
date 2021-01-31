@@ -17,29 +17,20 @@ use Illuminate\Support\Facades\Cache;
 |
 */
 
-// languages
-Route::prefix('languages')->group(function() {
-
-	Route::get('list','\App\Http\Controllers\Settings\LanguageController@availableLanguagesCodeAndLanguage');
-
-	Route::get('available', '\App\Http\Controllers\Settings\LanguageController@availableLanguagesCode');
-
-    Route::get('default','\App\Http\Controllers\Settings\LanguageController@defaultLanguage');
-
-	Route::post('modify/{locale}', 'App\Http\Controllers\Settings\LanguageController@changeLanguage')->where('locale', '[a-z]{2}_[A-Z]{2}');
-
-});
-
 // TODO: add gzip/brotli support to the server, modify middleware SetEncoding and add 'encoding' as middleware to serve compressed ressources at user
 
-// user views
-Route::middleware(['translations', 'cache.headers:public;max_age=2628000;etag', 'auth', 'verified'])->group(function() {
+/**
+ * Protected views
+ */
+Route::middleware(['translations', 'cache.headers:public;max_age=2628000;etag', 'auth'])->group(function() {
 
     Route::get('/settings', 'App\Http\Controllers\Views\SettingsController@index');
 
 });
 
-// public views
+/**
+ * Public views
+ */
 Route::middleware(['translations', 'cache.headers:public;max_age=2628000;etag'])->group(function() {
 
 	Route::get('/', 'App\Http\Controllers\Views\HomeController@index');

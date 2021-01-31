@@ -46,7 +46,7 @@
         created: function() {
 
             axios
-                .get(this.$appURL + '/languages/list')
+                .get(this.$apiURL + '/languages/list')
                 .then(response => {
 
                     if (response.data.success) {
@@ -76,16 +76,18 @@
                 if (this.__('Current language') !== lang) {
 
                     axios
-                        .post(this.$appURL + '/languages/modify/' + lang)
+                        .post(this.$apiURL + '/languages/modify/' + lang, {
+                            _token: this.getCSRFToken()
+                        })
                         .then(() => {
 
-                            setCookie("language", lang, 364);
+                            this.setCookie("language", lang, 365);
                             this.$swal.close()
                             this.$swalRouter.go()
 
                         })
                         .catch(error => {
-
+                            console.log(error)
                             this.error = true
 
                         })

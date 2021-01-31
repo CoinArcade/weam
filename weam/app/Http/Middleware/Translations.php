@@ -40,18 +40,7 @@ class Translations
     {
         $translations = collect();
 
-        try {
-            $client = new Client();
-            $response = $client->get(config('app.url').'/languages/available');
-            $data = json_decode($response->getBody(), true);
-            if (array_key_exists('success', $data)) {
-                $this->supported = $data['success'];
-            } else {
-                dd('erreur');
-            }
-        } catch (GuzzleException $e) {
-            echo $e->getMessage();
-        }
+        $this->supported = array_diff(scandir(resource_path('lang')), array('.', '..'));
 
         $locale = session('settings.locale');
 
@@ -59,7 +48,7 @@ class Translations
             $locale = $request->cookie('language');
         }
 
-        if (!in_array($locale, $this->supported) || $locale === null) {
+        if ($locale === null || $this->supported === null || !in_array($locale, $this->supported)) {
             $locale = config('app.fallback_locale');
         }
 

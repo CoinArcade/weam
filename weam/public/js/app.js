@@ -6527,6 +6527,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   store: _store_UserStore__WEBPACK_IMPORTED_MODULE_1__["default"],
   created: function created() {
     this.setPageLoading(true);
+    this.checkLanguage();
 
     if (this.getLSI('last_path') === null || this.getLSI('current_path') === null) {
       this.setLSI('last_path', '/');
@@ -6541,6 +6542,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(['user'])),
   methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])(['addUser', 'setPageLoading'])), {}, {
+    // check if language cookie exist or if it must be created
+    checkLanguage: function checkLanguage() {
+      var cookieLanguage = this.getCookie("language");
+      alert(cookieLanguage);
+
+      if (cookieLanguage !== undefined && cookieLanguage !== null && cookieLanguage !== "") {
+        alert('checkLanguage : ' + 'cookie defined, set at ' + cookieLanguage);
+        this.eraseCookie("language");
+        this.setCookie("language", cookieLanguage, 364);
+      } else {
+        alert('checkLanguage : ' + 'cookie undefined, set at ' + this.__('Default language'));
+        this.setCookie("language", this.__('Default language'), 364);
+      }
+    },
     // check if a user and his api token are valid
     checkAuth: function checkAuth() {
       var _this = this;
@@ -6596,14 +6611,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     $route: function $route(to, from) {
       this.setLSI('last_path', from.path);
       this.setLSI('current_path', to.path);
-      var cookieLanguage = this.getCookie("language");
-
-      if (cookieLanguage !== undefined && cookieLanguage !== null) {
-        this.eraseCookie("language");
-        this.setCookie("language", this.getCookie("language"), 364);
-      } else {
-        this.setCookie("language", this.__('Default language'), 364);
-      }
+      this.checkLanguage();
     }
   }
 });
@@ -6981,7 +6989,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    axios.get(this.$appURL + '/languages/list').then(function (response) {
+    axios.get(this.$apiURL + '/languages/list').then(function (response) {
       if (response.data.success) {
         _this.availableLanguages = response.data.success;
       } else {
@@ -6998,13 +7006,16 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       if (this.__('Current language') !== lang) {
-        axios.post(this.$appURL + '/languages/modify/' + lang).then(function () {
-          setCookie("language", lang, 364);
+        axios.post(this.$apiURL + '/languages/modify/' + lang, {
+          _token: this.getCSRFToken()
+        }).then(function () {
+          _this2.setCookie("language", lang, 365);
 
           _this2.$swal.close();
 
           _this2.$swalRouter.go();
         })["catch"](function (error) {
+          console.log(error);
           _this2.error = true;
         });
       }
@@ -7572,13 +7583,19 @@ __webpack_require__.r(__webpack_exports__);
     ...mapState(['notifications'])
    }*/
   created: function created() {
+    var _this = this;
+
     if (this.getLSI('current_path') === '/app/login') {
       this.showLogin({
         'tab': 1
+      }, function () {
+        _this.$router.push('/');
       });
     } else if (this.getLSI('current_path') === '/app/register') {
       this.showLogin({
         'tab': 2
+      }, function () {
+        _this.$router.push('/');
       });
     }
   }
@@ -55025,9 +55042,10 @@ module.exports = {
      * Allows to show the login form
      */
     showLogin: function showLogin(propsData) {
+      var onClose = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {};
       this.VueSwal2('swalLoginAndSigninForm', propsData, {
         popup: 'swal2-width-login'
-      });
+      }, onClose);
     },
 
     /**

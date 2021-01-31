@@ -23,6 +23,8 @@
 
             this.setPageLoading(true)
 
+            this.checkLanguage()
+
             if (this.getLSI('last_path') === null || this.getLSI('current_path') === null) {
                 this.setLSI('last_path', '/')
                 this.setLSI('current_path', '/')
@@ -47,6 +49,25 @@
 
             // allow to add a user in the store
             ...mapActions(['addUser', 'setPageLoading']),
+
+            // check if language cookie exist or if it must be created
+            checkLanguage: function() {
+
+                let cookieLanguage = this.getCookie("language");
+                alert(cookieLanguage)
+
+                if (cookieLanguage !== undefined && cookieLanguage !== null && cookieLanguage !== "") {
+                    alert('checkLanguage : ' + 'cookie defined, set at ' + cookieLanguage)
+                    this.eraseCookie("language");
+                    this.setCookie("language", cookieLanguage, 364);
+
+                } else {
+                    alert('checkLanguage : ' + 'cookie undefined, set at ' + this.__('Default language'))
+                    this.setCookie("language", this.__('Default language'), 364);
+
+                }
+
+            },
 
             // check if a user and his api token are valid
             checkAuth: function() {
@@ -111,23 +132,12 @@
 
         watch: {
 
-        	$route (to, from) {
+        	$route(to, from) {
 
                 this.setLSI('last_path', from.path)
                 this.setLSI('current_path', to.path)
 
-                let cookieLanguage = this.getCookie("language");
-
-                if (cookieLanguage !== undefined && cookieLanguage !== null) {
-
-                    this.eraseCookie("language");
-                    this.setCookie("language", this.getCookie("language"), 364);
-
-                } else {
-
-                    this.setCookie("language", this.__('Default language'), 364);
-
-                }
+                this.checkLanguage()
 
         	}
 

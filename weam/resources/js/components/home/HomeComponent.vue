@@ -52,9 +52,9 @@
         created: function() {
 
             if (this.getLSI('current_path') === '/app/login') {
-                this.showLogin({'tab': 1})
+                this.showLogin({'tab': 1}, () => {this.$router.push('/')})
             } else if (this.getLSI('current_path') === '/app/register') {
-                this.showLogin({'tab': 2})
+                this.showLogin({'tab': 2}, () => {this.$router.push('/')})
             }
 
         }

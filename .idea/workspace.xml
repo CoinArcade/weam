@@ -19,12 +19,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="store user on client side and handle error with secure logout">
-      <change afterPath="$PROJECT_DIR$/weam/app/Http/Middleware/Autologin.php" afterDir="false" />
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="create first auto-login test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Http/Controllers/Settings/LanguageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Http/Controllers/Api/LanguageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/app/Http/Middleware/Translations.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/app/Http/Middleware/Translations.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/js/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/lib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/AppComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/AppComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/ChooseLanguageComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/ChooseLanguageComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/home/HomeComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/home/HomeComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/js/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/lib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/weam/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,11 +89,11 @@
       <recent name="$PROJECT_DIR$/weam/resources/views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/weam/app/Http/Controllers/Api" />
       <recent name="$PROJECT_DIR$/weam/app/Http/Controllers/Data" />
       <recent name="$PROJECT_DIR$/weam/app/Http/Controllers/Security" />
       <recent name="$PROJECT_DIR$/weam/database/migrations" />
       <recent name="$PROJECT_DIR$/weam/database/factories" />
-      <recent name="$PROJECT_DIR$/weam/app/Http/Controllers/Settings" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -202,14 +209,8 @@
       <workItem from="1611912693630" duration="11099000" />
       <workItem from="1611925626980" duration="17835000" />
       <workItem from="1611954890472" duration="2412000" />
-      <workItem from="1612013412131" duration="17538000" />
-    </task>
-    <task id="LOCAL-00037" summary="remove bootstrap + install and configure tailwindcss">
-      <created>1606050813689</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1606050813689</updated>
+      <workItem from="1612013412131" duration="18792000" />
+      <workItem from="1612087417003" duration="5845000" />
     </task>
     <task id="LOCAL-00038" summary="removing node_modules directory from github">
       <created>1606050882083</created>
@@ -547,7 +548,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612025249492</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="create first auto-login test">
+      <created>1612036324029</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1612036324029</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +577,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="fix date verification on signin form, add auth scalfolding and update vendor" />
     <MESSAGE value="remove passport from project" />
     <MESSAGE value="add passport to project and modify users table" />
     <MESSAGE value="add passport table and start registration" />
@@ -594,6 +601,7 @@
     <MESSAGE value="Securize login and add swal warning component" />
     <MESSAGE value="Implement route memory + create app login and register routes" />
     <MESSAGE value="store user on client side and handle error with secure logout" />
-    <option name="LAST_COMMIT_MESSAGE" value="store user on client side and handle error with secure logout" />
+    <MESSAGE value="create first auto-login test" />
+    <option name="LAST_COMMIT_MESSAGE" value="create first auto-login test" />
   </component>
 </project>

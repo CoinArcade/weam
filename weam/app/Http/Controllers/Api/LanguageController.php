@@ -3,7 +3,7 @@
 // TODO: pass language cookie creation on server-side
 // TODO: error support
 
-namespace App\Http\Controllers\Settings;
+namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -44,22 +44,11 @@ class LanguageController extends Controller
     {
         $translations = collect();
 
-        try {
-            $client = new Client();
-            $response = $client->get(config('app.url').'/languages/available');
-            $data = json_decode($response->getBody(), true);
-            if ($data['success']) {
-                $this->supported = $data['success'];
-            } else {
-                dd('erreur');
-            }
-        } catch (GuzzleException $e) {
-            echo $e->getMessage();
-        }
+        $this->supported = array_diff(scandir(resource_path('lang')), array('.', '..'));
 
         $locale = session('settings.locale');
 
-        if (!in_array($locale, $this->supported) || $locale === null) {
+        if ($locale === null || $this->supported === null || !in_array($locale, $this->supported)) {
             $request->session()->forget('settings.locale');
             session(['settings.locale' => config('app.fallback_locale')]);
         }

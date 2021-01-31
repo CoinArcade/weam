@@ -17,9 +17,33 @@ use Illuminate\Support\Facades\Route;
 
 
 /**
- * non protected api routes
+ * Public api routes with session requirements
  */
-Route::prefix('/exist')->group(function() {
+Route::middleware('api-session')->group(function() {
+
+    // language handler
+    Route::prefix('languages')->group(function() {
+
+        Route::get('list','\App\Http\Controllers\Api\LanguageController@availableLanguagesCodeAndLanguage');
+
+        Route::get('available', '\App\Http\Controllers\Api\LanguageController@availableLanguagesCode');
+
+        Route::get('default','\App\Http\Controllers\Api\LanguageController@defaultLanguage');
+
+        Route::post('modify/{locale}', 'App\Http\Controllers\Api\LanguageController@changeLanguage')->where('locale', '[a-z]{2}_[A-Z]{2}');
+
+    });
+
+});
+
+
+
+/**
+ * Public api routes
+ */
+
+// account exist verification
+Route::prefix('exist')->group(function() {
 
     Route::get('/username/{username}', 'App\Http\Controllers\Auth\RegisterController@checkIfUsernameExist')
         ->where('username', '^[_a-zA-Z0-9]{3,25}$');
@@ -31,8 +55,10 @@ Route::prefix('/exist')->group(function() {
 
 
 /**
- * protected api routes
+ * Protected api routes
  */
+
+// users data
 Route::middleware(['auth:api', 'scopes:user-data'])->group(function() {
 
     Route::prefix('/user')->group(function() {

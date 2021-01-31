@@ -161,8 +161,8 @@ module.exports = {
         /**
          * Allows to show the login form
          */
-        showLogin(propsData) {
-            this.VueSwal2('swalLoginAndSigninForm', propsData, {popup: 'swal2-width-login'})
+        showLogin(propsData, onClose = () => {}) {
+            this.VueSwal2('swalLoginAndSigninForm', propsData, {popup: 'swal2-width-login'}, onClose)
         },
 
         /**
