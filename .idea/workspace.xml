@@ -21,15 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="add password strength support">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/public/css/async.css" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/css/async.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/form/ButtonLoaderComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/form/ButtonLoaderComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/form/FormInputComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/form/FormInputComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/form/FormLabelComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/form/FormLabelComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/sass/async.scss" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/sass/async.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,14 +202,9 @@
       <workItem from="1611954890472" duration="2412000" />
       <workItem from="1612013412131" duration="18792000" />
       <workItem from="1612087417003" duration="18322000" />
-      <workItem from="1612110372001" duration="506000" />
-    </task>
-    <task id="LOCAL-00041" summary="perform language module">
-      <created>1606849469648</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1606849469648</updated>
+      <workItem from="1612110372001" duration="2590000" />
+      <workItem from="1612125455747" duration="97000" />
+      <workItem from="1612167181136" duration="1353000" />
     </task>
     <task id="LOCAL-00042" summary="perform language module">
       <created>1607111539466</created>
@@ -554,7 +542,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612105239696</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="add animation when input load data">
+      <created>1612111451892</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1612111451893</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -576,7 +571,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="add passport table and start registration" />
     <MESSAGE value="sign up form backend validation" />
     <MESSAGE value="signup form email verification" />
     <MESSAGE value="try to fix routing bug" />
@@ -601,7 +595,8 @@
     <MESSAGE value="create first auto-login test" />
     <MESSAGE value="Fix all language cookie bugs + pass language handler routes under api routes" />
     <MESSAGE value="add password strength support" />
-    <option name="LAST_COMMIT_MESSAGE" value="add password strength support" />
+    <MESSAGE value="add animation when input load data" />
+    <option name="LAST_COMMIT_MESSAGE" value="add animation when input load data" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -119,6 +119,8 @@
 
                 // last password entered for signup even if value is wrong, for password confirmation verification
                 lastSignupPassword: null,
+                // last password confirmation entered even if value not match, for password verification
+                lastSignupPasswordConfirmation: null,
 
                 // signup birthdate errors
                 signupBirthdateIsValid: true,
@@ -229,9 +231,11 @@
                                 if (response.data.used === true) {
                                     this.signupUsername = null
                                     this.$refs.signupUsername.showErrorMsg('Unique.username')
+                                    this.checkSignupForm()
                                 } else {
                                     this.signupUsername = value
                                     this.$refs.signupUsername.resetErrorMsg()
+                                    this.checkSignupForm()
                                 }
                             }
                         })
@@ -242,9 +246,8 @@
                 } else {
                     this.signupUsername = null
                     this.$refs.signupUsername.showErrorMsg("Regex.username")
+                    this.checkSignupForm()
                 }
-
-                this.checkSignupForm()
 
             },
 
@@ -262,9 +265,11 @@
                                 if (response.data.used === true) {
                                     this.signupEmail = null
                                     this.$refs.signupEmail.showErrorMsg("Unique.email")
+                                    this.checkSignupForm()
                                 } else {
                                     this.signupEmail = value
                                     this.$refs.signupEmail.resetErrorMsg()
+                                    this.checkSignupForm()
                                 }
                             }
                         })
@@ -275,9 +280,8 @@
                 } else {
                     this.signupEmail = null
                     this.$refs.signupEmail.showErrorMsg("Email.email")
+                    this.checkSignupForm()
                 }
-
-                this.checkSignupForm()
 
             },
 
@@ -285,12 +289,14 @@
             passwordSignupValidation: function(value) {
 
                 // check if confirmation password match
-                if (value !== this.signupPasswordConfirmation) {
+                if (value !== this.lastSignupPasswordConfirmation) {
                     this.signupPasswordConfirmation = null
                     this.$refs.signupPasswordConfirmation.showErrorMsg('Confirmed.password')
+                    this.checkSignupForm()
                 } else {
                     this.signupPasswordConfirmation = value
                     this.$refs.signupPasswordConfirmation.resetErrorMsg()
+                    this.checkSignupForm()
                 }
 
                 // save the last value for check with the confirmation password input
@@ -309,24 +315,27 @@
                         if (!/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/.test(value)) {
                             this.signupPassword = null
                             this.$refs.signupPassword.showErrorMsg('Regex.password')
+                            this.checkSignupForm()
                         } else if (this.signupPasswordStrength < 75) {
                             this.signupPassword = null
                             this.$refs.signupPassword.showErrorMsg('Strength.password')
+                            this.checkSignupForm()
                         } else {
                             this.signupPassword = value
                             this.$refs.signupPassword.resetErrorMsg()
+                            this.checkSignupForm()
                         }
                     })
                     .finally(() => {
                         this.$refs.signupPassword.setLoadData(false)
                     })
 
-                this.checkSignupForm()
-
             },
 
             // check if passwords match
             passwordConfirmationSignupValidation: function(value) {
+
+                this.lastSignupPasswordConfirmation = value
 
                 if (value !== this.lastSignupPassword) {
                     this.signupPasswordConfirmation = null

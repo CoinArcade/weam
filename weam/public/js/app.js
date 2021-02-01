@@ -7186,6 +7186,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       signupBirthdateYear: null,
       // last password entered for signup even if value is wrong, for password confirmation verification
       lastSignupPassword: null,
+      // last password confirmation entered even if value not match, for password verification
+      lastSignupPasswordConfirmation: null,
       // signup birthdate errors
       signupBirthdateIsValid: true,
       errorBirthdateMsg: [],
@@ -7295,10 +7297,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               _this2.signupUsername = null;
 
               _this2.$refs.signupUsername.showErrorMsg('Unique.username');
+
+              _this2.checkSignupForm();
             } else {
               _this2.signupUsername = value;
 
               _this2.$refs.signupUsername.resetErrorMsg();
+
+              _this2.checkSignupForm();
             }
           }
         })["finally"](function () {
@@ -7307,9 +7313,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       } else {
         this.signupUsername = null;
         this.$refs.signupUsername.showErrorMsg("Regex.username");
+        this.checkSignupForm();
       }
-
-      this.checkSignupForm();
     },
     // check if email address is valid
     emailSignupValidation: function emailSignupValidation(value) {
@@ -7323,10 +7328,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               _this3.signupEmail = null;
 
               _this3.$refs.signupEmail.showErrorMsg("Unique.email");
+
+              _this3.checkSignupForm();
             } else {
               _this3.signupEmail = value;
 
               _this3.$refs.signupEmail.resetErrorMsg();
+
+              _this3.checkSignupForm();
             }
           }
         })["finally"](function () {
@@ -7335,21 +7344,22 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       } else {
         this.signupEmail = null;
         this.$refs.signupEmail.showErrorMsg("Email.email");
+        this.checkSignupForm();
       }
-
-      this.checkSignupForm();
     },
     // check if password is valid
     passwordSignupValidation: function passwordSignupValidation(value) {
       var _this4 = this;
 
       // check if confirmation password match
-      if (value !== this.signupPasswordConfirmation) {
+      if (value !== this.lastSignupPasswordConfirmation) {
         this.signupPasswordConfirmation = null;
         this.$refs.signupPasswordConfirmation.showErrorMsg('Confirmed.password');
+        this.checkSignupForm();
       } else {
         this.signupPasswordConfirmation = value;
         this.$refs.signupPasswordConfirmation.resetErrorMsg();
+        this.checkSignupForm();
       } // save the last value for check with the confirmation password input
 
 
@@ -7370,22 +7380,29 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           _this4.signupPassword = null;
 
           _this4.$refs.signupPassword.showErrorMsg('Regex.password');
+
+          _this4.checkSignupForm();
         } else if (_this4.signupPasswordStrength < 75) {
           _this4.signupPassword = null;
 
           _this4.$refs.signupPassword.showErrorMsg('Strength.password');
+
+          _this4.checkSignupForm();
         } else {
           _this4.signupPassword = value;
 
           _this4.$refs.signupPassword.resetErrorMsg();
+
+          _this4.checkSignupForm();
         }
       })["finally"](function () {
         _this4.$refs.signupPassword.setLoadData(false);
       });
-      this.checkSignupForm();
     },
     // check if passwords match
     passwordConfirmationSignupValidation: function passwordConfirmationSignupValidation(value) {
+      this.lastSignupPasswordConfirmation = value;
+
       if (value !== this.lastSignupPassword) {
         this.signupPasswordConfirmation = null;
         this.$refs.signupPasswordConfirmation.showErrorMsg('Confirmed.password');
