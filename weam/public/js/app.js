@@ -6526,7 +6526,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   name: 'App',
   store: _store_UserStore__WEBPACK_IMPORTED_MODULE_1__["default"],
   created: function created() {
-    this.setPageLoading(true);
+    this.checkAuth();
     this.checkLanguage();
 
     if (this.getLSI('last_path') === null || this.getLSI('current_path') === null) {
@@ -6537,11 +6537,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.setLSI('current_path', this.$route.path);
     }
 
-    this.checkAuth();
     this.setPageLoading(false);
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(['user'])),
-  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])(['addUser', 'setPageLoading'])), {}, {
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])(['addUser', 'setPageLoading', 'setLogged'])), {}, {
     // check if language cookie exist or if it must be created
     checkLanguage: function checkLanguage() {
       var cookieLanguage = this.getCookie("language");
@@ -6558,6 +6557,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       if (this.getLSI('api_token')) {
+        this.setLogged(true);
         var continueButton = [{
           key: 0,
           content: 'Continue',
@@ -6582,6 +6582,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               });
             }
           } catch (error) {
+            _this.setLogged(false);
+
             _this.VueSwal2('swalWarning', {
               'title': 'Error',
               'message': 'We are unable to retrieve your data',
@@ -6592,6 +6594,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             });
           }
         })["catch"](function () {
+          _this.setLogged(false);
+
           _this.VueSwal2('swalWarning', {
             'title': 'Error',
             'message': 'Invalid user access token',
@@ -54938,11 +54942,9 @@ var mutations = {
       birthdate: birthdate,
       key: 1
     };
-    state.logged = true;
   },
-  REMOVE_USER: function REMOVE_USER(state) {
-    state.user = null;
-    state.logged = false;
+  SET_LOGGED: function SET_LOGGED(state, status) {
+    state.logged = status;
   },
   SET_PAGE_LOADING: function SET_PAGE_LOADING(state, status) {
     state.pageLoading = status;
@@ -54976,8 +54978,8 @@ var actions = {
       birthdate: birthdate
     });
   },
-  removeUser: function removeUser(store) {
-    store.commit('REMOVE_USER');
+  setLogged: function setLogged(store, status) {
+    store.commit('SET_LOGGED', status);
   },
   setPageLoading: function setPageLoading(store, status) {
     store.commit('SET_PAGE_LOADING', status);

@@ -18,12 +18,10 @@ const mutations = {
             birthdate,
             key: 1
         }
-        state.logged = true
     },
 
-    REMOVE_USER: (state) => {
-        state.user = null
-        state.logged = false
+    SET_LOGGED: (state, status) => {
+        state.logged = status
     },
 
     SET_PAGE_LOADING: (state, status) => {
@@ -46,8 +44,8 @@ const actions = {
         store.commit('ADD_USER', {id, username, email, verified, role, birthdate})
     },
 
-    removeUser: (store) => {
-        store.commit('REMOVE_USER')
+    setLogged: (store, status) => {
+        store.commit('SET_LOGGED', status)
     },
 
     setPageLoading: (store, status) => {

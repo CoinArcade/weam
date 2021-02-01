@@ -21,7 +21,7 @@
 
         created: function() {
 
-            this.setPageLoading(true)
+            this.checkAuth()
 
             this.checkLanguage()
 
@@ -32,8 +32,6 @@
                 this.setLSI('last_path', this.getLSI('current_path'))
                 this.setLSI('current_path', this.$route.path)
             }
-
-            this.checkAuth()
 
             this.setPageLoading(false)
 
@@ -48,7 +46,7 @@
         methods: {
 
             // allow to add a user in the store
-            ...mapActions(['addUser', 'setPageLoading']),
+            ...mapActions(['addUser', 'setPageLoading', 'setLogged']),
 
             // check if language cookie exist or if it must be created
             checkLanguage: function() {
@@ -72,6 +70,8 @@
             checkAuth: function() {
 
                 if (this.getLSI('api_token')) {
+
+                    this.setLogged(true)
 
                     let continueButton = [
                         {
@@ -102,6 +102,7 @@
                                     })
                                 }
                             } catch (error) {
+                                this.setLogged(false)
                                 this.VueSwal2('swalWarning', {
                                     'title': 'Error',
                                     'message': 'We are unable to retrieve your data',
@@ -113,6 +114,7 @@
                             }
                         })
                         .catch(() => {
+                            this.setLogged(false)
                             this.VueSwal2('swalWarning', {
                                 'title': 'Error',
                                 'message': 'Invalid user access token',

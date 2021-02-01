@@ -19,10 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="add password strength support">
+    <list default="true" id="7474f447-0f37-4880-a03a-1b26e26a5be1" name="Default Changelist" comment="fix signup bug when input load data from server">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weam/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/general/swal/LoginAndSigninFormComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/AppComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/AppComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weam/resources/js/components/store/UserStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/weam/resources/js/components/store/UserStore.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,14 +205,8 @@
       <workItem from="1612087417003" duration="18322000" />
       <workItem from="1612110372001" duration="2590000" />
       <workItem from="1612125455747" duration="97000" />
-      <workItem from="1612167181136" duration="1353000" />
-    </task>
-    <task id="LOCAL-00042" summary="perform language module">
-      <created>1607111539466</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1607111539467</updated>
+      <workItem from="1612167181136" duration="3182000" />
+      <workItem from="1612179696477" duration="1402000" />
     </task>
     <task id="LOCAL-00043" summary="create login form">
       <created>1607117892734</created>
@@ -549,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612111451893</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="fix signup bug when input load data from server">
+      <created>1612168790930</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1612168790931</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,7 +573,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="sign up form backend validation" />
     <MESSAGE value="signup form email verification" />
     <MESSAGE value="try to fix routing bug" />
     <MESSAGE value="setup resend of email verification component" />
@@ -596,7 +597,8 @@
     <MESSAGE value="Fix all language cookie bugs + pass language handler routes under api routes" />
     <MESSAGE value="add password strength support" />
     <MESSAGE value="add animation when input load data" />
-    <option name="LAST_COMMIT_MESSAGE" value="add animation when input load data" />
+    <MESSAGE value="fix signup bug when input load data from server" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix signup bug when input load data from server" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
