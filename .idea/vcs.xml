@@ -2,5 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/requirements/stream-setup/janus-install/janus-webrtc-gateway-docker" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/requirements/stream-setup/nginx-install/nginx-http-flv-module" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/requirements/stream-setup/ome-install/OvenPlayer" vcs="Git" />
   </component>
 </project>

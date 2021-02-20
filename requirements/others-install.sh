@@ -49,6 +49,7 @@
 # TODO : change .env file
 # php artisan migrate
 
+# npm install vue-loader
 # npm install vue-router
 # npm install vuex
 # npm install vue-sweetalert2

@@ -150,12 +150,6 @@
 
             loginForm() {
                 this.showLogin({'tab': 1})
-            },
-
-            checkLogin() {
-                /*if (this.user[0] !== undefined) {
-                    alert(this.isLogin(this.user[0].id, this.user[0].username, this.user[0].email))
-                }*/
             }
 
         }
