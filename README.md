@@ -7,7 +7,7 @@ WEAM - The new french livestreaming platform
 ## Contributors
 
 - You can contact me via my university email address (castella.e1900282@etud.univ-ubs.fr) or via my personal email address (castella.mateo@gmail.com)
-- If you want to contribute to this project you're welcome.
+- If you want to contribute to this project you're welcome to do so.
 
 ## Date
 
