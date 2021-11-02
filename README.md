@@ -164,7 +164,8 @@ This software uses the following open source packages:
 AGPLv3
 
 ---
-
-> [weam.netlify.app](https://weam.netlify.app) &nbsp;&middot;&nbsp;
-> GitHub [@amitmerchant1990](https://github.com/0xARK) &nbsp;&middot;&nbsp;
-> Twitter [@amit_merchant](https://twitter.com/0x_ARK)
+<p align="center">
+[weam.netlify.app](https://weam.netlify.app) &nbsp;&middot;&nbsp;
+GitHub [@amitmerchant1990](https://github.com/0xARK) &nbsp;&middot;&nbsp;
+Twitter [@0x_ARK](https://twitter.com/0x_ARK)
+</p>
