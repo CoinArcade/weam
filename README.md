@@ -48,11 +48,11 @@ You ask for a lot...
   <br>
   <a href="https://weam.netlify.app/"><img src="https://weam.netlify.app/logo-weam.png" alt="Logo Weam" width="200"></a>
   <br>
-  Weam
+  weam
   <br>
 </h1>
 
-<h4 align="center">A minimal Markdown Editor desktop app built on top of <a href="http://electron.atom.io" target="_blank">Electron</a>.</h4>
+<h4 align="center">A semi-decentralized free and open-source livestreaming platform.</h4>
 
 <p align="center">
   <a href="https://badge.fury.io/js/electron-markdownify">
