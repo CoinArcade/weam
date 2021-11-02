@@ -1,6 +1,7 @@
 WEAM - The new french livestreaming platform
 ==
-[![Netlify Status](https://api.netlify.com/api/v1/badges/dabfaf49-0cdb-455e-93cd-7a5e60e4e25f/deploy-status)](https://app.netlify.com/sites/weam/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/dabfaf49-0cdb-455e-93cd-7a5e60e4e25f/deploy-status)](https://weam.netlify.app)
+
 **Version 0.3.0**
 
 
