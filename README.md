@@ -46,9 +46,9 @@ You ask for a lot...
 
 <h1 align="center">
   <br>
-  <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.png" alt="Markdownify" width="200"></a>
+  <a href="https://weam.netlify.app/"><img src="https://weam.netlify.app/logo-weam.png" alt="Logo Weam" width="200"></a>
   <br>
-  Markdownify
+  Weam
   <br>
 </h1>
 
