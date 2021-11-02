@@ -1,4 +1,4 @@
-WEAM - The new french livestreaming platform
+<!--WEAM - The new french livestreaming platform
 ==
 [![Netlify Status](https://api.netlify.com/api/v1/badges/dabfaf49-0cdb-455e-93cd-7a5e60e4e25f/deploy-status)](https://weam.netlify.app)
 
@@ -42,7 +42,7 @@ Features never seen before will be present :eyes:
 
 ## Installation
 
-You ask for a lot...
+You ask for a lot...-->
 
 <h1 align="center">
   <br>
@@ -62,6 +62,9 @@ You ask for a lot...
   <a href="https://gitter.im/amitmerchant1990/electron-markdownify"><img src="https://badges.gitter.im/amitmerchant1990/electron-markdownify.svg"></a>
   <a href="https://saythanks.io/to/bullredeyes@gmail.com">
       <img src="https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg">
+  </a>
+  <a href="https://weam.netlify.app">
+      <img src="https://api.netlify.com/api/v1/badges/dabfaf49-0cdb-455e-93cd-7a5e60e4e25f/deploy-status">
   </a>
   <a href="https://www.paypal.me/AmitMerchant">
     <img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat">
