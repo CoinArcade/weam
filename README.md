@@ -24,7 +24,7 @@
   </a>
 </p>
 
-<p align="center">
+<!--<p align="center">
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#download">Download</a> •
@@ -55,7 +55,7 @@
 * Cross platform
   - Windows, macOS and Linux ready.
 
-<!--## How To Use
+## How To Use
 
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
