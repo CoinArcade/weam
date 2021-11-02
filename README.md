@@ -165,7 +165,7 @@ AGPLv3
 
 ---
 <p align="center">
-[weam.netlify.app](https://weam.netlify.app) &nbsp;&middot;&nbsp;
-GitHub [@amitmerchant1990](https://github.com/0xARK) &nbsp;&middot;&nbsp;
-Twitter [@0x_ARK](https://twitter.com/0x_ARK)
+	<a href="https://weam.netlify.app">weam.netlify.app</a> &nbsp;&middot;&nbsp;
+	GitHub <a href="https://github.com/0xARK">@0xARK</a> &nbsp;&middot;&nbsp;
+	Twitter <a href="https://twitter.com/0x_ARK">@0x_ARK</a>
 </p>
