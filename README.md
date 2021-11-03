@@ -117,7 +117,7 @@ This software uses the following open source packages:
 
 ## License
 
-AGPLv3
+This project is developped under AGPLv3. For more details read the [LICENSE](https://github.com/0xARK/weam/blob/master/LICENSE) file.
 
 ---
 <p align="center">
